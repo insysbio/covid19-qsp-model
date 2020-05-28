@@ -1,0 +1,126 @@
+///version 23.x.x.
+V_maturation_hep:	=Hep;
+V_pro_hep:		Hep=2*Hep;
+V_apo_hep:		Hep=;
+V_entry_hcv:		Hep=iHep;
+V_inf_ihep:		iHep=vHep;
+V_apo_ihep:		iHep=;
+V_apo_vhep:		vHep=;
+V_syn_hcv:		=HCV;
+V_deg_hcv:		HCV=;
+V_syn_fibrosis:		=Fibrosis_as_hep;
+V_deg_fibrosis:		Fibrosis_as_hep=;
+V_syn_alt:		=ALT_pls;
+V_deg_alt:		ALT_pls=;
+///PEG-Interferon alpha-2a
+V_abs_pi2a:		pi2a_sc=pi2a_ser;  
+V_deg_pi2a:		pi2a_ser=;         
+///Ribavirin
+V_abs_rbv:		rbv_int=RBV_pls;
+V_pls_to_prf_rbv:	RBV_pls=RBV_prf;
+V_el_rbv:		RBV_pls=;
+V_rbv_to_rmp_rbc:	=RMP_rbc;
+V_rmp_to_rdp_rbc:	RMP_rbc=RDP_rbc;
+V_rdp_to_rtp_rbc:	RDP_rbc=RTP_rbc;
+V_deg_rtp_rbc:		RTP_rbc=;
+V_rbv_to_rmp_hep:	=RMP_hep;
+V_rmp_to_rdp_hep:	RMP_hep=RDP_hep;
+V_rdp_to_rtp_hep:	RDP_hep=RTP_hep;
+V_deg_rmp_hep:		RMP_hep=;
+V_rna_inc_rtp:		=RTP_rna;		///!!!new	///RTP incorporation in RNA
+V_rna_exc_rtp:		RTP_rna=;		///!!!new	///RTP excision from RNA
+///Asunaprevir
+V_int_mov_asv_1:	asv_int_1=asv_int_2;
+V_int_mov_asv_2:	asv_int_2=asv_int_3;
+V_int_mov_asv_3:	asv_int_3=asv_int_4;
+V_int_mov_asv_4:	asv_int_4=asv_int;
+V_abs_asv:		asv_int=ASV_pls;
+V_degel_asv:		ASV_pls=;
+V_pls_to_prf_asv:	ASV_pls=ASV_prf;
+V_eff_in_asv:		=ASV_eff;
+V_eff_out_asv:		ASV_eff=;
+///Daclatasvir
+V_abs_dcv:		dcv_int=DCV_pls;
+V_degel_dcv:		DCV_pls=;
+V_pls_to_prf_dcv:	DCV_pls=DCV_prf;
+///Beclabuvir
+V_abs_bcv:		bcv_int=BCV_pls;
+V_degel_bcv:		BCV_pls=;
+V_bcv_to_bms712:	BCV_pls=BMS794712_pls;
+V_degel_bms712:		BMS794712_pls=;	
+V_eff_in_bcv:		=BCV_eff;
+V_eff_out_bcv:		BCV_eff=;
+///Sofosbuvir
+V_abs_sof:				sof_int=SOF_pls;
+V_cl_sof:				SOF_pls=;
+V_sof_to_gs566500_hep:			=GS566500_hep;
+V_gs566500_to_gs606965_mp_hep:		GS566500_hep=GS606965_MP_hep;
+V_gs606965_mp_to_gs607596_dp_hep:	GS606965_MP_hep=GS607596_DP_hep;
+V_gs607596_dp_to_gs461203_tp_hep:	GS607596_DP_hep=GS461203_TP_hep;
+V_gs606965_mp_to_gs331007_hep:		GS606965_MP_hep=GS331007_hep;
+V_gs566500_deg_hep:			GS566500_hep=;
+V_gs606965_mp_deg_hep:			GS606965_MP_hep=;
+V_gs607596_dp_deg_hep:			GS607596_DP_hep=;
+V_gs461203_tp_deg_hep:			GS461203_TP_hep=;
+V_gs331007_deg_hep:			GS331007_hep=;
+V_eff_in_sof:		=SOF_eff;
+V_eff_out_sof:		SOF_eff=;
+///Ledipasvir
+V_abs_ldv:		ldv_int=LDV_pls;
+V_degel_ldv:		LDV_pls=;
+V_pls_to_prf_ldv:	LDV_pls=LDV_prf;
+///Grazoprevir
+V_abs_gzr:		gzr_int=GZR_pls;
+V_degel_gzr:		GZR_pls=;
+V_eff_in_gzr:		=GZR_eff;
+V_eff_out_gzr:		GZR_eff=;
+///Elbasvir
+V_abs_ebr:		ebr_int=EBR_pls;
+V_degel_ebr:		EBR_pls=;
+V_pls_to_prf_ebr:	EBR_pls=EBR_prf;
+///GS-5816
+V_abs_gs5816:		gs5816_int=GS5816_pls;
+V_degel_gs5816:		GS5816_pls=;
+V_pls_to_prf_gs5816:	GS5816_pls=GS5816_prf;
+///GS-9669
+V_abs_gs9669:		gs9669_int=GS9669_pls;
+V_degel_gs9669:		GS9669_pls=;
+V_eff_in_gs9669:	=GS9669_eff;
+V_eff_out_gs9669:	GS9669_eff=;
+///GS-9857
+V_abs_gs9857:		gs9857_int=GS9857_pls;
+V_degel_gs9857:		GS9857_pls=;
+V_pls_to_prf_gs9857:	GS9857_pls=GS9857_prf;
+///Vedroprevir
+V_abs_vdv:		vdv_int=VDV_pls;
+V_degel_vdv:		VDV_pls=;
+V_eff_in_vdv:		=VDV_eff;
+V_eff_out_vdv:		VDV_eff=;
+///ABT-493
+V_abs_abt493:		abt493_int=ABT493_pls;
+V_degel_abt493:		ABT493_pls=;
+V_eff_in_abt493:	=ABT493_eff;
+V_eff_out_abt493:	ABT493_eff=;
+///ABT-530
+V_abs_abt530:		abt530_int=ABT530_pls;
+V_degel_abt530:		ABT530_pls=;
+V_pls_to_prf_abt530:	ABT530_pls=ABT530_prf;
+///ACH-3102
+V_abs_ach3102:		ach3102_int=ACH3102_pls;
+V_degel_ach3102:	ACH3102_pls=;
+V_pls_to_prf_ach3102:	ACH3102_pls=ACH3102_prf;
+///ACH-3422
+V_abs_ach3422:		ach3422_int=ACH3422_pls;
+V_degel_ach3422:	ACH3422_pls=;
+V_eff_in_ach3422:	=ACH3422_eff;
+V_eff_out_ach3422:	ACH3422_eff=;
+///Sovaprevir
+V_abs_svv:		svv_int=SVV_pls;
+V_degel_svv:		SVV_pls=;
+V_eff_in_svv:		=SVV_eff;
+V_eff_out_svv:		SVV_eff=;
+///MK-3682
+V_abs_mk3682:		mk3682_int=MK3682_pls;
+V_degel_mk3682:		MK3682_pls=;
+V_eff_in_mk3682:	=MK3682_eff;
+V_eff_out_mk3682:	MK3682_eff=;
