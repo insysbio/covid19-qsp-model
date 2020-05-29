@@ -770,6 +770,17 @@
     "num": 11900
   },
   {
+    "class": "Const",
+    "id": "k_deg_cov_rna",
+    "title": "rate constant of COV_RNA degradation in bulk phase",
+    "notes": "assumed to be equal to COV half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "1/h",
+    "num": 0.17
+  },
+  {
     "class": "Record",
     "id": "time_day",
     "title": "hours to days conversion",
@@ -1094,6 +1105,18 @@
     }
   },
   {
+    "class": "Record",
+    "id": "COV_sgRNA_perc",
+    "title": "percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "100 * COV_RNA / COV"
+    }
+  },
+  {
     "class": "Compartment",
     "id": "default",
     "title": "Volume of default compartment",
@@ -1334,6 +1357,19 @@
     "compartment": "Vol_alv"
   },
   {
+    "class": "Species",
+    "id": "COV_RNA",
+    "title": "concentration of COV_RNA released from vPC due to their apoptosis",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pM",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv"
+  },
+  {
     "class": "Reaction",
     "id": "V_mat_pc",
     "title": "influx of Pneumocytes via maturation",
@@ -1542,7 +1578,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_ace2_apo_pc",
-    "title": "degradation of COV_ACE2 located at PC with concomitant COV release to bulk phase via PC apoptosis",
+    "title": "degradation of COV_ACE2 located at PC via PC apoptosis",
     "tags": [
       "COV-PC"
     ],
@@ -1691,7 +1727,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_ace2_apo_ipc",
-    "title": "degradation of COV_ACE2 located at iPC with concomitant COV release to bulk phase via iPC apoptosis",
+    "title": "degradation of COV_ACE2 located at iPC via iPC apoptosis",
     "tags": [
       "COV-iPC"
     ],
@@ -1710,7 +1746,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_apo_ipc",
-    "title": "degradation of COV located in iPC with concomitant COV release to bulk phase via iPC apoptosis",
+    "title": "degradation of COV located in iPC via iPC apoptosis",
     "tags": [
       "COV-iPC"
     ],
@@ -1928,7 +1964,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_ace2_apo_vpc",
-    "title": "degradation of COV_ACE2 located at vPC with concomitant COV release to bulk phase via vPC apoptosis",
+    "title": "degradation of COV_ACE2 located at vPC via vPC apoptosis",
     "tags": [
       "COV-vPC"
     ],
@@ -2058,7 +2094,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_apo_vpc",
-    "title": "degradation of COV located in vPC with concomitant COV release to bulk phase via vPC apoptosis",
+    "title": "degradation of COV located in vPC via vPC apoptosis",
     "tags": [
       "COV-vPC"
     ],
@@ -2077,7 +2113,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_rna_apo_vpc",
-    "title": "degradation of COV_RNA located at vPC with concomitant COV release to bulk phase via vPC apoptosis",
+    "title": "degradation of COV_RNA located at vPC with concomitant COV_RNA release to bulk phase via vPC apoptosis",
     "tags": [
       "COV-vPC"
     ],
@@ -2090,6 +2126,10 @@
       {
         "target": "COV_RNA_vpc",
         "stoichiometry": -1
+      },
+      {
+        "target": "COV_RNA",
+        "stoichiometry": 1
       }
     ]
   },
@@ -2108,6 +2148,25 @@
     "actors": [
       {
         "target": "COV",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_rna",
+    "title": "degradation of COV_RNA in bulk phase",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "Vol_alv * k_deg_cov_rna * COV_RNA"
+    },
+    "actors": [
+      {
+        "target": "COV_RNA",
         "stoichiometry": -1
       }
     ]

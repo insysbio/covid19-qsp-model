@@ -231,6 +231,19 @@
         >
         
       </species>
+      <species
+        id="COV_RNA"
+        name="concentration of COV_RNA released from vPC due to their apoptosis"
+        compartment="Vol_alv"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="pM_L"
+        metaid="COV_RNA"
+        >
+        
+      </species>
     </listOfSpecies>
   
     <listOfParameters>
@@ -505,6 +518,16 @@
         
       </parameter>
       <parameter
+        id="COV_sgRNA_perc"
+        name="percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients"
+        constant="false"
+        
+        units="UL"
+        metaid="COV_sgRNA_perc"
+        >
+        
+      </parameter>
+      <parameter
         id="kcell_to_cell"
         
         constant="true"
@@ -673,6 +696,16 @@
         metaid="Nmax_cov_per_cell"
         >
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>maximal number of virions Nmax = (surface area of PC faced to alveoli lumen)/(area of &quot;maximal&quot; section of SARS-CoV-2). Based on PC surface area = 183 um^2 [7103258] and (virion diameter=120-160 nm), one obtains Nmax =  183 um^2 / Pi*(140/2 nm) ^2 = 11900</p></html></notes>
+      </parameter>
+      <parameter
+        id="k_deg_cov_rna"
+        
+        constant="true"
+        value="0.17"
+        units="__h"
+        metaid="k_deg_cov_rna"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed to be equal to COV half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h</p></html></notes>
       </parameter>
   </listOfParameters>
   
@@ -887,7 +920,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_ace2_apo_pc"
-        name="degradation of COV_ACE2 located at PC with concomitant COV release to bulk phase via PC apoptosis"
+        name="degradation of COV_ACE2 located at PC via PC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_ace2_apo_pc"
@@ -1035,7 +1068,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_ace2_apo_ipc"
-        name="degradation of COV_ACE2 located at iPC with concomitant COV release to bulk phase via iPC apoptosis"
+        name="degradation of COV_ACE2 located at iPC via iPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_ace2_apo_ipc"
@@ -1055,7 +1088,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_apo_ipc"
-        name="degradation of COV located in iPC with concomitant COV release to bulk phase via iPC apoptosis"
+        name="degradation of COV located in iPC via iPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_apo_ipc"
@@ -1269,7 +1302,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_ace2_apo_vpc"
-        name="degradation of COV_ACE2 located at vPC with concomitant COV release to bulk phase via vPC apoptosis"
+        name="degradation of COV_ACE2 located at vPC via vPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_ace2_apo_vpc"
@@ -1397,7 +1430,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_apo_vpc"
-        name="degradation of COV located in vPC with concomitant COV release to bulk phase via vPC apoptosis"
+        name="degradation of COV located in vPC via vPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_apo_vpc"
@@ -1417,7 +1450,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_rna_apo_vpc"
-        name="degradation of COV_RNA located at vPC with concomitant COV release to bulk phase via vPC apoptosis"
+        name="degradation of COV_RNA located at vPC with concomitant COV_RNA release to bulk phase via vPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_rna_apo_vpc"
@@ -1425,9 +1458,11 @@
         
         <listOfReactants>
           <speciesReference species="COV_RNA_vpc" stoichiometry="1"/>
+          
           </listOfReactants>
         <listOfProducts>
           
+          <speciesReference species="COV_RNA" stoichiometry="1"/>
           </listOfProducts>
         <listOfModifiers>
           </listOfModifiers>
@@ -1453,6 +1488,26 @@
           </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>Vol_alv</ci><ci>k_deg_cov</ci></apply><ci>COV</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="V_deg_cov_rna"
+        name="degradation of COV_RNA in bulk phase"
+        reversible="true"
+        fast="false"
+        metaid="V_deg_cov_rna"
+        >
+        
+        <listOfReactants>
+          <speciesReference species="COV_RNA" stoichiometry="1"/>
+          </listOfReactants>
+        <listOfProducts>
+          
+          </listOfProducts>
+        <listOfModifiers>
+          </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>Vol_alv</ci><ci>k_deg_cov_rna</ci></apply><ci>COV_RNA</ci></apply></math>
         </kineticLaw>
       </reaction>
   </listOfReactions>
@@ -1646,6 +1701,13 @@
       metaid="steric_factor_vpc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_vpc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_sgRNA_perc"
+      name="percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients"
+      metaid="COV_sgRNA_perc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>COV_RNA</ci></apply><ci>COV</ci></apply></math>
     </assignmentRule>
   
   </listOfRules>
