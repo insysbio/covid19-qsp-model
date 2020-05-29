@@ -3,6 +3,7 @@
 The aim of the project is to develop a Quantitative Systems Pharmacology (QSP) model of COVID-19 describing virus (SARS-CoV-2) and host cell (lung epithelial cells - pneumocytes) life cycles, innate and adoptive immune response and possible therapeutic treatments. 
 
 [![Heta project](https://img.shields.io/badge/%CD%B1-Heta_project-blue)](https://hetalang.github.io/)
+[![Build and Share](https://github.com/insysbio/covid19-qsp-model/workflows/Build%20and%20Share/badge.svg)](https://github.com/insysbio/covid19-qsp-model/actions?query=workflow%3A%22Build+and+Share%22)
 [![GitHub issues](https://img.shields.io/github/issues/insysbio/covid19-qsp-model.svg)](https://GitHub.com/insysbio/covid19-qsp-model/issues/)
 [![GitHub license](https://img.shields.io/github/license/insysbio/covid19-qsp-model.svg)](https://github.com/insysbio/covid19-qsp-model/blob/master/LICENSE)
 

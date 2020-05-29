@@ -16,14 +16,19 @@ include ./cov19_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 3 }
 include ./cov19_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 3 }
 
 // include addon.json type json
-// include addon.yml type yaml
-
-//p1 @Record .= 1;
 
 // exports
-//output_sbml @SBMLExport { filepath: cov19_life_cycle_sbml, version: L2V4 };
-output_slv @SLVExport { filepath: cov19_life_cycle_slv, eventsOff: false };
-//output_json @JSONExport { filepath: output };
+output_sbml @SBMLExport {
+  filepath: cov19_life_cycle_sbml,
+  version: L2V4
+};
+output_slv @SLVExport {
+  filepath: cov19_life_cycle_slv,
+  eventsOff: false
+};
+output_json @JSONExport {
+  filepath: cov19_life_cycle_json
+};
 //output_yaml @YAMLExport { filepath: output };
 //output_simbio @SimbioExport { filepath: simbio };
 //output_mrg @MrgsolveExport { filepath: mrgsolve };
