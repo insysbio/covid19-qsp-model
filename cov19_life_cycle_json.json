@@ -1,0 +1,2130 @@
+[
+  {
+    "class": "UnitDef",
+    "id": "day",
+    "units": [
+      {
+        "kind": "hour",
+        "multiplier": 24,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "fmole",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1e-15,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "pmole",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1e-12,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "nmole",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1e-9,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "umole",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 0.000001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "mmole",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 0.001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "fM",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1e-15,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "pM",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1e-12,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "nM",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1e-9,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "uM",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 0.000001,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "mM",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 0.001,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "M",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "kM",
+    "units": [
+      {
+        "kind": "mole",
+        "multiplier": 1000,
+        "exponent": 1
+      },
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": -1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "fL",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 1e-15,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "pL",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 1e-12,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "nL",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 1e-9,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "uL",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 0.000001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "mL",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 0.001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "dL",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 0.1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "L",
+    "units": [
+      {
+        "kind": "litre",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "fs",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 1e-15,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "ps",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 1e-12,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "ns",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 1e-9,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "us",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 0.000001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "ms",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 0.001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "s",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "h",
+    "units": [
+      {
+        "kind": "hour",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "week",
+    "units": [
+      {
+        "kind": "second",
+        "multiplier": 604800,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "fg",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 1e-18,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "pg",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 1e-15,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "ng",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 1e-12,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "ug",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 1e-9,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "mg",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 0.000001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "g",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 0.001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "kg",
+    "units": [
+      {
+        "kind": "kilogram",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "kat",
+    "units": [
+      {
+        "kind": "katal",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "cell",
+    "units": [
+      {
+        "kind": "item",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "kcell",
+    "units": [
+      {
+        "kind": "item",
+        "multiplier": 1000,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "kvir",
+    "units": [
+      {
+        "kind": "item",
+        "multiplier": 1000,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "cal",
+    "units": [
+      {
+        "kind": "joule",
+        "multiplier": 4.1868,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "kcal",
+    "units": [
+      {
+        "kind": "joule",
+        "multiplier": 4186.8,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "fm",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 1e-15,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "pm",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 1e-12,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "nm",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 1e-9,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "um",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 0.000001,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "mm",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 1e-13,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "cm",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 0.01,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "m",
+    "units": [
+      {
+        "kind": "metre",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "UL",
+    "units": [
+      {
+        "kind": "dimensionless",
+        "multiplier": 1,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "UnitDef",
+    "id": "percent",
+    "units": [
+      {
+        "kind": "dimensionless",
+        "multiplier": 0.01,
+        "exponent": 1
+      }
+    ]
+  },
+  {
+    "class": "Const",
+    "id": "kcell_to_cell",
+    "title": "kcell to cell conversion coefficient",
+    "tags": [
+      "AUX"
+    ],
+    "units": "cell/kcell",
+    "num": 1000
+  },
+  {
+    "class": "Const",
+    "id": "NA_pmole",
+    "title": "Avogadro constant for 1 pmole",
+    "tags": [
+      "AUX"
+    ],
+    "units": "item/pmole",
+    "num": 602000000000
+  },
+  {
+    "class": "Const",
+    "id": "k_apo_pc",
+    "title": "rate constant of PC and iPC apoptosis",
+    "notes": "the value was estimated from the HS submodel at steady state. Indeed, taking into account that (i) PC2 is precursors of PC1 [9227501], (ii) life span of PC1 is about 120 days [20616357], (iii) ratio of PC1/PC2 at steady state = 19/37 [7103258] we represented lung cell  dynamics system as follows: --(Vol_alv*k_mat_pc) --> PC2 --(Vol_alv*k_dif_pc*PC2)--> PC1--(Vol_alv*k_apo_pc1*PC1)-->. Then consider the system at steady state and assuming that lifespan (T_ls) corresponds to time required for 99% of cell die we have come to following formulas: (a) k_apo_pc1 = ln(1/0.01)/(120 days) = 1.6e-3 1/h, (b) k_dif_pc = k_apo_pc1*PC1_ss/PC2_ss = 8.2e-4 1/h, (c) k_mat_pc = k_dif_pc*PC2_ss. Since  PC2 to PC1 transition was not considered in the version of the model we can assume that k_apo_pc = k_dif_pc",
+    "tags": [
+      "PC"
+    ],
+    "units": "1/h",
+    "num": 0.00082
+  },
+  {
+    "class": "Const",
+    "id": "k_apo_vpc",
+    "title": "rate constant of vPC apoptosis",
+    "notes": "the value was estimated from [PMID 18487354] only",
+    "tags": [
+      "PC"
+    ],
+    "units": "1/h",
+    "num": 0.00082
+  },
+  {
+    "class": "Const",
+    "id": "kbase_tran_pc_ipc",
+    "title": "rate constant of PC to iPC transition",
+    "notes": "fitted to describe in vivo viral load dynamics",
+    "tags": [
+      "PC"
+    ],
+    "units": "1/pM/h",
+    "num": 0.01
+  },
+  {
+    "class": "Const",
+    "id": "kbase_tran_ipc_vpc",
+    "title": "rate constant of iPC to vPC transition",
+    "notes": "fitted to describe in vivo viral load dynamics",
+    "tags": [
+      "PC"
+    ],
+    "units": "1/pM/h",
+    "num": 0.01
+  },
+  {
+    "class": "Const",
+    "id": "k_shed_ace2_pc",
+    "title": "rate constant of ACE2 shedding",
+    "notes": "rate constant of shedding catalysed by ADAM17/TACE = 5e-4 1/s",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "1/h",
+    "num": 1.8
+  },
+  {
+    "class": "Const",
+    "id": "k_off_cov_ace2",
+    "title": "rate constant of COV_ACE2 complex dissociation",
+    "notes": "k_off for viral Spike receptor binding domain (RBD) and ACE2 receptor",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "1/h",
+    "num": 23.56
+  },
+  {
+    "class": "Const",
+    "id": "Kd_cov_ace2",
+    "title": "equilibrium dissociation constant of COV to ACE2 binding",
+    "notes": "Kd for viral Spike receptor binding domain (RBD) and ACE2 receptor is equal to 4.67 nM. Basing on estimate that virion includes about 150 spike proteins (virion diameter=120-160 nm, Spike height=20nm) we have calculated Kd for COV and ACE2 binding equal to 4.67 nM/150 = 31.13 pM",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "pM",
+    "num": 31.13
+  },
+  {
+    "class": "Const",
+    "id": "k_ent_cov_ipc",
+    "title": "rate constant of COV entry in iPC cell",
+    "notes": "estimated on the basis of rate constant of endocytosis for Influenza virus",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "1/h",
+    "num": 0.936
+  },
+  {
+    "class": "Const",
+    "id": "k_rel_cov_ipc",
+    "title": "rate constant of COV release to bulk phase from iPC and vPC cell",
+    "notes": "fitted to describe in vivo viral load dynamics averaged across 9 patients",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "1/h",
+    "num": 0.6
+  },
+  {
+    "class": "Const",
+    "id": "k_unc_cov_vpc",
+    "title": "rate constant of COV uncouting in vPC cell",
+    "notes": "estimated on the basis of rate constant of endocytosis for Influenza virus: k_end-cyt_Vend in original paper describing release from endosome/uncoating",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "1/h",
+    "num": 14
+  },
+  {
+    "class": "Const",
+    "id": "k_rep_cov_rna_vpc",
+    "title": "rate constant of COV_RNA replication in vPC cell",
+    "notes": "fitted to describe in vivo viral load dynamics averaged across 9 patients",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "1/h",
+    "num": 0.6
+  },
+  {
+    "class": "Const",
+    "id": "EC50_rep_cov_rna_vpc",
+    "title": "EC50 of COV_RNA replication referring to concentration inindividual vPC cell",
+    "notes": "it was proposed that a host cell can produce about 8000 virions of Influenza virus before it dies. So we have calculated the EC50 basing on the value.",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pM",
+    "num": 10000
+  },
+  {
+    "class": "Const",
+    "id": "k_ass_cov_vpc",
+    "title": "rate constant of COV assembling in vPC",
+    "notes": "fitted to describe in vivo viral load dynamics averaged across 9 patients",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "1/h",
+    "num": 1
+  },
+  {
+    "class": "Const",
+    "id": "k_deg_cov",
+    "title": "rate constant of COV degradation in bulk phase",
+    "notes": "COV half-life on different surfaces and aerosole is varied from 1 to 8 hours. We have chosen half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "1/h",
+    "num": 0.17
+  },
+  {
+    "class": "Const",
+    "id": "Nmax_cov_per_cell",
+    "title": "maximal number of viral particles able to be simultaneously attached to pneumocyte",
+    "notes": "maximal number of virions Nmax = (surface area of PC faced to alveoli lumen)/(area of \"maximal\" section of SARS-CoV-2). Based on PC surface area = 183 um^2 [7103258] and (virion diameter=120-160 nm), one obtains Nmax =  183 um^2 / Pi*(140/2 nm) ^2 = 11900",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "item/cell",
+    "num": 11900
+  },
+  {
+    "class": "Record",
+    "id": "time_day",
+    "title": "hours to days conversion",
+    "tags": [
+      "AUX"
+    ],
+    "units": "day",
+    "assignments": {
+      "ode_": "t / 24"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "k_syn_ace2_pc",
+    "title": "rate of ACE2 synthesis calculated per volume of PC",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "pM/h/cell",
+    "assignments": {
+      "ode_": "k_shed_ace2_pc * ACE2_pc_hs_ss / PC_hs_ss / Vol_pc / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "k_tran_pc_ipc",
+    "title": "apparent rate constant of PC to iPC transition",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "1/h",
+    "assignments": {
+      "ode_": "kbase_tran_pc_ipc * COV_ACE2_pc"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "k_tran_ipc_vpc",
+    "title": "apparent rate constant of iPC to vPC transition",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "1/h",
+    "assignments": {
+      "ode_": "kbase_tran_ipc_vpc * COV_ipc"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "ACE2_pc_per_cell",
+    "title": "number of ACE2 per PC cell",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * ACE2_pc / PC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_ACE2_pc_per_cell",
+    "title": "number of COV_ACE2 per PC cell",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COV_ACE2_pc / PC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "ACE2_ipc_per_cell",
+    "title": "number of ACE2 per iPC cell",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * ACE2_ipc / iPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_ACE2_ipc_per_cell",
+    "title": "number of COV_ACE2 per iPC cell",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COV_ACE2_ipc / iPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_ipc_per_cell",
+    "title": "number of COV per iPC cell",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COV_ipc / iPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "ACE2_vpc_per_cell",
+    "title": "number of ACE2 per vPC cell",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * ACE2_vpc / vPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_ACE2_vpc_per_cell",
+    "title": "number of COV_ACE2 per vPC cell",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COV_ACE2_vpc / vPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_vpc_per_cell",
+    "title": "number of COV per vPC cell",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COV_vpc / vPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_RNA_vpc_per_cell",
+    "title": "number of COV_RNA per vPC cell",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COV_RNA_vpc / vPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_num_ml",
+    "title": "number of virus copies in 1 mL",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "item/mL",
+    "assignments": {
+      "ode_": "COV * Vol_alv * NA_pmole / 1000"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "PC_tot",
+    "title": "total pneumocytes cell count",
+    "tags": [
+      "PC"
+    ],
+    "units": "kcell/L",
+    "assignments": {
+      "ode_": "PC + iPC + vPC"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "PC_percent",
+    "title": "percent of PC of total pneumocytes cell count",
+    "tags": [
+      "PC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "100 * PC / PC_tot"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "iPC_percent",
+    "title": "percent of iPC of total pneumocytes cell count",
+    "tags": [
+      "PC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "100 * iPC / PC_tot"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "vPC_percent",
+    "title": "percent of vPC of total pneumocytes cell count",
+    "tags": [
+      "PC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "100 * vPC / PC_tot"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "ACE2_pc_per_cell_tot",
+    "title": "total number of ACE2 molecules per PC cell",
+    "tags": [
+      "ACE2"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "ACE2_pc_per_cell + COV_ACE2_pc_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "ACE2_ipc_per_cell_tot",
+    "title": "total number of ACE2 molecules per iPC cell",
+    "tags": [
+      "ACE2"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "ACE2_ipc_per_cell + COV_ACE2_ipc_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "ACE2_vpc_per_cell_tot",
+    "title": "total number of ACE2 molecules per vPC cell",
+    "tags": [
+      "ACE2"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "ACE2_vpc_per_cell + COV_ACE2_vpc_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_pc_per_cell_tot",
+    "title": "total number of COV genomes per PC cell",
+    "tags": [
+      "COV"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "COV_ACE2_pc_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_ipc_per_cell_tot",
+    "title": "total number of COV genomes per iPC cell",
+    "tags": [
+      "COV"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "COV_ACE2_ipc_per_cell + COV_ipc_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "COV_vpc_per_cell_tot",
+    "title": "total number of COV genomes per vPC cell",
+    "tags": [
+      "COV"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "COV_ACE2_vpc_per_cell + COV_vpc_per_cell + COV_RNA_vpc_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "steric_factor_pc",
+    "title": "a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "1 - COV_ACE2_pc_per_cell / Nmax_cov_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "steric_factor_ipc",
+    "title": "a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "1 - COV_ACE2_ipc_per_cell / Nmax_cov_per_cell"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "steric_factor_vpc",
+    "title": "a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "1 - COV_ACE2_vpc_per_cell / Nmax_cov_per_cell"
+    }
+  },
+  {
+    "class": "Compartment",
+    "id": "default",
+    "title": "Volume of default compartment",
+    "units": "L",
+    "assignments": {
+      "start_": "1"
+    }
+  },
+  {
+    "class": "Compartment",
+    "id": "Vol_alv",
+    "title": "Volume of surfactant linning alveolar surface",
+    "notes": "calculated as (width of linning layer)*(lunf surface area) = (0.1 - 0.3 um)*(66 - 75 m)",
+    "units": "L",
+    "assignments": {
+      "start_": "0.014"
+    }
+  },
+  {
+    "class": "Compartment",
+    "id": "Vol_pc",
+    "title": "Volume of Pneumocyte",
+    "notes": "averaged between type I and II pneumocytes",
+    "units": "L/cell",
+    "assignments": {
+      "start_": "1.33e-12"
+    }
+  },
+  {
+    "class": "Species",
+    "id": "PC",
+    "title": "concentration of PC type II (Pneumocytes free of virus) in alveoli",
+    "notes": "calculated on the basis of total type II pneumocytes number per lungs (see ref) and volume of lung surfactant equal to 0.014L",
+    "tags": [
+      "PC"
+    ],
+    "units": "kcell/L",
+    "assignments": {
+      "start_": "2.643e+9"
+    },
+    "compartment": "Vol_alv"
+  },
+  {
+    "class": "Species",
+    "id": "iPC",
+    "title": "concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli",
+    "tags": [
+      "PC"
+    ],
+    "units": "kcell/L",
+    "assignments": {
+      "start_": "1"
+    },
+    "compartment": "Vol_alv"
+  },
+  {
+    "class": "Species",
+    "id": "vPC",
+    "title": "concentration of vPC (Pneumocytes with virus actively replicated) in alveoli",
+    "tags": [
+      "PC"
+    ],
+    "units": "kcell/L",
+    "assignments": {
+      "start_": "1"
+    },
+    "compartment": "Vol_alv"
+  },
+  {
+    "class": "Species",
+    "id": "PC_hs_ss",
+    "title": "concentration of PC type II at steady state w/o virus exposure",
+    "notes": "estimate for type II pneumocytes was taken",
+    "tags": [
+      "PC"
+    ],
+    "units": "kcell/L",
+    "assignments": {
+      "start_": "2.643e+9"
+    },
+    "boundary": true,
+    "compartment": "Vol_alv"
+  },
+  {
+    "class": "Species",
+    "id": "ACE2_pc",
+    "title": "amount of ACE2 located at PC",
+    "notes": "based on 1e4 ACE2 per cell",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "615"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "ACE2_pc_hs_ss",
+    "title": "amount of ACE2 located at PC",
+    "notes": "based on 1e4 ACE2 per cell and total PC II number in lungs equal to 37e9 [7103258]",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "615"
+    },
+    "boundary": true,
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV_ACE2_pc",
+    "title": "amount of COV_ACE2 complexes located at PC",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "ACE2_ipc",
+    "title": "amount of ACE2 located at iPC",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV_ACE2_ipc",
+    "title": "amount of COV_ACE2 complexes located at iPC",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV_ipc",
+    "title": "amount of COV particles located in iPC",
+    "tags": [
+      "COV-iPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "ACE2_vpc",
+    "title": "amount of ACE2 located at vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV_ACE2_vpc",
+    "title": "amount of COV_ACE2 complexes located at vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV_vpc",
+    "title": "amount of COV particles located in vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV_RNA_vpc",
+    "title": "amount of COV_RNA located in vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "COV",
+    "title": "concentration of  COV (SARS-CoV-2 virus)",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pM",
+    "assignments": {
+      "start_": "0.002"
+    },
+    "compartment": "Vol_alv"
+  },
+  {
+    "class": "Reaction",
+    "id": "V_mat_pc",
+    "title": "influx of Pneumocytes via maturation",
+    "tags": [
+      "PC"
+    ],
+    "aux": {},
+    "units": "kcell/h",
+    "assignments": {
+      "ode_": "Vol_alv * k_apo_pc * PC_hs_ss"
+    },
+    "actors": [
+      {
+        "target": "PC",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_pc_ipc",
+    "title": "transition of Pneumocyte from normal state to state with entered COV",
+    "tags": [
+      "PC"
+    ],
+    "aux": {},
+    "units": "kcell/h",
+    "assignments": {
+      "ode_": "k_tran_pc_ipc * PC"
+    },
+    "actors": [
+      {
+        "target": "PC",
+        "stoichiometry": -1
+      },
+      {
+        "target": "iPC",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_ipc_vpc",
+    "title": "transition of Pneumocyte from state with entered COV to state able to produce viral particles",
+    "tags": [
+      "PC"
+    ],
+    "aux": {},
+    "units": "kcell/h",
+    "assignments": {
+      "ode_": "k_tran_ipc_vpc * iPC"
+    },
+    "actors": [
+      {
+        "target": "iPC",
+        "stoichiometry": -1
+      },
+      {
+        "target": "vPC",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_apo_pc",
+    "title": "apoptosis of Pneumocyte",
+    "tags": [
+      "PC"
+    ],
+    "aux": {},
+    "units": "kcell/h",
+    "assignments": {
+      "ode_": "Vol_alv * k_apo_pc * PC"
+    },
+    "actors": [
+      {
+        "target": "PC",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_apo_ipc",
+    "title": "apoptosis of iPneumocyte",
+    "tags": [
+      "PC"
+    ],
+    "aux": {},
+    "units": "kcell/h",
+    "assignments": {
+      "ode_": "Vol_alv * k_apo_pc * iPC"
+    },
+    "actors": [
+      {
+        "target": "iPC",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_apo_vpc",
+    "title": "apoptosis of vPneumocyte",
+    "tags": [
+      "PC"
+    ],
+    "aux": {},
+    "units": "kcell/h",
+    "assignments": {
+      "ode_": "Vol_alv * k_apo_vpc * vPC"
+    },
+    "actors": [
+      {
+        "target": "vPC",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_syn_ace2_pc",
+    "title": "synthesis of ACE2 by PC",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "Vol_pc * k_syn_ace2_pc * PC * Vol_alv * kcell_to_cell"
+    },
+    "actors": [
+      {
+        "target": "ACE2_pc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_shed_ace2_pc",
+    "title": "degradation of ACE2 located at PC via shedding",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_shed_ace2_pc * ACE2_pc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_pc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_bind_cov_ace2_pc",
+    "title": "binding of COV to ACE2 located at PC surface",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_off_cov_ace2 * (steric_factor_pc * COV * ACE2_pc / Kd_cov_ace2 - COV_ACE2_pc)"
+    },
+    "actors": [
+      {
+        "target": "COV",
+        "stoichiometry": -1
+      },
+      {
+        "target": "ACE2_pc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_ACE2_pc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_ace2_apo_pc",
+    "title": "degradation of ACE2 located at PC via PC apoptosis",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * ACE2_pc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_pc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_ace2_apo_pc",
+    "title": "degradation of COV_ACE2 located at PC with concomitant COV release to bulk phase via PC apoptosis",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * COV_ACE2_pc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_pc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_ace2_pc_ipc",
+    "title": "transition of ACE2 from PC to iPC with transition of pneumocytes between the states",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_tran_pc_ipc * ACE2_pc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_pc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "ACE2_ipc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_cov_ace2_pc_ipc",
+    "title": "transition of COV_ACE2 from PC to iPC with transition of pneumocytes between the states",
+    "tags": [
+      "COV-PC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_tran_pc_ipc * COV_ACE2_pc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_pc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_ACE2_ipc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_syn_ace2_ipc",
+    "title": "synthesis of ACE2 by iPC",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "Vol_pc * k_syn_ace2_pc * iPC * Vol_alv * kcell_to_cell"
+    },
+    "actors": [
+      {
+        "target": "ACE2_ipc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_shed_ace2_ipc",
+    "title": "degradation of ACE2 located at iPC via shedding",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_shed_ace2_pc * ACE2_ipc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_ipc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_bind_cov_ace2_ipc",
+    "title": "binding of COV to ACE2 located at iPC surface",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_off_cov_ace2 * (steric_factor_ipc * COV * ACE2_ipc / Kd_cov_ace2 - COV_ACE2_ipc)"
+    },
+    "actors": [
+      {
+        "target": "COV",
+        "stoichiometry": -1
+      },
+      {
+        "target": "ACE2_ipc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_ACE2_ipc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_ace2_apo_ipc",
+    "title": "degradation of ACE2 located at iPC via iPC apoptosis",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * ACE2_ipc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_ipc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_ace2_apo_ipc",
+    "title": "degradation of COV_ACE2 located at iPC with concomitant COV release to bulk phase via iPC apoptosis",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * COV_ACE2_ipc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_ipc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_apo_ipc",
+    "title": "degradation of COV located in iPC with concomitant COV release to bulk phase via iPC apoptosis",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * COV_ipc"
+    },
+    "actors": [
+      {
+        "target": "COV_ipc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_ent_cov_ipc",
+    "title": "entry of COV into iPC with concomitant ACE2 degradation",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_ent_cov_ipc * COV_ACE2_ipc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_ipc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_ipc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_rel_cov_ipc",
+    "title": "release of COV in iPC",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_rel_cov_ipc * COV_ipc"
+    },
+    "actors": [
+      {
+        "target": "COV_ipc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_ace2_ipc_vpc",
+    "title": "transition of ACE2 from iPC to vPC with transition of pneumocytes between the states",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_tran_ipc_vpc * ACE2_ipc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_ipc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "ACE2_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_cov_ace2_ipc_vpc",
+    "title": "transition of COV_ACE2 from iPC to vPC with transition of pneumocytes between the states",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_tran_ipc_vpc * COV_ACE2_ipc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_ipc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_ACE2_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_tran_cov_ipc_vpc",
+    "title": "transition of COV from iPC to vPC with transition of pneumocytes between the states",
+    "tags": [
+      "COV-iPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_tran_ipc_vpc * COV_ipc"
+    },
+    "actors": [
+      {
+        "target": "COV_ipc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_syn_ace2_vpc",
+    "title": "synthesis of ACE2 by vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "Vol_pc * k_syn_ace2_pc * vPC * Vol_alv * kcell_to_cell"
+    },
+    "actors": [
+      {
+        "target": "ACE2_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_shed_ace2_vpc",
+    "title": "degradation of ACE2 located at vPC via shedding",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_shed_ace2_pc * ACE2_vpc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_vpc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_bind_cov_ace2_vpc",
+    "title": "binding of COV to ACE2 located at vPC surface",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_off_cov_ace2 * (steric_factor_vpc * COV * ACE2_vpc / Kd_cov_ace2 - COV_ACE2_vpc)"
+    },
+    "actors": [
+      {
+        "target": "COV",
+        "stoichiometry": -1
+      },
+      {
+        "target": "ACE2_vpc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_ACE2_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_ace2_apo_vpc",
+    "title": "degradation of ACE2 located at iPC via vPC apoptosis",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * ACE2_vpc"
+    },
+    "actors": [
+      {
+        "target": "ACE2_vpc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_ace2_apo_vpc",
+    "title": "degradation of COV_ACE2 located at vPC with concomitant COV release to bulk phase via vPC apoptosis",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_pc * COV_ACE2_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_vpc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_ent_cov_vpc",
+    "title": "entry of COV into vPC with concomitant ACE2 degradation",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_ent_cov_ipc * COV_ACE2_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_ACE2_vpc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_unc_cov_vpc",
+    "title": "uncoating of COV in vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_unc_cov_vpc * COV_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_vpc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_RNA_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_rep_cov_rna_vpc",
+    "title": "replication of COV_RNA in vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_rep_cov_rna_vpc * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * kcell_to_cell) / Vol_pc) / EC50_rep_cov_rna_vpc)"
+    },
+    "actors": [
+      {
+        "target": "COV_RNA_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_ass_cov_vpc",
+    "title": "assembling of COV in vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_ass_cov_vpc * COV_RNA_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_RNA_vpc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV_vpc",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_rel_cov_vpc",
+    "title": "release of COV in vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_rel_cov_ipc * COV_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_vpc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV",
+        "stoichiometry": 1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_apo_vpc",
+    "title": "degradation of COV located in vPC with concomitant COV release to bulk phase via vPC apoptosis",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_vpc * COV_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_vpc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_rna_apo_vpc",
+    "title": "degradation of COV_RNA located at vPC with concomitant COV release to bulk phase via vPC apoptosis",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_vpc * COV_RNA_vpc"
+    },
+    "actors": [
+      {
+        "target": "COV_RNA_vpc",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov",
+    "title": "degradation of COV in bulk phase",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "Vol_alv * k_deg_cov * COV"
+    },
+    "actors": [
+      {
+        "target": "COV",
+        "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "SBMLExport",
+    "id": "output_sbml",
+    "filepath": "cov19_life_cycle_sbml"
+  },
+  {
+    "class": "SLVExport",
+    "id": "output_slv",
+    "filepath": "cov19_life_cycle_slv"
+  },
+  {
+    "class": "JSONExport",
+    "id": "output_json",
+    "filepath": "cov19_life_cycle_json"
+  }
+]
