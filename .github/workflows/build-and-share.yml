@@ -29,8 +29,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i -g heta-compiler@${{ matrix.heta-version }}
-    - run: heta build -i cov19_life_cycle
-    - name: Deploy to "dist" branch
+    - run: heta build
+    - name: Deploy to "dist" branch only for "master" pushes
+      if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && github.ref == 'master' }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

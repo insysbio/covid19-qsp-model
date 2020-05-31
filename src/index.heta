@@ -1,0 +1,36 @@
+/*
+  integrated platform
+  entry point for whole platform
+*/
+
+include ./Cov19_life_cycle/cov19_life_cycle.heta
+
+// exports
+out_sbml @SBMLExport {
+  filepath: covid19_integrated_sbml,
+  version: L2V4
+};
+
+out_slv @SLVExport {
+  filepath: covid19_integrated_slv,
+  eventsOff: false
+};
+
+out_json @JSONExport {
+  filepath: covid19_integrated_json
+};
+
+out_simbio @SimbioExport {
+  filepath: covid19_integrated_simbio
+};
+
+out_mrg @MrgsolveExport {
+  filepath: covid19_integrated_mrgsolve
+};
+
+out_mrg @MatlabExport {
+  filepath: covid19_integrated_matlab
+};
+
+//output_yaml @YAMLExport { filepath: output };
+//output_xlsx @XLSXExport { filepath: cov19_life_cycle_xlsx, omitRows: 3, splitByClass: true };
