@@ -3,7 +3,7 @@
 The aim of the project is to develop a Quantitative Systems Pharmacology (QSP) model of COVID-19 describing virus (SARS-CoV-2) and host cell (lung epithelial cells - pneumocytes) life cycles, innate and adoptive immune response and possible therapeutic treatments. 
 
 [![Heta project](https://img.shields.io/badge/%CD%B1-Heta_project-blue)](https://hetalang.github.io/)
-[![Build and Share](https://github.com/insysbio/covid19-qsp-model/workflows/Build%20and%20Share/badge.svg)](https://github.com/insysbio/covid19-qsp-model/actions?query=workflow%3A%22Build+and+Share%22)
+[![Build and Share](https://github.com/insysbio/covid19-qsp-model/workflows/Build%20and%20Share/badge.svg)](https://github.com/insysbio/covid19-qsp-model/tree/dist)
 [![GitHub issues](https://img.shields.io/github/issues/insysbio/covid19-qsp-model.svg)](https://GitHub.com/insysbio/covid19-qsp-model/issues/)
 [![GitHub license](https://img.shields.io/github/license/insysbio/covid19-qsp-model.svg)](https://github.com/insysbio/covid19-qsp-model/blob/master/LICENSE)
 
@@ -23,7 +23,9 @@ Basing on these considerations we have desided to initiate open sorce project fo
 
 ## Model outline
 
-QSP model of COVID-19 is mathematical model developed on the basis of modular approach. Each module, represents life cycle of a particular cell, is developed independently. Cell lifecycle sub-model is ODE system describing dynamics of states of the cell caused by influx, proliferation, differentiation, activation, death and migration between relevant tissues. Cytokine production/release and regulation of all the processes with cytokines/surface molecules is also included in cell lifecycle sub-model. Cell lifecycle sub-model is partially calibrated against in vitro data. Most of the cell lifecycles will be taken from IRT. These extracted lifecycles will then additionally calibrated against in vivo baseline data describing cell and cytokine concentrations in lung tissue, lymph node and blood extracted from Cytocon DB. 
+QSP model of COVID-19 is mathematical model developed on the basis of modular approach. Each module, represents life cycle of a particular cell, is developed independently. Cell lifecycle sub-model is ODE system describing dynamics of states of the cell caused by influx, proliferation, differentiation, activation, death and migration between relevant tissues. Cytokine production/release and regulation of all the processes with cytokines/surface molecules is also included in cell lifecycle sub-model. Cell lifecycle sub-model is partially calibrated against in vitro data. Most of the cell lifecycles will be taken from IRT. These extracted lifecycles will then additionally calibrated against in vivo baseline data describing cell and cytokine concentrations in lung tissue, lymph node and blood extracted from Cytocon DB.
+
+![model scheme](./fig1.png)
 
 At the initial glance We plan to include in the model following modules:
 1) Virus lifecycle including virus binding to pneumocyte, endocytosis, uncoating, replication, assembly and release
@@ -37,10 +39,52 @@ Source code of the model represents set of heta and excel files which can be com
 
 ## Usage
 
-*Will be later... I need to set dev branch before.* 
+### See the project current progress
 
-please describe how to use heta compiler to get to executable versions of the model. OR alternatevly, could you describe how potential user can access ready-to-simulate files in different formats. 
+All results are located in "docs/dist" directory
 
+### Compiled model files
+
+The presented integral model is available in several ready-to-use formats: SBML, mrgsolve, simbio, etc.
+All files are recompiled each time when "master" branch updates.
+To get them:
+- navigate to ["dist" branch](https://github.com/insysbio/covid19-qsp-model/tree/dist).
+- or [download distributives](https://github.com/insysbio/covid19-qsp-model/archive/dist.zip) directly.
+
+### Sources for Heta compiler
+
+If you are a [Heta user](https://hetalang.github.io/#/) you can extend the platform by your code or use some of the modules in your model.
+
+**Example**
+
+Creation of qsp platfrom located in "Y:/new-platform" which uses "Cov19_life_cycle" module.
+
+- Get the latest code
+    ```sh
+    cd Y:/
+    git clone https://github.com/insysbio/covid19-qsp-model
+    ```
+- Create a new platfrom (for example in )
+    ```sh
+    cd Y:/new-platform
+    heta init
+    ```
+- update an index file "Y:/new-platform/src/index.heta"
+    ```heta
+    /* my qsp platform */
+    include ./qsp-units.heta
+
+    include Y:/covid19-qsp-model/src/Cov19_life_cycle/cov19_life_cycle.heta
+
+    // new initial value
+    ACE2_ipc .= 1e-6;
+
+    sbml1 @SBMLExport { filepath: output };
+    ```
+- run compilation
+    ```sh
+    heta build
+    ```
 
 ## Getting help
 
@@ -53,7 +97,7 @@ Any contribution is welcomed: bug reports, pull requests (code or documentation)
 
 ## License
 
-Licensed under the MIT license. See the [LICENSE](./LICENSE) text.
+Licensed under the MIT. See the [LICENSE](./LICENSE) text.
 
 ## Contributors
 
