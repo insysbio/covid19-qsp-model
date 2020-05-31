@@ -22,13 +22,7 @@ output_sbml @SBMLExport {
   filepath: cov19_life_cycle_sbml,
   version: L2V4
 };
-output_slv @SLVExport {
-  filepath: cov19_life_cycle_slv,
-  eventsOff: false
-};
-output_json @JSONExport {
-  filepath: cov19_life_cycle_json
-};
+
 //output_yaml @YAMLExport { filepath: output };
 //output_simbio @SimbioExport { filepath: simbio };
 //output_mrg @MrgsolveExport { filepath: mrgsolve };
