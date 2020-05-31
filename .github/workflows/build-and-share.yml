@@ -30,6 +30,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i -g heta-compiler@${{ matrix.heta-version }}
     - run: heta build
+    - run: echo "${{ matrix.node-version }}"
+    - run: echo "${{ github.event_name }}"
+    - run: echo "${{ github.ref }}"
     - name: Deploy to "dist" branch only for "master" pushes
       if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && github.ref == 'master' }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
