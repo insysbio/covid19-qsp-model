@@ -37,6 +37,18 @@ Source code of the model represents set of heta and excel files which can be com
 
 ## Usage
 
+## See the project current progress
+
+All results are located in "docs/dist" directory. Two pptx files 
+ - Calibration_validation_key_simulations.pptx
+ - Description_model_development_testing.pptx
+can be found in docs folder. 
+
+File "Calibration_validation_key_simulations.pptx" includes commit/model version specific modification of model scheme, figures illustrating model calibration and validation quality as well as key model simulations. 
+
+File "Description_model_development_testing.pptx" includes commit/model version specific description of model modifications, model scheme, figures illustrating model calibration and validation quality as well technical/test simulations with particular model version. 
+
+
 *Will be later... I need to set dev branch before.* 
 
 please describe how to use heta compiler to get to executable versions of the model. OR alternatevly, could you describe how potential user can access ready-to-simulate files in different formats. 
