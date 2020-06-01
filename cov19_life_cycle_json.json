@@ -606,6 +606,16 @@
   },
   {
     "class": "Const",
+    "id": "sputum_dilution_coef",
+    "title": "dilution of sputum in comparison with lung epithelium lining fluid",
+    "tags": [
+      "AUX"
+    ],
+    "units": "UL",
+    "num": 0.1
+  },
+  {
+    "class": "Const",
     "id": "k_apo_pc",
     "title": "rate constant of PC and iPC apoptosis",
     "notes": "the value was estimated from the HS submodel at steady state. Indeed, taking into account that (i) PC2 is precursors of PC1 [9227501], (ii) life span of PC1 is about 120 days [20616357], (iii) ratio of PC1/PC2 at steady state = 19/37 [7103258] we represented lung cell  dynamics system as follows: --(Vol_alv*k_mat_pc) --> PC2 --(Vol_alv*k_dif_pc*PC2)--> PC1--(Vol_alv*k_apo_pc1*PC1)-->. Then consider the system at steady state and assuming that lifespan (T_ls) corresponds to time required for 99% of cell die we have come to following formulas: (a) k_apo_pc1 = ln(1/0.01)/(120 days) = 1.6e-3 1/h, (b) k_dif_pc = k_apo_pc1*PC1_ss/PC2_ss = 8.2e-4 1/h, (c) k_mat_pc = k_dif_pc*PC2_ss. Since  PC2 to PC1 transition was not considered in the version of the model we can assume that k_apo_pc = k_dif_pc",
@@ -617,7 +627,7 @@
   },
   {
     "class": "Const",
-    "id": "k_apo_vpc",
+    "id": "kbase_apo_vpc",
     "title": "rate constant of vPC apoptosis",
     "notes": "the value was estimated from [PMID 18487354] only",
     "tags": [
@@ -635,7 +645,7 @@
       "PC"
     ],
     "units": "1/pM/h",
-    "num": 0.01
+    "num": 0.25
   },
   {
     "class": "Const",
@@ -646,7 +656,7 @@
       "PC"
     ],
     "units": "1/pM/h",
-    "num": 0.01
+    "num": 0.25
   },
   {
     "class": "Const",
@@ -672,14 +682,22 @@
   },
   {
     "class": "Const",
-    "id": "Kd_cov_ace2",
-    "title": "equilibrium dissociation constant of COV to ACE2 binding",
-    "notes": "Kd for viral Spike receptor binding domain (RBD) and ACE2 receptor is equal to 4.67 nM. Basing on estimate that virion includes about 150 spike proteins (virion diameter=120-160 nm, Spike height=20nm) we have calculated Kd for COV and ACE2 binding equal to 4.67 nM/150 = 31.13 pM",
+    "id": "Num_sp_per_cov",
+    "title": "number of Spike proteins per virion",
+    "notes": "Basing on estimate  that virion diameter=120-160 nm and Spike height=20nm we have come to following number of Spikes per virion = 4*3.14*(70 nm)^2/(3.14*(10 nm)^2)  = 4*49 = 196. Assuming that \"dynamic\" diameter of Spike is little bit more we have assumed that there are about  150 spike proteins per 1 virion.",
+    "units": "UL",
+    "num": 150
+  },
+  {
+    "class": "Const",
+    "id": "Kd_spike_ace2",
+    "title": "equilibrium dissociation constant of spike (RBD) to ACE2 binding",
+    "notes": "Kd for viral Spike receptor binding domain (RBD) and ACE2",
     "tags": [
       "COV-PC"
     ],
     "units": "pM",
-    "num": 31.13
+    "num": 4670
   },
   {
     "class": "Const",
@@ -694,14 +712,14 @@
   },
   {
     "class": "Const",
-    "id": "k_rel_cov_ipc",
+    "id": "k_rel_cov_vpc",
     "title": "rate constant of COV release to bulk phase from iPC and vPC cell",
     "notes": "fitted to describe in vivo viral load dynamics averaged across 9 patients",
     "tags": [
-      "COV-iPC"
+      "COV-vPC"
     ],
     "units": "1/h",
-    "num": 0.6
+    "num": 2
   },
   {
     "class": "Const",
@@ -723,18 +741,18 @@
       "COV-vPC"
     ],
     "units": "1/h",
-    "num": 0.6
+    "num": 0.5
   },
   {
     "class": "Const",
     "id": "EC50_rep_cov_rna_vpc",
     "title": "EC50 of COV_RNA replication referring to concentration inindividual vPC cell",
-    "notes": "it was proposed that a host cell can produce about 8000 virions of Influenza virus before it dies. So we have calculated the EC50 basing on the value.",
+    "notes": "it was proposed that a host cell can produce about 8000 (item/cell) virions of Influenza virus before it dies [15384040]. So we have calculated the EC50 basing on the value; taking into account that Vol_pc = 1.33e-12 L/cell we can obtain estimate in pM: EC50 = 8e3 /NA_pmole/Vol_pc = 8e3/6.02e11/1.33e-12 = 9992 pM",
     "tags": [
       "COV-vPC"
     ],
     "units": "pM",
-    "num": 10000
+    "num": 9992
   },
   {
     "class": "Const",
@@ -745,7 +763,7 @@
       "COV-vPC"
     ],
     "units": "1/h",
-    "num": 1
+    "num": 0.39
   },
   {
     "class": "Const",
@@ -778,7 +796,84 @@
       "COV-vPC"
     ],
     "units": "1/h",
-    "num": 0.17
+    "num": 17
+  },
+  {
+    "class": "Const",
+    "id": "switch_ir",
+    "title": "switch of effect of IR on vPC apoptosis",
+    "notes": "assumed",
+    "tags": [
+      "IR"
+    ],
+    "units": "UL",
+    "num": 0
+  },
+  {
+    "class": "Const",
+    "id": "T_sw_ir",
+    "title": "switch on time of IR effect on vPC apoptosis",
+    "notes": "assumed",
+    "tags": [
+      "IR"
+    ],
+    "units": "h",
+    "num": 50
+  },
+  {
+    "class": "Const",
+    "id": "ET50_ir",
+    "title": "Effective Time when IR effect reach 50% of maximal value",
+    "notes": "assumed",
+    "tags": [
+      "IR"
+    ],
+    "units": "h",
+    "num": 190
+  },
+  {
+    "class": "Const",
+    "id": "Emax_ir_apo",
+    "title": "maximal effect of IR on vPC apoptosis",
+    "notes": "assumed",
+    "tags": [
+      "IR"
+    ],
+    "units": "UL",
+    "num": 700
+  },
+  {
+    "class": "Const",
+    "id": "n_ir",
+    "title": "Hill coefficient of IR effect on vPC apoptosis",
+    "notes": "assumed",
+    "tags": [
+      "IR"
+    ],
+    "units": "UL",
+    "num": 5
+  },
+  {
+    "class": "Const",
+    "id": "Kd_anti_Ab",
+    "title": "Kd for binding of Spike protein and neutralizing antibodies",
+    "notes": "assumed to be equal to tat presented in the paper for neutralizing mAb",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pM",
+    "num": 14300
+  },
+  {
+    "class": "Const",
+    "id": "anti_Ab_max",
+    "title": "maximal concentration of anti Spike Ab in serum",
+    "notes": "For Protective Antigen (PA) for Anthrax vaccine it was measured that concentration of Anti-PA specific IgG in serum is 141.2 ug/mL [15358653]. Taking into account Mr_IgG = 150 kDa, one obtains 141.2 ug/mL =",
+    "tags": [
+      "IR"
+    ],
+    "units": "pM",
+    "num": 941000
   },
   {
     "class": "Record",
@@ -826,6 +921,31 @@
     "units": "1/h",
     "assignments": {
       "ode_": "kbase_tran_ipc_vpc * COV_ipc"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "VO",
+    "title": "Virus Occupancy (VO) level with anti_Ab antibodies",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "anti_Ab / (Kd_anti_Ab + anti_Ab)"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "Kd_cov_ace2",
+    "title": "apparent dissociation equilibrium constant of COV and ACE2",
+    "notes": "Kd for viral Spike receptor binding domain (RBD) and ACE2 receptor is known and equal to 4.67 nM. Basing on estimate that virion includes  VO*Num_sp_per_cov free spike proteins ready to bind to ACE2 we have come to the equation for apparent Kd describing binding of virion and ACE2",
+    "tags": [
+      "COV-PC"
+    ],
+    "units": "pM",
+    "assignments": {
+      "ode_": "Kd_spike_ace2 / Num_sp_per_cov / (1 - VO)"
     }
   },
   {
@@ -926,6 +1046,18 @@
   },
   {
     "class": "Record",
+    "id": "COVass_vpc_per_cell",
+    "title": "number of COVass per vPC cell",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "item/cell",
+    "assignments": {
+      "ode_": "NA_pmole * COVass_vpc / vPC / Vol_alv / kcell_to_cell"
+    }
+  },
+  {
+    "class": "Record",
     "id": "COV_RNA_vpc_per_cell",
     "title": "number of COV_RNA per vPC cell",
     "tags": [
@@ -938,14 +1070,14 @@
   },
   {
     "class": "Record",
-    "id": "COV_num_ml",
-    "title": "number of virus copies in 1 mL",
+    "id": "COV_num_sputum_ml",
+    "title": "number of virus copies in 1 mL of sputum",
     "tags": [
       "COV-vPC"
     ],
     "units": "item/mL",
     "assignments": {
-      "ode_": "COV * Vol_alv * NA_pmole / 1000"
+      "ode_": "sputum_dilution_coef * (COV + COV_RNA) * Vol_alv * NA_pmole / 1000"
     }
   },
   {
@@ -1113,7 +1245,31 @@
     ],
     "units": "UL",
     "assignments": {
-      "ode_": "100 * COV_RNA / COV"
+      "ode_": "100 * COV_RNA / (COV + COV_RNA)"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "IR_apo",
+    "title": "empiric function imitating effect of Immune Response on vPC apoptosis",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "UL",
+    "assignments": {
+      "ode_": "1 + switch_ir * Emax_ir_apo * (t - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (t - T_sw_ir) ^ n_ir)"
+    }
+  },
+  {
+    "class": "Record",
+    "id": "k_apo_vpc",
+    "title": "dependence of rate constant of vPC apoptosis on IR effect",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "1/h",
+    "assignments": {
+      "ode_": "kbase_apo_vpc * IR_apo"
     }
   },
   {
@@ -1276,7 +1432,7 @@
   {
     "class": "Species",
     "id": "COV_ipc",
-    "title": "amount of COV particles located in iPC",
+    "title": "amount of partially disrupted COV particles ready to release RNA in cytoplasm located in iPC",
     "tags": [
       "COV-iPC"
     ],
@@ -1318,7 +1474,7 @@
   {
     "class": "Species",
     "id": "COV_vpc",
-    "title": "amount of COV particles located in vPC",
+    "title": "amount of partially disrupted COV particles ready to release RNA in cytoplasm located in vPC",
     "tags": [
       "COV-vPC"
     ],
@@ -1352,7 +1508,7 @@
     ],
     "units": "pM",
     "assignments": {
-      "start_": "0.002"
+      "start_": "4e-4"
     },
     "compartment": "Vol_alv"
   },
@@ -1366,6 +1522,34 @@
     "units": "pM",
     "assignments": {
       "start_": "0"
+    },
+    "compartment": "Vol_alv"
+  },
+  {
+    "class": "Species",
+    "id": "COVass_vpc",
+    "title": "amount of assembled virus ready to be released from from vPC",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "start_": "0"
+    },
+    "compartment": "Vol_alv",
+    "isAmount": true
+  },
+  {
+    "class": "Species",
+    "id": "anti_Ab",
+    "title": "concentration of anti-Spike attibodies",
+    "notes": "hill like expression describes general kinetic pattern observed for Spike specific IgG and IgM in [32350462]",
+    "tags": [
+      "COV-vPC"
+    ],
+    "units": "pmole",
+    "assignments": {
+      "ode_": "switch_ir * anti_Ab_max * (t - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (t - T_sw_ir) ^ n_ir)"
     },
     "compartment": "Vol_alv"
   },
@@ -1578,7 +1762,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_ace2_apo_pc",
-    "title": "degradation of COV_ACE2 located at PC via PC apoptosis",
+    "title": "degradation of COV_ACE2 located at PC via PC apoptosis with concomitant COV release",
     "tags": [
       "COV-PC"
     ],
@@ -1591,6 +1775,10 @@
       {
         "target": "COV_ACE2_pc",
         "stoichiometry": -1
+      },
+      {
+        "target": "COV",
+        "stoichiometry": 1
       }
     ]
   },
@@ -1727,7 +1915,7 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_ace2_apo_ipc",
-    "title": "degradation of COV_ACE2 located at iPC via iPC apoptosis",
+    "title": "degradation of COV_ACE2 located at iPC via iPC apoptosis with concomitant COV release",
     "tags": [
       "COV-iPC"
     ],
@@ -1740,6 +1928,10 @@
       {
         "target": "COV_ACE2_ipc",
         "stoichiometry": -1
+      },
+      {
+        "target": "COV",
+        "stoichiometry": 1
       }
     ]
   },
@@ -1781,29 +1973,6 @@
       },
       {
         "target": "COV_ipc",
-        "stoichiometry": 1
-      }
-    ]
-  },
-  {
-    "class": "Reaction",
-    "id": "V_rel_cov_ipc",
-    "title": "release of COV in iPC",
-    "tags": [
-      "COV-iPC"
-    ],
-    "aux": {},
-    "units": "pmole/h",
-    "assignments": {
-      "ode_": "k_rel_cov_ipc * COV_ipc"
-    },
-    "actors": [
-      {
-        "target": "COV_ipc",
-        "stoichiometry": -1
-      },
-      {
-        "target": "COV",
         "stoichiometry": 1
       }
     ]
@@ -1952,7 +2121,7 @@
     "aux": {},
     "units": "pmole/h",
     "assignments": {
-      "ode_": "k_apo_pc * ACE2_vpc"
+      "ode_": "k_apo_vpc * ACE2_vpc"
     },
     "actors": [
       {
@@ -1964,19 +2133,23 @@
   {
     "class": "Reaction",
     "id": "V_deg_cov_ace2_apo_vpc",
-    "title": "degradation of COV_ACE2 located at vPC via vPC apoptosis",
+    "title": "degradation of COV_ACE2 located at vPC via vPC apoptosis with concomitant COV release",
     "tags": [
       "COV-vPC"
     ],
     "aux": {},
     "units": "pmole/h",
     "assignments": {
-      "ode_": "k_apo_pc * COV_ACE2_vpc"
+      "ode_": "k_apo_vpc * COV_ACE2_vpc"
     },
     "actors": [
       {
         "target": "COV_ACE2_vpc",
         "stoichiometry": -1
+      },
+      {
+        "target": "COV",
+        "stoichiometry": 1
       }
     ]
   },
@@ -2063,7 +2236,7 @@
         "stoichiometry": -1
       },
       {
-        "target": "COV_vpc",
+        "target": "COVass_vpc",
         "stoichiometry": 1
       }
     ]
@@ -2078,11 +2251,11 @@
     "aux": {},
     "units": "pmole/h",
     "assignments": {
-      "ode_": "k_rel_cov_ipc * COV_vpc"
+      "ode_": "k_rel_cov_vpc * COVass_vpc"
     },
     "actors": [
       {
-        "target": "COV_vpc",
+        "target": "COVass_vpc",
         "stoichiometry": -1
       },
       {
@@ -2107,6 +2280,29 @@
       {
         "target": "COV_vpc",
         "stoichiometry": -1
+      }
+    ]
+  },
+  {
+    "class": "Reaction",
+    "id": "V_deg_cov_ass_apo_vpc",
+    "title": "degradation of COVass located in vPC via vPC apoptosis with concomitant COV release",
+    "tags": [
+      "COV-vPC"
+    ],
+    "aux": {},
+    "units": "pmole/h",
+    "assignments": {
+      "ode_": "k_apo_vpc * COVass_vpc"
+    },
+    "actors": [
+      {
+        "target": "COVass_vpc",
+        "stoichiometry": -1
+      },
+      {
+        "target": "COV",
+        "stoichiometry": 1
       }
     ]
   },
