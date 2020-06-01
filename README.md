@@ -7,6 +7,14 @@ The aim of the project is to develop a Quantitative Systems Pharmacology (QSP) m
 [![GitHub issues](https://img.shields.io/github/issues/insysbio/covid19-qsp-model.svg)](https://GitHub.com/insysbio/covid19-qsp-model/issues/)
 [![GitHub license](https://img.shields.io/github/license/insysbio/covid19-qsp-model.svg)](https://github.com/insysbio/covid19-qsp-model/blob/master/LICENSE)
 
+## Table of contents
+
+* [Introduction](#introduction)
+* [Usage](#usage)
+* [Getting help](#getting-help)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contributors](#contributors)
 
 ## Introduction
 
@@ -21,7 +29,7 @@ InSysBio has an experience in modeling of viral dynamics and multiple antiviral 
 
 Basing on these considerations we have desided to initiate open sorce project focused on development of template QSP model of COVID-19 and appropriate therapies. The template model will be updated periodically increasing level of its calibration and improving prediction power. 
 
-## Model outline
+### Model outline
 
 QSP model of COVID-19 is mathematical model developed on the basis of modular approach. Each module, represents life cycle of a particular cell, is developed independently. Cell lifecycle sub-model is ODE system describing dynamics of states of the cell caused by influx, proliferation, differentiation, activation, death and migration between relevant tissues. Cytokine production/release and regulation of all the processes with cytokines/surface molecules is also included in cell lifecycle sub-model. Cell lifecycle sub-model is partially calibrated against in vitro data. Most of the cell lifecycles will be taken from IRT. These extracted lifecycles will then additionally calibrated against in vivo baseline data describing cell and cytokine concentrations in lung tissue, lymph node and blood extracted from Cytocon DB.
 
