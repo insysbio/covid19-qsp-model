@@ -10,7 +10,7 @@ The aim of the project is to develop a Quantitative Systems Pharmacology (QSP) m
 
 ## Introduction
 
-The ongoing pandemic caused by the novel severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has challenged the global public health. Coronavirus disease 2019 (COVID-19) is associated with several respiratory symptoms, including fever and cough that can be progressed to acute respiratory distress syndrome (ARDS) in some patients [???]. There is no cure against COVID-19. More than 500 clinical trials have been conducted or in progress with no definitive confidence in the doses, regimens and outcome tested. QSP modeling approach can possibly contribute to the fight of the global public health system with the COVID-19 via increasing confidence in mechanism based understanding of virus intereaction with host cell leading to immune response and associated inflammation.  
+The ongoing pandemic caused by the novel severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has challenged the global public health. Coronavirus disease 2019 (COVID-19) is associated with several respiratory symptoms, including fever and cough that can be progressed to acute respiratory distress syndrome (ARDS) in some patients. There is no cure against COVID-19. More than 500 clinical trials have been conducted or in progress with no definitive confidence in the doses, regimens and outcome tested. QSP modeling approach can possibly contribute to the fight of the global public health system with the COVID-19 via increasing confidence in mechanism based understanding of virus intereaction with host cell leading to immune response and associated inflammation.  
 
 InSysBio has an experience in development of QSP platforms of immune response in different diseases and their applications to address specific questions associated with drug research and development. We have developed  and implemented for internal use QSP software infrastructure including 
 1) [Immune Response Template](https://irt.insysbio.com/) (IRT)
@@ -27,7 +27,7 @@ QSP model of COVID-19 is mathematical model developed on the basis of modular ap
 
 ![model scheme](./fig1.png)
 
-At the initial glance We plan to include in the model following modules:
+At the initial glance we plan to include in the model following modules:
 1) Virus lifecycle including virus binding to pneumocyte, endocytosis, uncoating, replication, assembly and release
 2) host cell life cycle including proliferation of type II pneumocytes, their differentiation to type I pneumocytes, death of both cell types, surfactant and cytokine production by type II cells
 3) Infected cell responses, including changes in level of secreted molecules, and death
@@ -41,7 +41,14 @@ Source code of the model represents set of heta and excel files which can be com
 
 ### See the project current progress
 
-All results are located in "docs/dist" directory
+All results are located in "docs/dist" directory. Two pptx files 
+ - Calibration_validation_key_simulations.pptx
+ - Description_model_development_testing.pptx
+can be found in docs folder. 
+
+File "Calibration_validation_key_simulations.pptx" includes commit/model version specific modification of model scheme, figures illustrating model calibration and validation quality as well as key model simulations. 
+
+File "Description_model_development_testing.pptx" includes commit/model version specific description of model modifications, model scheme, figures illustrating model calibration and validation quality as well technical/test simulations with particular model version. 
 
 ### Compiled model files
 
