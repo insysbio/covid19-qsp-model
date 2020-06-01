@@ -155,7 +155,7 @@
       </species>
       <species
         id="COV_ipc"
-        name="amount of COV particles located in iPC"
+        name="amount of partially disrupted COV particles ready to release RNA in cytoplasm located in iPC"
         compartment="Vol_alv"
         constant="false"
         boundaryCondition="false"
@@ -194,7 +194,7 @@
       </species>
       <species
         id="COV_vpc"
-        name="amount of COV particles located in vPC"
+        name="amount of partially disrupted COV particles ready to release RNA in cytoplasm located in vPC"
         compartment="Vol_alv"
         constant="false"
         boundaryCondition="false"
@@ -225,11 +225,50 @@
         constant="false"
         boundaryCondition="false"
         hasOnlySubstanceUnits="false"
-        initialConcentration="0.002"
+        initialConcentration="0.0004"
         substanceUnits="pM_L"
         metaid="COV"
         >
         
+      </species>
+      <species
+        id="COV_RNA"
+        name="concentration of COV_RNA released from vPC due to their apoptosis"
+        compartment="Vol_alv"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="false"
+        initialConcentration="0"
+        substanceUnits="pM_L"
+        metaid="COV_RNA"
+        >
+        
+      </species>
+      <species
+        id="COVass_vpc"
+        name="amount of assembled virus ready to be released from from vPC"
+        compartment="Vol_alv"
+        constant="false"
+        boundaryCondition="false"
+        hasOnlySubstanceUnits="true"
+        initialAmount="0"
+        substanceUnits="pmole"
+        metaid="COVass_vpc"
+        >
+        
+      </species>
+      <species
+        id="anti_Ab"
+        name="concentration of anti-Spike attibodies"
+        compartment="Vol_alv"
+        constant="false"
+        boundaryCondition="true"
+        hasOnlySubstanceUnits="false"
+        
+        substanceUnits="pmole_L"
+        metaid="anti_Ab"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>hill like expression describes general kinetic pattern observed for Spike specific IgG and IgM in [32350462]</p></html></notes>
       </species>
     </listOfSpecies>
   
@@ -273,6 +312,26 @@
         metaid="k_tran_ipc_vpc"
         >
         
+      </parameter>
+      <parameter
+        id="VO"
+        name="Virus Occupancy (VO) level with anti_Ab antibodies"
+        constant="false"
+        
+        units="UL"
+        metaid="VO"
+        >
+        
+      </parameter>
+      <parameter
+        id="Kd_cov_ace2"
+        name="apparent dissociation equilibrium constant of COV and ACE2"
+        constant="false"
+        
+        units="pM"
+        metaid="Kd_cov_ace2"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>Kd for viral Spike receptor binding domain (RBD) and ACE2 receptor is known and equal to 4.67 nM. Basing on estimate that virion includes  VO*Num<em>sp</em>per_cov free spike proteins ready to bind to ACE2 we have come to the equation for apparent Kd describing binding of virion and ACE2</p></html></notes>
       </parameter>
       <parameter
         id="ACE2_pc_per_cell"
@@ -355,6 +414,16 @@
         
       </parameter>
       <parameter
+        id="COVass_vpc_per_cell"
+        name="number of COVass per vPC cell"
+        constant="false"
+        
+        units="item__cell"
+        metaid="COVass_vpc_per_cell"
+        >
+        
+      </parameter>
+      <parameter
         id="COV_RNA_vpc_per_cell"
         name="number of COV_RNA per vPC cell"
         constant="false"
@@ -365,12 +434,12 @@
         
       </parameter>
       <parameter
-        id="COV_num_ml"
-        name="number of virus copies in 1 mL"
+        id="COV_num_sputum_ml"
+        name="number of virus copies in 1 mL of sputum"
         constant="false"
         
         units="__mL_item"
-        metaid="COV_num_ml"
+        metaid="COV_num_sputum_ml"
         >
         
       </parameter>
@@ -505,6 +574,36 @@
         
       </parameter>
       <parameter
+        id="COV_sgRNA_perc"
+        name="percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients"
+        constant="false"
+        
+        units="UL"
+        metaid="COV_sgRNA_perc"
+        >
+        
+      </parameter>
+      <parameter
+        id="IR_apo"
+        name="empiric function imitating effect of Immune Response on vPC apoptosis"
+        constant="false"
+        
+        units="UL"
+        metaid="IR_apo"
+        >
+        
+      </parameter>
+      <parameter
+        id="k_apo_vpc"
+        name="dependence of rate constant of vPC apoptosis on IR effect"
+        constant="false"
+        
+        units="__h"
+        metaid="k_apo_vpc"
+        >
+        
+      </parameter>
+      <parameter
         id="kcell_to_cell"
         
         constant="true"
@@ -525,6 +624,16 @@
         
       </parameter>
       <parameter
+        id="sputum_dilution_coef"
+        
+        constant="true"
+        value="0.1"
+        units="UL"
+        metaid="sputum_dilution_coef"
+        >
+        
+      </parameter>
+      <parameter
         id="k_apo_pc"
         
         constant="true"
@@ -535,12 +644,12 @@
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>the value was estimated from the HS submodel at steady state. Indeed, taking into account that (i) PC2 is precursors of PC1 [9227501], (ii) life span of PC1 is about 120 days [20616357], (iii) ratio of PC1/PC2 at steady state = 19/37 [7103258] we represented lung cell  dynamics system as follows: --(Vol<em>alv*k</em>mat<em>pc) --&gt; PC2 --(Vol</em>alv*k<em>dif</em>pc*PC2)--&gt; PC1--(Vol<em>alv*k</em>apo<em>pc1*PC1)--&gt;. Then consider the system at steady state and assuming that lifespan (T</em>ls) corresponds to time required for 99% of cell die we have come to following formulas: (a) k<em>apo</em>pc1 = ln(1/0.01)/(120 days) = 1.6e-3 1/h, (b) k<em>dif</em>pc = k<em>apo</em>pc1*PC1<em>ss/PC2</em>ss = 8.2e-4 1/h, (c) k<em>mat</em>pc = k<em>dif</em>pc*PC2<em>ss. Since  PC2 to PC1 transition was not considered in the version of the model we can assume that k</em>apo<em>pc = k</em>dif_pc</p></html></notes>
       </parameter>
       <parameter
-        id="k_apo_vpc"
+        id="kbase_apo_vpc"
         
         constant="true"
         value="0.00082"
         units="__h"
-        metaid="k_apo_vpc"
+        metaid="kbase_apo_vpc"
         >
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>the value was estimated from [PMID 18487354] only</p></html></notes>
       </parameter>
@@ -548,7 +657,7 @@
         id="kbase_tran_pc_ipc"
         
         constant="true"
-        value="0.01"
+        value="0.25"
         units="__pM__h"
         metaid="kbase_tran_pc_ipc"
         >
@@ -558,7 +667,7 @@
         id="kbase_tran_ipc_vpc"
         
         constant="true"
-        value="0.01"
+        value="0.25"
         units="__pM__h"
         metaid="kbase_tran_ipc_vpc"
         >
@@ -585,14 +694,24 @@
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>k_off for viral Spike receptor binding domain (RBD) and ACE2 receptor</p></html></notes>
       </parameter>
       <parameter
-        id="Kd_cov_ace2"
+        id="Num_sp_per_cov"
         
         constant="true"
-        value="31.13"
-        units="pM"
-        metaid="Kd_cov_ace2"
+        value="150"
+        units="UL"
+        metaid="Num_sp_per_cov"
         >
-        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>Kd for viral Spike receptor binding domain (RBD) and ACE2 receptor is equal to 4.67 nM. Basing on estimate that virion includes about 150 spike proteins (virion diameter=120-160 nm, Spike height=20nm) we have calculated Kd for COV and ACE2 binding equal to 4.67 nM/150 = 31.13 pM</p></html></notes>
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>Basing on estimate  that virion diameter=120-160 nm and Spike height=20nm we have come to following number of Spikes per virion = 4<em>3.14</em>(70 nm)^2/(3.14<em>(10 nm)^2)  = 4</em>49 = 196. Assuming that &quot;dynamic&quot; diameter of Spike is little bit more we have assumed that there are about  150 spike proteins per 1 virion.</p></html></notes>
+      </parameter>
+      <parameter
+        id="Kd_spike_ace2"
+        
+        constant="true"
+        value="4670"
+        units="pM"
+        metaid="Kd_spike_ace2"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>Kd for viral Spike receptor binding domain (RBD) and ACE2</p></html></notes>
       </parameter>
       <parameter
         id="k_ent_cov_ipc"
@@ -605,12 +724,12 @@
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>estimated on the basis of rate constant of endocytosis for Influenza virus</p></html></notes>
       </parameter>
       <parameter
-        id="k_rel_cov_ipc"
+        id="k_rel_cov_vpc"
         
         constant="true"
-        value="0.6"
+        value="2"
         units="__h"
-        metaid="k_rel_cov_ipc"
+        metaid="k_rel_cov_vpc"
         >
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>fitted to describe in vivo viral load dynamics averaged across 9 patients</p></html></notes>
       </parameter>
@@ -628,7 +747,7 @@
         id="k_rep_cov_rna_vpc"
         
         constant="true"
-        value="0.6"
+        value="0.5"
         units="__h"
         metaid="k_rep_cov_rna_vpc"
         >
@@ -638,17 +757,17 @@
         id="EC50_rep_cov_rna_vpc"
         
         constant="true"
-        value="10000"
+        value="9992"
         units="pM"
         metaid="EC50_rep_cov_rna_vpc"
         >
-        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>it was proposed that a host cell can produce about 8000 virions of Influenza virus before it dies. So we have calculated the EC50 basing on the value.</p></html></notes>
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>it was proposed that a host cell can produce about 8000 (item/cell) virions of Influenza virus before it dies [15384040]. So we have calculated the EC50 basing on the value; taking into account that Vol<em>pc = 1.33e-12 L/cell we can obtain estimate in pM: EC50 = 8e3 /NA</em>pmole/Vol_pc = 8e3/6.02e11/1.33e-12 = 9992 pM</p></html></notes>
       </parameter>
       <parameter
         id="k_ass_cov_vpc"
         
         constant="true"
-        value="1"
+        value="0.39"
         units="__h"
         metaid="k_ass_cov_vpc"
         >
@@ -673,6 +792,86 @@
         metaid="Nmax_cov_per_cell"
         >
         <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>maximal number of virions Nmax = (surface area of PC faced to alveoli lumen)/(area of &quot;maximal&quot; section of SARS-CoV-2). Based on PC surface area = 183 um^2 [7103258] and (virion diameter=120-160 nm), one obtains Nmax =  183 um^2 / Pi*(140/2 nm) ^2 = 11900</p></html></notes>
+      </parameter>
+      <parameter
+        id="k_deg_cov_rna"
+        
+        constant="true"
+        value="17"
+        units="__h"
+        metaid="k_deg_cov_rna"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed to be equal to COV half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h</p></html></notes>
+      </parameter>
+      <parameter
+        id="switch_ir"
+        
+        constant="true"
+        value="0"
+        units="UL"
+        metaid="switch_ir"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed</p></html></notes>
+      </parameter>
+      <parameter
+        id="T_sw_ir"
+        
+        constant="true"
+        value="50"
+        units="h"
+        metaid="T_sw_ir"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed</p></html></notes>
+      </parameter>
+      <parameter
+        id="ET50_ir"
+        
+        constant="true"
+        value="190"
+        units="h"
+        metaid="ET50_ir"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed</p></html></notes>
+      </parameter>
+      <parameter
+        id="Emax_ir_apo"
+        
+        constant="true"
+        value="700"
+        units="UL"
+        metaid="Emax_ir_apo"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed</p></html></notes>
+      </parameter>
+      <parameter
+        id="n_ir"
+        
+        constant="true"
+        value="5"
+        units="UL"
+        metaid="n_ir"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed</p></html></notes>
+      </parameter>
+      <parameter
+        id="Kd_anti_Ab"
+        
+        constant="true"
+        value="14300"
+        units="pM"
+        metaid="Kd_anti_Ab"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>assumed to be equal to tat presented in the paper for neutralizing mAb</p></html></notes>
+      </parameter>
+      <parameter
+        id="anti_Ab_max"
+        
+        constant="true"
+        value="941000"
+        units="pM"
+        metaid="anti_Ab_max"
+        >
+        <notes><html xmlns="http://www.w3.org/1999/xhtml"><p>For Protective Antigen (PA) for Anthrax vaccine it was measured that concentration of Anti-PA specific IgG in serum is 141.2 ug/mL [15358653]. Taking into account Mr_IgG = 150 kDa, one obtains 141.2 ug/mL =</p></html></notes>
       </parameter>
   </listOfParameters>
   
@@ -887,7 +1086,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_ace2_apo_pc"
-        name="degradation of COV_ACE2 located at PC with concomitant COV release to bulk phase via PC apoptosis"
+        name="degradation of COV_ACE2 located at PC via PC apoptosis with concomitant COV release"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_ace2_apo_pc"
@@ -895,9 +1094,11 @@
         
         <listOfReactants>
           <speciesReference species="COV_ACE2_pc" stoichiometry="1"/>
+          
           </listOfReactants>
         <listOfProducts>
           
+          <speciesReference species="COV" stoichiometry="1"/>
           </listOfProducts>
         <listOfModifiers>
           </listOfModifiers>
@@ -1035,7 +1236,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_ace2_apo_ipc"
-        name="degradation of COV_ACE2 located at iPC with concomitant COV release to bulk phase via iPC apoptosis"
+        name="degradation of COV_ACE2 located at iPC via iPC apoptosis with concomitant COV release"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_ace2_apo_ipc"
@@ -1043,9 +1244,11 @@
         
         <listOfReactants>
           <speciesReference species="COV_ACE2_ipc" stoichiometry="1"/>
+          
           </listOfReactants>
         <listOfProducts>
           
+          <speciesReference species="COV" stoichiometry="1"/>
           </listOfProducts>
         <listOfModifiers>
           </listOfModifiers>
@@ -1055,7 +1258,7 @@
       </reaction>
       <reaction
         id="V_deg_cov_apo_ipc"
-        name="degradation of COV located in iPC with concomitant COV release to bulk phase via iPC apoptosis"
+        name="degradation of COV located in iPC via iPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_apo_ipc"
@@ -1093,28 +1296,6 @@
           </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_ent_cov_ipc</ci><ci>COV_ACE2_ipc</ci></apply></math>
-        </kineticLaw>
-      </reaction>
-      <reaction
-        id="V_rel_cov_ipc"
-        name="release of COV in iPC"
-        reversible="true"
-        fast="false"
-        metaid="V_rel_cov_ipc"
-        >
-        
-        <listOfReactants>
-          <speciesReference species="COV_ipc" stoichiometry="1"/>
-          
-          </listOfReactants>
-        <listOfProducts>
-          
-          <speciesReference species="COV" stoichiometry="1"/>
-          </listOfProducts>
-        <listOfModifiers>
-          </listOfModifiers>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_rel_cov_ipc</ci><ci>COV_ipc</ci></apply></math>
         </kineticLaw>
       </reaction>
       <reaction
@@ -1264,12 +1445,12 @@
         <listOfModifiers>
           </listOfModifiers>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_apo_pc</ci><ci>ACE2_vpc</ci></apply></math>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_apo_vpc</ci><ci>ACE2_vpc</ci></apply></math>
         </kineticLaw>
       </reaction>
       <reaction
         id="V_deg_cov_ace2_apo_vpc"
-        name="degradation of COV_ACE2 located at vPC with concomitant COV release to bulk phase via vPC apoptosis"
+        name="degradation of COV_ACE2 located at vPC via vPC apoptosis with concomitant COV release"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_ace2_apo_vpc"
@@ -1277,14 +1458,16 @@
         
         <listOfReactants>
           <speciesReference species="COV_ACE2_vpc" stoichiometry="1"/>
+          
           </listOfReactants>
         <listOfProducts>
           
+          <speciesReference species="COV" stoichiometry="1"/>
           </listOfProducts>
         <listOfModifiers>
           </listOfModifiers>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_apo_pc</ci><ci>COV_ACE2_vpc</ci></apply></math>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_apo_vpc</ci><ci>COV_ACE2_vpc</ci></apply></math>
         </kineticLaw>
       </reaction>
       <reaction
@@ -1365,7 +1548,7 @@
           </listOfReactants>
         <listOfProducts>
           
-          <speciesReference species="COV_vpc" stoichiometry="1"/>
+          <speciesReference species="COVass_vpc" stoichiometry="1"/>
           </listOfProducts>
         <listOfModifiers>
           </listOfModifiers>
@@ -1382,7 +1565,7 @@
         >
         
         <listOfReactants>
-          <speciesReference species="COV_vpc" stoichiometry="1"/>
+          <speciesReference species="COVass_vpc" stoichiometry="1"/>
           
           </listOfReactants>
         <listOfProducts>
@@ -1392,12 +1575,12 @@
         <listOfModifiers>
           </listOfModifiers>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_rel_cov_ipc</ci><ci>COV_vpc</ci></apply></math>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_rel_cov_vpc</ci><ci>COVass_vpc</ci></apply></math>
         </kineticLaw>
       </reaction>
       <reaction
         id="V_deg_cov_apo_vpc"
-        name="degradation of COV located in vPC with concomitant COV release to bulk phase via vPC apoptosis"
+        name="degradation of COV located in vPC via vPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_apo_vpc"
@@ -1416,8 +1599,30 @@
         </kineticLaw>
       </reaction>
       <reaction
+        id="V_deg_cov_ass_apo_vpc"
+        name="degradation of COVass located in vPC via vPC apoptosis with concomitant COV release"
+        reversible="true"
+        fast="false"
+        metaid="V_deg_cov_ass_apo_vpc"
+        >
+        
+        <listOfReactants>
+          <speciesReference species="COVass_vpc" stoichiometry="1"/>
+          
+          </listOfReactants>
+        <listOfProducts>
+          
+          <speciesReference species="COV" stoichiometry="1"/>
+          </listOfProducts>
+        <listOfModifiers>
+          </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_apo_vpc</ci><ci>COVass_vpc</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
         id="V_deg_cov_rna_apo_vpc"
-        name="degradation of COV_RNA located at vPC with concomitant COV release to bulk phase via vPC apoptosis"
+        name="degradation of COV_RNA located at vPC with concomitant COV_RNA release to bulk phase via vPC apoptosis"
         reversible="true"
         fast="false"
         metaid="V_deg_cov_rna_apo_vpc"
@@ -1425,9 +1630,11 @@
         
         <listOfReactants>
           <speciesReference species="COV_RNA_vpc" stoichiometry="1"/>
+          
           </listOfReactants>
         <listOfProducts>
           
+          <speciesReference species="COV_RNA" stoichiometry="1"/>
           </listOfProducts>
         <listOfModifiers>
           </listOfModifiers>
@@ -1453,6 +1660,26 @@
           </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>Vol_alv</ci><ci>k_deg_cov</ci></apply><ci>COV</ci></apply></math>
+        </kineticLaw>
+      </reaction>
+      <reaction
+        id="V_deg_cov_rna"
+        name="degradation of COV_RNA in bulk phase"
+        reversible="true"
+        fast="false"
+        metaid="V_deg_cov_rna"
+        >
+        
+        <listOfReactants>
+          <speciesReference species="COV_RNA" stoichiometry="1"/>
+          </listOfReactants>
+        <listOfProducts>
+          
+          </listOfProducts>
+        <listOfModifiers>
+          </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>Vol_alv</ci><ci>k_deg_cov_rna</ci></apply><ci>COV_RNA</ci></apply></math>
         </kineticLaw>
       </reaction>
   </listOfReactions>
@@ -1485,6 +1712,20 @@
       metaid="k_tran_ipc_vpc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_tran_ipc_vpc</ci><ci>COV_ipc</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="VO"
+      name="Virus Occupancy (VO) level with anti_Ab antibodies"
+      metaid="VO::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>anti_Ab</ci><apply><plus/><ci>Kd_anti_Ab</ci><ci>anti_Ab</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="Kd_cov_ace2"
+      name="apparent dissociation equilibrium constant of COV and ACE2"
+      metaid="Kd_cov_ace2::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><ci>Kd_spike_ace2</ci><ci>Num_sp_per_cov</ci></apply><apply><minus/><cn>1</cn><ci>VO</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_pc_per_cell"
@@ -1543,6 +1784,13 @@
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
+      variable="COVass_vpc_per_cell"
+      name="number of COVass per vPC cell"
+      metaid="COVass_vpc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COVass_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
       variable="COV_RNA_vpc_per_cell"
       name="number of COV_RNA per vPC cell"
       metaid="COV_RNA_vpc_per_cell::ode_"
@@ -1550,11 +1798,11 @@
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_RNA_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
-      variable="COV_num_ml"
-      name="number of virus copies in 1 mL"
-      metaid="COV_num_ml::ode_"
+      variable="COV_num_sputum_ml"
+      name="number of virus copies in 1 mL of sputum"
+      metaid="COV_num_sputum_ml::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>COV</ci><ci>Vol_alv</ci></apply><ci>NA_pmole</ci></apply><cn>1000</cn></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>sputum_dilution_coef</ci><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply><ci>Vol_alv</ci></apply><ci>NA_pmole</ci></apply><cn>1000</cn></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="PC_tot"
@@ -1647,6 +1895,34 @@
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_vpc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
     </assignmentRule>
+    <assignmentRule
+      variable="COV_sgRNA_perc"
+      name="percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients"
+      metaid="COV_sgRNA_perc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>COV_RNA</ci></apply><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="IR_apo"
+      name="empiric function imitating effect of Immune Response on vPC apoptosis"
+      metaid="IR_apo::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><cn>1</cn><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>Emax_ir_apo</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><ci>T_sw_ir</ci><ci>ET50_ir</ci></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="k_apo_vpc"
+      name="dependence of rate constant of vPC apoptosis on IR effect"
+      metaid="k_apo_vpc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_apo_vpc</ci><ci>IR_apo</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="anti_Ab"
+      name="concentration of anti-Spike attibodies"
+      metaid="anti_Ab::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>anti_Ab_max</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><ci>T_sw_ir</ci><ci>ET50_ir</ci></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply></apply></math>
+    </assignmentRule>
   
   </listOfRules>
   
@@ -1669,6 +1945,17 @@
     <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
   </listOfUnits>
 </unitDefinition>
+      <unitDefinition id="UL" name="UL">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+      <unitDefinition id="pM" name="pM">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
       <unitDefinition id="item__cell" name="item/cell">
   <listOfUnits>
   </listOfUnits>
@@ -1683,11 +1970,6 @@
   <listOfUnits>
     <unit kind="item" exponent="1" scale="3" multiplier="1"/>
     <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-      <unitDefinition id="UL" name="UL">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
       <unitDefinition id="L" name="L">
@@ -1714,6 +1996,12 @@
       <unitDefinition id="pM_L" name="pM*L">
   <listOfUnits>
     <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+      <unitDefinition id="pmole_L" name="pmole*L">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
       <unitDefinition id="kcell__h" name="kcell/h">
@@ -1746,10 +2034,9 @@
     <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
   </listOfUnits>
 </unitDefinition>
-      <unitDefinition id="pM" name="pM">
+      <unitDefinition id="h" name="h">
   <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
   </listOfUnits>
 </unitDefinition>
   </listOfUnitDefinitions>
