@@ -3,7 +3,10 @@
   entry point for whole platform
 */
 
-include ./Cov19_life_cycle/cov19_life_cycle.heta
+// include units
+include ./qsp-units.heta
+// include life cycle module
+include ./Cov19_life_cycle/index.heta
 
 // exports
 out_sbml @SBMLExport {
@@ -32,5 +35,13 @@ out_mrg @MatlabExport {
   filepath: covid19_integrated_matlab
 };
 
-//output_yaml @YAMLExport { filepath: output };
-//output_xlsx @XLSXExport { filepath: cov19_life_cycle_xlsx, omitRows: 3, splitByClass: true };
+/*
+output_yaml @YAMLExport {
+  filepath: output
+};
+output_xlsx @XLSXExport {
+  filepath: cov19_life_cycle_xlsx,
+  omitRows: 3,
+  splitByClass: true
+};
+*/
