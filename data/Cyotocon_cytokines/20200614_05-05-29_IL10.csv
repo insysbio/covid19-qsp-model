@@ -1,0 +1,55 @@
+Species name;Markers;Species value;Species dispersion left;Species dispersion right;Species min value;Species max value;Species value (original);Species dispersion left(original);Species dispersion right(original);Species min value(original);Species max value(original);Unified units;Original unit;Tissue type;Disease;Average type;Dispersion type;ID type;ID value;Link;Source type;Patient race/ethnicity;Patient # male;Patient # female;Patient group average age;Patient group comment;Patient number;Patient weight (kg);Patient BMI;Patient height (cm);Patient Smoking status;Breast milk feeding (%);Fasting before blood draw (hours);FEV1, L;FEV1, % predicted;FEV1 before salbutamol (% predicted);FEV1 after salbutamol (% predicted);PC20 аfer methacholine;Severity
+IL10;;0.774366472;1.027777778;NA;NA;NA;15.89;21.09;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;23984295;;Article;;;;;;50;;;;;;;;;;;;
+IL10;;0.455653021;0.376705653;NA;NA;NA;9.35;7.73;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;Mean;SD;PMID;26424214;;Article;;;;;;6;;;;;;;;;;;;
+IL10;;0.877192982;NA;2.923976608;NA;2.923976608;18;NA;60;NA;60;pM;pg/ml;Blood;Healthy control;Mean;Not specified;PMID;24825462;;Article;;;;;;20;;;;;;;;;;;;
+IL10;;2.53411306;0.925925926;NA;NA;NA;52;19;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;23537276;;Article;;;;;;23;;;;;;;;;;;;
+IL10;;4.045808967;0.139376218;NA;NA;NA;83.02;2.86;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;27199554;;Article;;;;;;15;;;;;;;;;;;;
+IL10;;1.515594542;0.735867446;NA;NA;NA;31.1;15.1;NA;NA;NA;pM;pg/mL;Serum;Healthy control;Mean;SD;DB;http://www.aamj.eg.net/journals/pdf/1149.pdf;Table 3, p. 5;Article;;9;6;35.1;;15;;;;;;;;98;;;;
+IL10;;0.423976608;0.084795322;NA;NA;NA;8.7;1.74;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;25329073;;Article;;;;;;20;;;;;;;;;;;;
+IL10;;0.375243665;0.33625731;0.438596491;0.33625731;0.438596491;7.7;6.9;9;6.9;9;pM;pg/ml;Serum;Healthy control;Median;Not specified;PMID;24102578;;Article;;;;;;37;;;;;;;;;;;;
+IL10;;5.823586745;0.433723197;NA;NA;NA;119.5;8.9;NA;NA;NA;pM;pg/ml;Sputum;Healthy control;Mean;SD;PMID;23255616;;Article;;;;;;7;;;;;;;;;;;;
+IL10;;0.643274854;0.082846004;NA;NA;NA;13.2;1.7;NA;NA;NA;pM;pg/ml;Sputum;Healthy control;Mean;SEM;PMID;10515406;;Article;;;;;;12;;;;;;;;;;;;
+IL10;;3.281189084;0.309454191;NA;NA;NA;67.33;6.35;NA;NA;NA;pM;pg/ml;Sputum;Healthy control;Mean;SD;PMID;24137259;;Article;;;;;;40;;;;;;;;;;;;
+IL10;;7.266081871;NA;NA;NA;NA;149.1;NA;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;Mean;NA;PMID;10994773;table 1;Article;;;;;;20;;;;;;;;;;;;
+IL10;;0.036062378;0.082358674;NA;NA;NA;0.74;1.69;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;Median;IQR(Q1, Q3);PMID;25980674;table 2;Article;;;;;;8;;;;;;;;;;;;
+IL10;;0.477582846;0.219298246;NA;NA;NA;9.8;4.5;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;Mean;SD;PMID;9930598;Fig 3 + line 21, left column, page 1205;Article;;;;;;30;;;;;;;;;;;;
+IL10;;NA;0.243664717;5.653021442;NA;NA;NA;5;116;NA;NA;pM;pg/ml;Serum;Healthy control;NA;95%Cl;PMID;12072014;Fig 2, left column, line 10, page 227;Article;;4;6;29.8;;10;;;;;;;;;;;;
+IL10;;0.185185185;0.11208577;0.555555556;0.11208577;0.555555556;3.8;2.3;11.4;2.3;11.4;pM;pg/ml;Serum;Healthy control;Median;Not specified;PMID;28128077;table 2;Article;;30;22;0.33;;28;;;;;;;;;;;;
+IL10;;0.062378168;NA;NA;NA;NA;1.28;NA;NA;NA;NA;pM;pg/ml;Serum;Healthy control;GeomMean;NA;DB;OpenDermJ_2008_2_18;table 3;Article;;;;2.5;;12;;;;;;;;;;;;
+IL10;;0.004873294;0.018518519;NA;NA;NA;0.1;0.38;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;17332188;table 3;Article;;85;102;;;187;;;;;;;;;;;;
+IL10;;0.004873294;0.020955166;NA;NA;NA;0.1;0.43;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;17332188;table 3;Article;;86;100;;;186;;;;;;;;;;;;
+IL10;;0.24122807;NA;NA;NA;NA;4.95;NA;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;NA;PMID;25562560;table 1, table 2;Article;;51;42;8.51;;93;;;;;;;;;;;;
+IL10;;0.730994152;0.14619883;NA;NA;NA;15;3;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Median;SD;PMID;23331964;Fig4,p.7;Article;;;;;;30;;;;;;;;;;;;
+IL10;;0.487329435;3.021442495;NA;NA;NA;10;62;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;24363402;page 10;Article;;;;;;50;;;;;;;;;;;;
+IL10;;2.071637427;0.302631579;NA;NA;NA;42.51;6.21;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;20843660;Fig.6;Article;;4;6;58.3;;10;;;;;;;;;;;;
+IL10;;0.300194932;0.159844055;NA;NA;NA;6.16;3.28;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;22137028;Table 1;Article;;19;8;37.3;;27;;;;;;;;;;;;
+IL10;;0.087719298;0.021929825;NA;NA;NA;1.8;0.45;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;25825101;table 5;Article;;15;10;;;25;;;;;;;;;;;;
+IL10;;0.359161793;0.032163743;NA;NA;NA;7.37;0.66;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;28595236;Table 3;Article;;;;39.6;;22;;;;;;;;;;;;
+IL10;;0.316764133;0.048245614;NA;NA;NA;6.5;0.99;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;28595236;Table 3;Article;;;;39.1;;11;;;;;;;;;;;;
+IL10;;0.246101365;0.076998051;NA;NA;NA;5.05;1.58;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;22648272;fig 2B;Article;;5;3;;;8;;;;;;;;;;;;
+IL10;;0.194931774;0.004873294;2.553606238;NA;NA;4;0.1;52.4;NA;NA;pM;pg/mL;Serum;Healthy control;Median;5%_95%_IPR;PMID;21632552;Table 2, p. 4901;Article;White/Black/others;186;111;64.5;;297;;;;;;;;;;;;
+IL10;;0.043859649;0.024366472;0.082846004;NA;NA;0.9;0.5;1.7;NA;NA;pM;pg/mL;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;23300021;Table 1, p. 339;Article;White/Japanese/Latino/African American/Hawaiian;313;228;70;;541;;26.4;;;;12.3;;;;;;
+IL10;;2.263157895;0.331384016;NA;NA;NA;46.44;6.8;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;GeomMean;GeomSD;PMID;20501772;tab 2, p 1581;Article;;34;52;54;;86;;25.3;;;;;;;;;;
+IL10;;0.151072125;0.092592593;0.331384016;NA;NA;3.1;1.9;6.8;NA;NA;pM;pg/ml;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;20373009;tab 3, p 16;Article;European/African-American/Latina;;;57.3;;184;67.2;25.5;162.5;never/current/past smoker;;;;;;;;
+IL10;;0.076510721;0.048732943;0.092592593;NA;NA;1.57;1;1.9;NA;NA;pM;pg/ml;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;22238172;tab 2, p 1867;Article;Caucasian/other;7;14;42;;21;;;;;;;;;;;;
+IL10;;0.155945419;0.116959064;NA;NA;NA;3.2;2.4;NA;NA;NA;pM;pg/mL;Serum;Healthy control;Mean;SD;PMID;30814550;tab 4, p 6;Article;;10;17;45.2;;27;;28;;;;;;;;;;
+IL10;;0.151559454;NA;NA;NA;NA;3.11;NA;NA;NA;NA;pM;pg/mL;Serum;Healthy control;Mean;NA;PMID;11762815;Tab.3, p.1426;Article;;26;24;38.9;;50;;;;;;;;;;;;
+IL10;;0.153508772;0.024366472;0.365497076;0.024366472;0.365497076;3.15;0.5;7.5;0.5;7.5;pM;pg/mL;Serum;Healthy control;Median;Not specified;PMID;12115531;Tab. 2, p. 465;Article;;26;24;49;;50;;;;;;;;;;;;
+IL10;;2.246588694;0.78460039;NA;NA;NA;46.1;16.1;NA;NA;NA;pM;pg/mL;Broncho-alveolar lavage (BAL);Healthy control;Mean;SD;DB;http://www.aamj.eg.net/journals/pdf/1149.pdf;Table 2, p. 5;Article;;9;6;35.1;;15;;;;;;;;98;;;;
+IL10;;0.204678363;0.043859649;0.248538012;NA;NA;4.2;0.9;5.1;NA;NA;pM;pg/mL;Plasma;Healthy control;Median;IQR(Q1, Q3);PMID;23028695;Fig. 3, p. 6;Article;;7;5;30.7;;12;;;;;;;;;;;;
+IL10;;0.19005848;0.175438596;NA;NA;NA;3.9;3.6;NA;NA;NA;pM;pg/mL;Plasma;Healthy control;Mean;SE;PMID;12459041;p. 3, Section Results;Article;;;;;;;;;;;;;;;;;;
+IL10;;0.458089669;0.423976608;0.501949318;NA;NA;9.4;8.7;10.3;NA;NA;pM;pg/mL;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;26604855;Fig. 4, p. 7;Article;;13;3;34;;16;;;;Non-smokers - 10, smokers - 6 ;;;;93;;;;
+IL10;;0.043859649;0.004873294;NA;NA;NA;0.9;0.1;NA;NA;NA;pM;pg/mL;Plasma;Healthy control;Mean;SD;PMID;24163809;Fig. 4, p. 5;Article;;;;;;270;;;;;;;;;;;;
+IL10;;0.282651072;0.248538012;0.316764133;NA;NA;5.8;5.1;6.5;NA;NA;pM;pg/mL;Serum;Healthy control;Median;IQR(Q1, Q3);PMID;25587794;Tab. 1, p. 693;Article;;10;9;51.1;;19;;;;;;;;;;;;
+IL10;;0.14619883;0.097465887;0.355750487;0.097465887;0.355750487;3;2;7.3;2;7.3;pM;pg/mL;Serum;Healthy control;Median;Not specified;PMID;16645324;Tab. 2, p. 117;Article;;;;;;50;;;;;;;;;;;;
+IL10;;0.058479532;0.058479532;0.058479532;NA;NA;1.2;1.2;1.2;NA;NA;pM;pg/mL;Plasma;Healthy control;Median;IQR(Q1, Q3);PMID;31986264;Suppl. Fig. 1, p. 6;Article;;;;;;4;;;;;;;;;;;;
+IL10;;0.443469786;0.073099415;0.696881092;NA;NA;9.1;1.5;14.3;NA;NA;pM;pg/mL;Plasma;COVID-2019;Median;IQR(Q1, Q3);PMID;31986264;Suppl. Fig. 1, p. 6;Article;;11;2;49;;13;;;;No current smoking;;;;;;;;
+IL10;;0.063352827;0.063352827;0.438596491;NA;NA;1.3;1.3;9;NA;NA;pM;pg/mL;Plasma;COVID-2019;Median;IQR(Q1, Q3);PMID;31986264;Suppl. Fig. 1, p. 6;Article;;19;9;49;;28;;;;Current smoking - 3;;;;;;;;
+IL10;;0.263157895;0.14619883;0.389863548;NA;NA;5.4;3;8;NA;NA;pM;pg/mL;Blood;COVID-2019;Median;IQR(Q1, Q3);PMID;32317267;tab.S1 p.2;Article;;58;38;55;;96;;;;;;;;;;;;moderate-to-severe
+IL10;;0.180311891;0.126705653;0.365497076;NA;NA;3.7;2.6;7.5;NA;NA;pM;pg/mL;Blood;COVID-2019;Median;IQR(Q1, Q3);PMID;32317267;tab.S1 p.2;Article;;9;13;47.5;;22;;;;;;;;;;;;Mild
+IL10;;0.287524366;0.14619883;0.409356725;NA;NA;5.9;3;8.4;NA;NA;pM;pg/mL;Blood;COVID-2019;Median;IQR(Q1, Q3);PMID;32317267;tab.S1 p.2;Article;;49;25;57;;74;;;;;;;;;;;;Severe
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Serum;Plasma;Sputum;linning fluid;lymph node;Blood;BAL;EBC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+HC;0.246101365;0.204678363;3.281189084;32.81189084;NA;0.877192982;2.246588694;NA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+COVID-19;NA;0.253411306;NA;NA;NA;0.263157895;NA;NA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
