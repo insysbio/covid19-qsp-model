@@ -1,0 +1,32 @@
+/*
+  template file for creating platform
+*/
+// add qsp units
+include ../qsp-units.heta
+
+// @Const
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 1, omitRows: 1 }
+// @Record
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 2, omitRows: 1 }
+// @Compartment
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 3, omitRows: 1 }
+// @Species
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 1 }
+// @Reaction
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 1 }
+
+// exports
+output_sbml @SBMLExport {
+  filepath: mph_life_cycle_sbml,
+  version: L2V4
+};
+
+out_slv @SLVExport {
+  filepath: mph_life_cycle_slv,
+  eventsOff: false
+};
+
+//output_yaml @YAMLExport { filepath: output };
+//output_simbio @SimbioExport { filepath: simbio };
+//output_mrg @MrgsolveExport { filepath: mrgsolve };
+//output_xlsx @XLSXExport { filepath: cov19_life_cycle_xlsx, omitRows: 3, splitByClass: true };
