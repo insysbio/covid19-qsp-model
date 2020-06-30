@@ -1,0 +1,16 @@
+Species name;Markers;Species value;Species dispersion left;Species dispersion right;Species min value;Species max value;Species value (original);Species dispersion left(original);Species dispersion right(original);Species min value(original);Species max value(original);Unified units;Original unit;Tissue type;Disease;Average type;Dispersion type;ID type;ID value;Link;Source type;Patient race/ethnicity;Patient # male;Patient # female;Patient group average age;Patient group comment;Patient number;Patient weight (kg);Patient BMI;Patient height (cm);Patient Smoking status;Breast milk feeding (%);Fasting before blood draw (hours)
+Peripheral blood monocytes;;415000;160000;NA;NA;NA;415;160;NA;NA;NA;kcells/L;cells/uL;Blood;Healthy control;Median;IQR(Q1, Q3);DB;ISSN: 1043-4666;;Article;;;;;;33;;;;;;
+Peripheral blood monocytes;;455000;140000;NA;NA;NA;6.5;2;NA;NA;NA;kcells/L;%WBC_Blood_HC;Plasma;Healthy control;Mean;SD;DB;Report on ref.man 1975;p37;Article;;;;;;-1;;;;;;
+Peripheral blood monocytes;;533400;340200;1098300;340200;1098300;7.62;4.86;15.69;4.86;15.69;kcells/L;%Cells[CD45+]_Blood_HC;Blood;Healthy control;Median;Not specified;PMID;29380876;Fig. 1C;Article;;;;3;;15;;;;;;
+Peripheral blood monocytes;;479500;270900;882000;270900;882000;6.85;3.87;12.6;3.87;12.6;kcells/L;%Cells[CD45+]_Blood_HC;Blood;Asthma;Median;Not specified;PMID;29380876;Fig. 1C;Article;;;;3;;68;;;;;;
+Peripheral blood monocytes;;479500;255500;943600;255500;943600;6.85;3.65;13.48;3.65;13.48;kcells/L;%Cells[CD45+]_Blood_HC;Blood;Asthma, food allergy and atopic dermatitis;Median;Not specified;PMID;29380876;Fig. 1C;Article;;;;3;;48;;;;;;
+Peripheral blood monocytes;;502600;324800;1013600;324800;1013600;7.18;4.64;14.48;4.64;14.48;kcells/L;%Cells[CD45+]_Blood_HC;Blood;Food allergy and atopic dermatitis;Median;Not specified;PMID;29380876;Fig. 1C;Article;;;;3;;33;;;;;;
+Peripheral blood monocytes;;440000;60000;NA;NA;NA;0.44;0.06;NA;NA;NA;kcells/L;Gcell/L;Blood;Atopic dermatitis;Mean;SEM;PMID;15932386;table 2;Article;;3;7;31;;10;;;;;;
+Peripheral blood monocytes;;480000;80000;NA;NA;NA;0.48;0.08;NA;NA;NA;kcells/L;Gcell/L;Blood;Atopic dermatitis;Mean;SEM;PMID;15932386;table 2;Article;;3;7;31;;10;;;;;;
+Peripheral blood monocytes;;316000;123000;NA;NA;NA;316;123;NA;NA;NA;kcells/L;cells/mm3;Blood;Healthy control;Mean;SD;PMID;22493730;page 4, left column;Article;;;;;;16;;;;;;
+Peripheral blood monocytes;;420000;128000;NA;NA;NA;420;128;NA;NA;NA;kcells/L;cells/mm3;Blood;Psoriasis;Mean;SD;PMID;22493730;page 4, left column;Article;;;;;;16;;;;;;
+Peripheral blood monocytes;;280000;210000;NA;NA;NA;4;3;NA;NA;NA;kcells/L;%WBC_Blood_HC;Blood;Healthy control;Mean;SD;PMID;10504452;table1;Article;;3;3;39;;6;;;;;;
+Peripheral blood monocytes;;420000;140000;NA;NA;NA;6;2;NA;NA;NA;kcells/L;%WBC_Blood_HC;Blood;Atopic dermatitis;Mean;SD;PMID;10504452;table1;Article;;7;2;37;;9;;;;;;
+Peripheral blood monocytes;;490000;280000;NA;NA;NA;7;4;NA;NA;NA;kcells/L;%WBC_Blood_HC;Blood;Atopic dermatitis;Mean;SD;PMID;10504452;table1;Article;;4;4;49;;8;;;;;;
+Peripheral blood monocytes;;405300;NA;NA;NA;NA;5.79;NA;NA;NA;NA;kcells/L;%WBC_Blood_HC;Blood;Atopic dermatitis;GeomMean;NA;PMID;1421636;table 1;Article;;11;27;34;;37;;;;;;
+Peripheral blood monocytes;;455000;NA;NA;NA;NA;6.5;NA;NA;NA;NA;kcells/L;%WBC_Blood_HC;Blood;Atopic dermatitis;GeomMean;NA;PMID;1421636;table 1;Article;;11;27;34;;37;;;;;;

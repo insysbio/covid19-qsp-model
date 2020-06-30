@@ -1,0 +1,15 @@
+Species name;Markers;Species value;Species dispersion left;Species dispersion right;Species min value;Species max value;Species value (original);Species dispersion left(original);Species dispersion right(original);Species min value(original);Species max value(original);Unified units;Original unit;Tissue type;Disease;Average type;Dispersion type;ID type;ID value;Link;Source type;Patient race/ethnicity;Patient # male;Patient # female;Patient group average age;Patient group comment;Patient number;Patient weight (kg);Patient BMI;Patient height (cm);Patient Smoking status;Breast milk feeding (%);Fasting before blood draw (hours);FEV1, L;FEV1, % predicted;FEV1 before salbutamol (% predicted);FEV1 after salbutamol (% predicted);PC20 аfer methacholine;Severity;
+TGFb;;28.1686964366261;19.0121786197564;NA;NA;NA;1249;843;NA;NA;NA;pM;pg/ml;Sputum;Healthy control;Median;SD;PMID;18564632;;Article;;;;;;8;;;;;;;;;;;;;
+TGFb;;1.5787099684258;1.08254397834912;2.8191249436175;1.08254397834912;2.8191249436175;70;48;125;48;125;pM;pg/ml;Plasma;Healthy control;Mean;Not specified;PMID;24825462;;Article;;;;;;20;;;;;;;;;;;;;
+TGFb;;0.36468200270636;0.0863779882724402;NA;NA;NA;16.17;3.83;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;25329073;;Article;;;;;;20;;;;;;;;;;;;;
+TGFb;;69.3279206134416;3.17997293640054;NA;NA;NA;3074;141;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;Mean;SEM;PMID;20819268;;Article;;;;;;105;;;;;;;;;;;;;
+TGFb;;44.8804691023906;2.255299954894;NA;NA;NA;1.99;0.1;NA;NA;NA;pM;ng/ml;Plasma;Healthy control;Mean;SEM;PMID;27549738;;Article;;;;;;27;;;;;;;;;;;;;
+TGFb;;90.21199819576;2.255299954894;NA;NA;NA;4000;100;NA;NA;NA;pM;pg/ml;Plasma;Healthy control;Mean;SEM;PMID;19186046;;Article;;;;;;105;;;;;;;;;;;;;
+TGFb;;22.55299954894;11.27649977447;NA;NA;NA;1;0.5;NA;NA;NA;pM;ng/ml;Lymph node;Healthy control;Mean;SD;PMID;24364843;Fig.2A,p.205;Article;;25;;;;25;;;;;;;;;;;;;
+TGFb;;789.3549842129;225.5299954894;NA;NA;NA;35;10;NA;NA;NA;pM;ng/ml;Serum;Healthy control;Median;SD;PMID;23331964;Fig4,p.7;Article;;;;;;30;;;;;;;;;;;;;
+TGFb;;2.54149751917005;0.849797023004059;NA;NA;NA;112.69;37.68;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;20843660;Fig.7;Article;;4;6;58.3;;10;;;;;;;;;;;;;
+TGFb;;0.018042399639152;0.0275146594497068;NA;NA;NA;0.8;1.22;NA;NA;NA;pM;pg/ml;Serum;Healthy control;Mean;SD;PMID;25825101;table 5;Article;;15;10;;;25;;;;;;;;;;;;;
+TGFb;;1.17275597654488;0.36084799278304;NA;NA;NA;52;16;NA;NA;NA;pM;pg/mL;Serum;Healthy control;Mean;SD;PMID;24904654;Fig. 7, p. 238;Article;;12;6;54.2;;18;;;;;;;;;;;;;
+TGFb;;4.41362201172756;0.570590888588182;NA;NA;NA;195.7;25.3;NA;NA;NA;pM;pg/mL;Plasma;Healthy control;Mean;Not specified;PMID;20514447;p. 83, Section Results;Article;;14;21;;;35;;;;;;;;;;;;;
+TGFb;;95.1736580965268;24.808299503834;256.427604871448;24.808299503834;256.427604871448;4220;1100;11370;1100;11370;pM;pg/mL;Plasma;Healthy control;Mean;Not specified;PMID;25924227;Fig. 7, p. 9;Article;;;;;;10;;;;;;;;;;;;;
+
