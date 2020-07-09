@@ -1,13 +1,9 @@
 {
-  "builderVersion": ">=0.4.29",
-  "id": "COV19",
-  "title": "COVID-19 QSP template",
-  "notes": "QSP template describing immune response and virus life cycle in COVID-19",
-  "version": "v0.0.0",
+  "builderVersion": "^0.5.4",
+  "id": "mph-life-cycle",
   "license": "MIT",
   "importModule": {
     "type": "heta",
-    "source": "src/Mph_life_cycle/mph_life_cycle.heta",
-    "ignoreDeps": false
+    "source": "src/Mph_life_cycle/mph_life_cycle.heta"
   }
 }

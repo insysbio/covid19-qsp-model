@@ -1,5 +1,5 @@
 /*
-  template file for creating platform
+  platform for compilation as stand-alone model (not integral)
 */
 // add qsp units
 include ../qsp-units.heta
@@ -16,12 +16,11 @@ include ./cov19_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 3 }
 include ./cov19_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 3 }
 
 // exports
-output_sbml @SBMLExport {
+#export {
+  format: SBML,
   filepath: cov19_life_cycle_sbml,
   version: L2V4
 };
 
-//output_yaml @YAMLExport { filepath: output };
-//output_simbio @SimbioExport { filepath: simbio };
-//output_mrg @MrgsolveExport { filepath: mrgsolve };
-//output_xlsx @XLSXExport { filepath: cov19_life_cycle_xlsx, omitRows: 3, splitByClass: true };
+// #export { format: Simbio, filepath: cov19_life_cycle_simbio };
+// #export { format:Mrgsolve, filepath: cov19_life_cycle_mrgsolve };

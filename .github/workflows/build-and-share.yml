@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         node-version: [ 8.x ]
-        heta-version: [ v0.4.29 ]
+        heta-version: [ v0.5.4 ]
         platform: [ ubuntu-latest ]
 
     runs-on: ${{ matrix.platform }}
@@ -30,6 +30,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i -g heta-compiler@${{ matrix.heta-version }}
     - run: heta build
+    - run: heta build --source src/Cov19_life_cycle/cov19_life_cycle.heta
     - name: Deploy to "dist" branch only for "master" pushes
       if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && github.ref == 'refs/heads/master' }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
