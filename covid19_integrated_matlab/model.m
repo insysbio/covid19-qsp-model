@@ -8,7 +8,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
     y0_ = InitFunc();
 
     % shared variable
-    shared_values = zeros(1, 92);
+    shared_values = zeros(1, 90);
     integrator = [];
 
     %%% Initialization of dynamic records
@@ -54,7 +54,6 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         COV_RNA_vpc_per_cell = p(2) * COV_RNA_vpc / vPC / Vol_alv / p(1); % COV_RNA_vpc_per_cell, number of COV_RNA per vPC cell (item/cell)
         COV_vpc_per_cell_tot = COV_ACE2_vpc_per_cell + COV_vpc_per_cell + COV_RNA_vpc_per_cell; % COV_vpc_per_cell_tot, total number of COV genomes per vPC cell (item/cell)
         COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA); % COV_sgRNA_perc, percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients (UL)
-        default = 1; % default, Volume of default compartment (L)
         PC_hs_ss = 2.643e+9; % PC_hs_ss, concentration of PC type II at steady state w/o virus exposure (kcell/L)
         V_mat_pc = Vol_alv * p(4) * PC_hs_ss; % V_mat_pc, influx of Pneumocytes via maturation (kcell/h)
         k_tran_pc_ipc = p(6) * COV_ACE2_pc; % k_tran_pc_ipc, apparent rate constant of PC to iPC transition (1/h)
@@ -67,9 +66,8 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         k_apo_vpc = p(5) * IR_apo; % k_apo_vpc, dependence of rate constant of vPC apoptosis on IR effect (1/h)
         V_apo_vpc = Vol_alv * k_apo_vpc * vPC; % V_apo_vpc, apoptosis of vPneumocyte (kcell/h)
         ACE2_pc_hs_ss = 615; % ACE2_pc_hs_ss, amount of ACE2 located at PC (pmole)
-        Vol_pc = 1.33e-12; % Vol_pc, Volume of Pneumocyte (L/cell)
-        k_syn_ace2_pc = p(8) * ACE2_pc_hs_ss / PC_hs_ss / Vol_pc / Vol_alv / p(1); % k_syn_ace2_pc, rate of ACE2 synthesis calculated per volume of PC (pM/h/cell)
-        V_syn_ace2_pc = Vol_pc * k_syn_ace2_pc * PC * Vol_alv * p(1); % V_syn_ace2_pc, synthesis of ACE2 by PC (pmole/h)
+        k_syn_ace2_pc = p(8) * ACE2_pc_hs_ss / PC_hs_ss / p(28) / Vol_alv / p(1); % k_syn_ace2_pc, rate of ACE2 synthesis calculated per volume of PC (pM/h/cell)
+        V_syn_ace2_pc = p(28) * k_syn_ace2_pc * PC * Vol_alv * p(1); % V_syn_ace2_pc, synthesis of ACE2 by PC (pmole/h)
         V_shed_ace2_pc = p(8) * ACE2_pc; % V_shed_ace2_pc, degradation of ACE2 located at PC via shedding (pmole/h)
         steric_factor_pc = 1 - COV_ACE2_pc_per_cell / p(19); % steric_factor_pc, a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell (UL)
         anti_Ab = p(21) * p(27) * (time - p(22)) ^ p(25) / ((p(22) + p(23)) ^ p(25) + (time - p(22)) ^ p(25)); % anti_Ab, concentration of anti-Spike attibodies (pmole)
@@ -80,7 +78,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         V_deg_cov_ace2_apo_pc = p(4) * COV_ACE2_pc; % V_deg_cov_ace2_apo_pc, degradation of COV_ACE2 located at PC via PC apoptosis with concomitant COV release (pmole/h)
         V_tran_ace2_pc_ipc = k_tran_pc_ipc * ACE2_pc; % V_tran_ace2_pc_ipc, transition of ACE2 from PC to iPC with transition of pneumocytes between the states (pmole/h)
         V_tran_cov_ace2_pc_ipc = k_tran_pc_ipc * COV_ACE2_pc; % V_tran_cov_ace2_pc_ipc, transition of COV_ACE2 from PC to iPC with transition of pneumocytes between the states (pmole/h)
-        V_syn_ace2_ipc = Vol_pc * k_syn_ace2_pc * iPC * Vol_alv * p(1); % V_syn_ace2_ipc, synthesis of ACE2 by iPC (pmole/h)
+        V_syn_ace2_ipc = p(28) * k_syn_ace2_pc * iPC * Vol_alv * p(1); % V_syn_ace2_ipc, synthesis of ACE2 by iPC (pmole/h)
         V_shed_ace2_ipc = p(8) * ACE2_ipc; % V_shed_ace2_ipc, degradation of ACE2 located at iPC via shedding (pmole/h)
         steric_factor_ipc = 1 - COV_ACE2_ipc_per_cell / p(19); % steric_factor_ipc, a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell (UL)
         V_bind_cov_ace2_ipc = p(9) * (steric_factor_ipc * COV * ACE2_ipc / Kd_cov_ace2 - COV_ACE2_ipc); % V_bind_cov_ace2_ipc, binding of COV to ACE2 located at iPC surface (pmole/h)
@@ -91,7 +89,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         V_tran_ace2_ipc_vpc = k_tran_ipc_vpc * ACE2_ipc; % V_tran_ace2_ipc_vpc, transition of ACE2 from iPC to vPC with transition of pneumocytes between the states (pmole/h)
         V_tran_cov_ace2_ipc_vpc = k_tran_ipc_vpc * COV_ACE2_ipc; % V_tran_cov_ace2_ipc_vpc, transition of COV_ACE2 from iPC to vPC with transition of pneumocytes between the states (pmole/h)
         V_tran_cov_ipc_vpc = k_tran_ipc_vpc * COV_ipc; % V_tran_cov_ipc_vpc, transition of COV from iPC to vPC with transition of pneumocytes between the states (pmole/h)
-        V_syn_ace2_vpc = Vol_pc * k_syn_ace2_pc * vPC * Vol_alv * p(1); % V_syn_ace2_vpc, synthesis of ACE2 by vPC (pmole/h)
+        V_syn_ace2_vpc = p(28) * k_syn_ace2_pc * vPC * Vol_alv * p(1); % V_syn_ace2_vpc, synthesis of ACE2 by vPC (pmole/h)
         V_shed_ace2_vpc = p(8) * ACE2_vpc; % V_shed_ace2_vpc, degradation of ACE2 located at vPC via shedding (pmole/h)
         steric_factor_vpc = 1 - COV_ACE2_vpc_per_cell / p(19); % steric_factor_vpc, a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell (UL)
         V_bind_cov_ace2_vpc = p(9) * (steric_factor_vpc * COV * ACE2_vpc / Kd_cov_ace2 - COV_ACE2_vpc); % V_bind_cov_ace2_vpc, binding of COV to ACE2 located at vPC surface (pmole/h)
@@ -99,7 +97,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         V_deg_cov_ace2_apo_vpc = k_apo_vpc * COV_ACE2_vpc; % V_deg_cov_ace2_apo_vpc, degradation of COV_ACE2 located at vPC via vPC apoptosis with concomitant COV release (pmole/h)
         V_ent_cov_vpc = p(12) * COV_ACE2_vpc; % V_ent_cov_vpc, entry of COV into vPC with concomitant ACE2 degradation (pmole/h)
         V_unc_cov_vpc = p(14) * COV_vpc; % V_unc_cov_vpc, uncoating of COV in vPC (pmole/h)
-        V_rep_cov_rna_vpc = p(15) * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * p(1)) / Vol_pc) / p(16)); % V_rep_cov_rna_vpc, replication of COV_RNA in vPC (pmole/h)
+        V_rep_cov_rna_vpc = p(15) * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * p(1)) / p(28)) / p(16)); % V_rep_cov_rna_vpc, replication of COV_RNA in vPC (pmole/h)
         V_ass_cov_vpc = p(17) * COV_RNA_vpc; % V_ass_cov_vpc, assembling of COV in vPC (pmole/h)
         V_rel_cov_vpc = p(13) * COVass_vpc; % V_rel_cov_vpc, release of COV in vPC (pmole/h)
         V_deg_cov_apo_vpc = k_apo_vpc * COV_vpc; % V_deg_cov_apo_vpc, degradation of COV located in vPC via vPC apoptosis (pmole/h)
@@ -108,7 +106,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         V_deg_cov = Vol_alv * p(18) * COV; % V_deg_cov, degradation of COV in bulk phase (pmole/h)
         V_deg_cov_rna = Vol_alv * p(20) * COV_RNA; % V_deg_cov_rna, degradation of COV_RNA in bulk phase (pmole/h)
 
-        y__ = [default; Vol_alv; Vol_pc; PC * Vol_alv; iPC * Vol_alv; vPC * Vol_alv; PC_hs_ss * Vol_alv; ACE2_pc; ACE2_pc_hs_ss; COV_ACE2_pc; ACE2_ipc; COV_ACE2_ipc; COV_ipc; ACE2_vpc; COV_ACE2_vpc; COV_vpc; COV_RNA_vpc; COV * Vol_alv; COV_RNA * Vol_alv; COVass_vpc];
+        y__ = [Vol_alv; PC * Vol_alv; iPC * Vol_alv; vPC * Vol_alv; PC_hs_ss * Vol_alv; ACE2_pc; ACE2_pc_hs_ss; COV_ACE2_pc; ACE2_ipc; COV_ACE2_ipc; COV_ipc; ACE2_vpc; COV_ACE2_vpc; COV_vpc; COV_RNA_vpc; COV * Vol_alv; COV_RNA * Vol_alv; COVass_vpc];
     end
 
     function status = OutputFunc(time, y, flag)
@@ -125,51 +123,49 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
 
     function dydt = ODEFunc(time, y)
 
-        dydt = zeros(20, 1);
+        dydt = zeros(18, 1);
 
         %%% Dynamic records annotation
-        %1 - default, Volume of default compartment (L) 
-        %2 - Vol_alv, Volume of surfactant linning alveolar surface (L) calculated as (width of linning layer)*(lunf surface area) = (0.1 - 0.3 um)*(66 - 75 m)
-        %3 - Vol_pc, Volume of Pneumocyte (L/cell) averaged between type I and II pneumocytes
-        %4 - PC, concentration of PC type II (Pneumocytes free of virus) in alveoli (kcell/L) calculated on the basis of total type II pneumocytes number per lungs (see ref) and volume of lung surfactant equal to 0.014L
-        %5 - iPC, concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli (kcell/L) 
-        %6 - vPC, concentration of vPC (Pneumocytes with virus actively replicated) in alveoli (kcell/L) 
-        %7 - PC_hs_ss, concentration of PC type II at steady state w/o virus exposure (kcell/L) estimate for type II pneumocytes was taken
-        %8 - ACE2_pc, amount of ACE2 located at PC (pmole) based on 1e4 ACE2 per cell
-        %9 - ACE2_pc_hs_ss, amount of ACE2 located at PC (pmole) based on 1e4 ACE2 per cell and total PC II number in lungs equal to 37e9 [7103258]
-        %10 - COV_ACE2_pc, amount of COV_ACE2 complexes located at PC (pmole) 
-        %11 - ACE2_ipc, amount of ACE2 located at iPC (pmole) 
-        %12 - COV_ACE2_ipc, amount of COV_ACE2 complexes located at iPC (pmole) 
-        %13 - COV_ipc, amount of partially disrupted COV particles ready to release RNA in cytoplasm located in iPC (pmole) 
-        %14 - ACE2_vpc, amount of ACE2 located at vPC (pmole) 
-        %15 - COV_ACE2_vpc, amount of COV_ACE2 complexes located at vPC (pmole) 
-        %16 - COV_vpc, amount of partially disrupted COV particles ready to release RNA in cytoplasm located in vPC (pmole) 
-        %17 - COV_RNA_vpc, amount of COV_RNA located in vPC (pmole) 
-        %18 - COV, concentration of  COV (SARS-CoV-2 virus) (pM) 
-        %19 - COV_RNA, concentration of COV_RNA released from vPC due to their apoptosis (pM) 
-        %20 - COVass_vpc, amount of assembled virus ready to be released from from vPC (pmole) 
+        %1 - Vol_alv, Volume of surfactant linning alveolar surface (L) calculated as (width of linning layer)*(lunf surface area) = (0.1 - 0.3 um)*(66 - 75 m)
+        %2 - PC, concentration of PC type II (Pneumocytes free of virus) in alveoli (kcell/L) calculated on the basis of total type II pneumocytes number per lungs (see ref) and volume of lung surfactant equal to 0.014L
+        %3 - iPC, concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli (kcell/L) 
+        %4 - vPC, concentration of vPC (Pneumocytes with virus actively replicated) in alveoli (kcell/L) 
+        %5 - PC_hs_ss, concentration of PC type II at steady state w/o virus exposure (kcell/L) estimate for type II pneumocytes was taken
+        %6 - ACE2_pc, amount of ACE2 located at PC (pmole) based on 1e4 ACE2 per cell
+        %7 - ACE2_pc_hs_ss, amount of ACE2 located at PC (pmole) based on 1e4 ACE2 per cell and total PC II number in lungs equal to 37e9 [7103258]
+        %8 - COV_ACE2_pc, amount of COV_ACE2 complexes located at PC (pmole) 
+        %9 - ACE2_ipc, amount of ACE2 located at iPC (pmole) 
+        %10 - COV_ACE2_ipc, amount of COV_ACE2 complexes located at iPC (pmole) 
+        %11 - COV_ipc, amount of partially disrupted COV particles ready to release RNA in cytoplasm located in iPC (pmole) 
+        %12 - ACE2_vpc, amount of ACE2 located at vPC (pmole) 
+        %13 - COV_ACE2_vpc, amount of COV_ACE2 complexes located at vPC (pmole) 
+        %14 - COV_vpc, amount of partially disrupted COV particles ready to release RNA in cytoplasm located in vPC (pmole) 
+        %15 - COV_RNA_vpc, amount of COV_RNA located in vPC (pmole) 
+        %16 - COV, concentration of  COV (SARS-CoV-2 virus) (pM) 
+        %17 - COV_RNA, concentration of COV_RNA released from vPC due to their apoptosis (pM) 
+        %18 - COVass_vpc, amount of assembled virus ready to be released from from vPC (pmole) 
 
         %%% Output records
         % hours to days conversion (day) 
         time_day = time / 24;
         % amount of assembled virus ready to be released from from vPC (pmole) 
-        COVass_vpc = y(20);
+        COVass_vpc = y(18);
         % Volume of surfactant linning alveolar surface (L) calculated as (width of linning layer)*(lunf surface area) = (0.1 - 0.3 um)*(66 - 75 m)
-        Vol_alv = y(2);
+        Vol_alv = y(1);
         % concentration of vPC (Pneumocytes with virus actively replicated) in alveoli (kcell/L) 
-        vPC = y(6) / Vol_alv;
+        vPC = y(4) / Vol_alv;
         % number of COVass per vPC cell (item/cell) 
         COVass_vpc_per_cell = p(2) * COVass_vpc / vPC / Vol_alv / p(1);
         % concentration of  COV (SARS-CoV-2 virus) (pM) 
-        COV = y(18) / Vol_alv;
+        COV = y(16) / Vol_alv;
         % concentration of COV_RNA released from vPC due to their apoptosis (pM) 
-        COV_RNA = y(19) / Vol_alv;
+        COV_RNA = y(17) / Vol_alv;
         % number of virus copies in 1 mL of sputum (item/mL) 
         COV_num_sputum_ml = p(3) * (COV + COV_RNA) * Vol_alv * p(2) / 1000;
         % concentration of PC type II (Pneumocytes free of virus) in alveoli (kcell/L) calculated on the basis of total type II pneumocytes number per lungs (see ref) and volume of lung surfactant equal to 0.014L
-        PC = y(4) / Vol_alv;
+        PC = y(2) / Vol_alv;
         % concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli (kcell/L) 
-        iPC = y(5) / Vol_alv;
+        iPC = y(3) / Vol_alv;
         % total pneumocytes cell count (kcell/L) 
         PC_tot = PC + iPC + vPC;
         % percent of PC of total pneumocytes cell count (UL) 
@@ -179,31 +175,31 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         % percent of vPC of total pneumocytes cell count (UL) 
         vPC_percent = 100 * vPC / PC_tot;
         % amount of ACE2 located at PC (pmole) based on 1e4 ACE2 per cell
-        ACE2_pc = y(8);
+        ACE2_pc = y(6);
         % number of ACE2 per PC cell (item/cell) 
         ACE2_pc_per_cell = p(2) * ACE2_pc / PC / Vol_alv / p(1);
         % amount of COV_ACE2 complexes located at PC (pmole) 
-        COV_ACE2_pc = y(10);
+        COV_ACE2_pc = y(8);
         % number of COV_ACE2 per PC cell (item/cell) 
         COV_ACE2_pc_per_cell = p(2) * COV_ACE2_pc / PC / Vol_alv / p(1);
         % total number of ACE2 molecules per PC cell (item/cell) 
         ACE2_pc_per_cell_tot = ACE2_pc_per_cell + COV_ACE2_pc_per_cell;
         % amount of ACE2 located at iPC (pmole) 
-        ACE2_ipc = y(11);
+        ACE2_ipc = y(9);
         % number of ACE2 per iPC cell (item/cell) 
         ACE2_ipc_per_cell = p(2) * ACE2_ipc / iPC / Vol_alv / p(1);
         % amount of COV_ACE2 complexes located at iPC (pmole) 
-        COV_ACE2_ipc = y(12);
+        COV_ACE2_ipc = y(10);
         % number of COV_ACE2 per iPC cell (item/cell) 
         COV_ACE2_ipc_per_cell = p(2) * COV_ACE2_ipc / iPC / Vol_alv / p(1);
         % total number of ACE2 molecules per iPC cell (item/cell) 
         ACE2_ipc_per_cell_tot = ACE2_ipc_per_cell + COV_ACE2_ipc_per_cell;
         % amount of ACE2 located at vPC (pmole) 
-        ACE2_vpc = y(14);
+        ACE2_vpc = y(12);
         % number of ACE2 per vPC cell (item/cell) 
         ACE2_vpc_per_cell = p(2) * ACE2_vpc / vPC / Vol_alv / p(1);
         % amount of COV_ACE2 complexes located at vPC (pmole) 
-        COV_ACE2_vpc = y(15);
+        COV_ACE2_vpc = y(13);
         % number of COV_ACE2 per vPC cell (item/cell) 
         COV_ACE2_vpc_per_cell = p(2) * COV_ACE2_vpc / vPC / Vol_alv / p(1);
         % total number of ACE2 molecules per vPC cell (item/cell) 
@@ -211,27 +207,25 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         % total number of COV genomes per PC cell (item/cell) 
         COV_pc_per_cell_tot = COV_ACE2_pc_per_cell;
         % amount of partially disrupted COV particles ready to release RNA in cytoplasm located in iPC (pmole) 
-        COV_ipc = y(13);
+        COV_ipc = y(11);
         % number of COV per iPC cell (item/cell) 
         COV_ipc_per_cell = p(2) * COV_ipc / iPC / Vol_alv / p(1);
         % total number of COV genomes per iPC cell (item/cell) 
         COV_ipc_per_cell_tot = COV_ACE2_ipc_per_cell + COV_ipc_per_cell;
         % amount of partially disrupted COV particles ready to release RNA in cytoplasm located in vPC (pmole) 
-        COV_vpc = y(16);
+        COV_vpc = y(14);
         % number of COV per vPC cell (item/cell) 
         COV_vpc_per_cell = p(2) * COV_vpc / vPC / Vol_alv / p(1);
         % amount of COV_RNA located in vPC (pmole) 
-        COV_RNA_vpc = y(17);
+        COV_RNA_vpc = y(15);
         % number of COV_RNA per vPC cell (item/cell) 
         COV_RNA_vpc_per_cell = p(2) * COV_RNA_vpc / vPC / Vol_alv / p(1);
         % total number of COV genomes per vPC cell (item/cell) 
         COV_vpc_per_cell_tot = COV_ACE2_vpc_per_cell + COV_vpc_per_cell + COV_RNA_vpc_per_cell;
         % percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients (UL) 
         COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA);
-        % Volume of default compartment (L) 
-        default = y(1);
         % concentration of PC type II at steady state w/o virus exposure (kcell/L) estimate for type II pneumocytes was taken
-        PC_hs_ss = y(7) / Vol_alv;
+        PC_hs_ss = y(5) / Vol_alv;
         % influx of Pneumocytes via maturation (kcell/h) 
         V_mat_pc = Vol_alv * p(4) * PC_hs_ss;
         % apparent rate constant of PC to iPC transition (1/h) 
@@ -253,13 +247,11 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         % apoptosis of vPneumocyte (kcell/h) 
         V_apo_vpc = Vol_alv * k_apo_vpc * vPC;
         % amount of ACE2 located at PC (pmole) based on 1e4 ACE2 per cell and total PC II number in lungs equal to 37e9 [7103258]
-        ACE2_pc_hs_ss = y(9);
-        % Volume of Pneumocyte (L/cell) averaged between type I and II pneumocytes
-        Vol_pc = y(3);
+        ACE2_pc_hs_ss = y(7);
         % rate of ACE2 synthesis calculated per volume of PC (pM/h/cell) 
-        k_syn_ace2_pc = p(8) * ACE2_pc_hs_ss / PC_hs_ss / Vol_pc / Vol_alv / p(1);
+        k_syn_ace2_pc = p(8) * ACE2_pc_hs_ss / PC_hs_ss / p(28) / Vol_alv / p(1);
         % synthesis of ACE2 by PC (pmole/h) 
-        V_syn_ace2_pc = Vol_pc * k_syn_ace2_pc * PC * Vol_alv * p(1);
+        V_syn_ace2_pc = p(28) * k_syn_ace2_pc * PC * Vol_alv * p(1);
         % degradation of ACE2 located at PC via shedding (pmole/h) 
         V_shed_ace2_pc = p(8) * ACE2_pc;
         % a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell (UL) 
@@ -281,7 +273,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         % transition of COV_ACE2 from PC to iPC with transition of pneumocytes between the states (pmole/h) 
         V_tran_cov_ace2_pc_ipc = k_tran_pc_ipc * COV_ACE2_pc;
         % synthesis of ACE2 by iPC (pmole/h) 
-        V_syn_ace2_ipc = Vol_pc * k_syn_ace2_pc * iPC * Vol_alv * p(1);
+        V_syn_ace2_ipc = p(28) * k_syn_ace2_pc * iPC * Vol_alv * p(1);
         % degradation of ACE2 located at iPC via shedding (pmole/h) 
         V_shed_ace2_ipc = p(8) * ACE2_ipc;
         % a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell (UL) 
@@ -303,7 +295,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         % transition of COV from iPC to vPC with transition of pneumocytes between the states (pmole/h) 
         V_tran_cov_ipc_vpc = k_tran_ipc_vpc * COV_ipc;
         % synthesis of ACE2 by vPC (pmole/h) 
-        V_syn_ace2_vpc = Vol_pc * k_syn_ace2_pc * vPC * Vol_alv * p(1);
+        V_syn_ace2_vpc = p(28) * k_syn_ace2_pc * vPC * Vol_alv * p(1);
         % degradation of ACE2 located at vPC via shedding (pmole/h) 
         V_shed_ace2_vpc = p(8) * ACE2_vpc;
         % a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell (UL) 
@@ -319,7 +311,7 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         % uncoating of COV in vPC (pmole/h) 
         V_unc_cov_vpc = p(14) * COV_vpc;
         % replication of COV_RNA in vPC (pmole/h) 
-        V_rep_cov_rna_vpc = p(15) * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * p(1)) / Vol_pc) / p(16));
+        V_rep_cov_rna_vpc = p(15) * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * p(1)) / p(28)) / p(16));
         % assembling of COV in vPC (pmole/h) 
         V_ass_cov_vpc = p(17) * COV_RNA_vpc;
         % release of COV in vPC (pmole/h) 
@@ -334,29 +326,27 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         V_deg_cov = Vol_alv * p(18) * COV;
         % degradation of COV_RNA in bulk phase (pmole/h) 
         V_deg_cov_rna = Vol_alv * p(20) * COV_RNA;
-        shared_values = [time_day, COVass_vpc, Vol_alv, vPC, COVass_vpc_per_cell, COV, COV_RNA, COV_num_sputum_ml, PC, iPC, PC_tot, PC_percent, iPC_percent, vPC_percent, ACE2_pc, ACE2_pc_per_cell, COV_ACE2_pc, COV_ACE2_pc_per_cell, ACE2_pc_per_cell_tot, ACE2_ipc, ACE2_ipc_per_cell, COV_ACE2_ipc, COV_ACE2_ipc_per_cell, ACE2_ipc_per_cell_tot, ACE2_vpc, ACE2_vpc_per_cell, COV_ACE2_vpc, COV_ACE2_vpc_per_cell, ACE2_vpc_per_cell_tot, COV_pc_per_cell_tot, COV_ipc, COV_ipc_per_cell, COV_ipc_per_cell_tot, COV_vpc, COV_vpc_per_cell, COV_RNA_vpc, COV_RNA_vpc_per_cell, COV_vpc_per_cell_tot, COV_sgRNA_perc, default, PC_hs_ss, V_mat_pc, k_tran_pc_ipc, V_tran_pc_ipc, k_tran_ipc_vpc, V_tran_ipc_vpc, V_apo_pc, V_apo_ipc, IR_apo, k_apo_vpc, V_apo_vpc, ACE2_pc_hs_ss, Vol_pc, k_syn_ace2_pc, V_syn_ace2_pc, V_shed_ace2_pc, steric_factor_pc, anti_Ab, VO, Kd_cov_ace2, V_bind_cov_ace2_pc, V_deg_ace2_apo_pc, V_deg_cov_ace2_apo_pc, V_tran_ace2_pc_ipc, V_tran_cov_ace2_pc_ipc, V_syn_ace2_ipc, V_shed_ace2_ipc, steric_factor_ipc, V_bind_cov_ace2_ipc, V_deg_ace2_apo_ipc, V_deg_cov_ace2_apo_ipc, V_deg_cov_apo_ipc, V_ent_cov_ipc, V_tran_ace2_ipc_vpc, V_tran_cov_ace2_ipc_vpc, V_tran_cov_ipc_vpc, V_syn_ace2_vpc, V_shed_ace2_vpc, steric_factor_vpc, V_bind_cov_ace2_vpc, V_deg_ace2_apo_vpc, V_deg_cov_ace2_apo_vpc, V_ent_cov_vpc, V_unc_cov_vpc, V_rep_cov_rna_vpc, V_ass_cov_vpc, V_rel_cov_vpc, V_deg_cov_apo_vpc, V_deg_cov_ass_apo_vpc, V_deg_cov_rna_apo_vpc, V_deg_cov, V_deg_cov_rna];
+        shared_values = [time_day, COVass_vpc, Vol_alv, vPC, COVass_vpc_per_cell, COV, COV_RNA, COV_num_sputum_ml, PC, iPC, PC_tot, PC_percent, iPC_percent, vPC_percent, ACE2_pc, ACE2_pc_per_cell, COV_ACE2_pc, COV_ACE2_pc_per_cell, ACE2_pc_per_cell_tot, ACE2_ipc, ACE2_ipc_per_cell, COV_ACE2_ipc, COV_ACE2_ipc_per_cell, ACE2_ipc_per_cell_tot, ACE2_vpc, ACE2_vpc_per_cell, COV_ACE2_vpc, COV_ACE2_vpc_per_cell, ACE2_vpc_per_cell_tot, COV_pc_per_cell_tot, COV_ipc, COV_ipc_per_cell, COV_ipc_per_cell_tot, COV_vpc, COV_vpc_per_cell, COV_RNA_vpc, COV_RNA_vpc_per_cell, COV_vpc_per_cell_tot, COV_sgRNA_perc, PC_hs_ss, V_mat_pc, k_tran_pc_ipc, V_tran_pc_ipc, k_tran_ipc_vpc, V_tran_ipc_vpc, V_apo_pc, V_apo_ipc, IR_apo, k_apo_vpc, V_apo_vpc, ACE2_pc_hs_ss, k_syn_ace2_pc, V_syn_ace2_pc, V_shed_ace2_pc, steric_factor_pc, anti_Ab, VO, Kd_cov_ace2, V_bind_cov_ace2_pc, V_deg_ace2_apo_pc, V_deg_cov_ace2_apo_pc, V_tran_ace2_pc_ipc, V_tran_cov_ace2_pc_ipc, V_syn_ace2_ipc, V_shed_ace2_ipc, steric_factor_ipc, V_bind_cov_ace2_ipc, V_deg_ace2_apo_ipc, V_deg_cov_ace2_apo_ipc, V_deg_cov_apo_ipc, V_ent_cov_ipc, V_tran_ace2_ipc_vpc, V_tran_cov_ace2_ipc_vpc, V_tran_cov_ipc_vpc, V_syn_ace2_vpc, V_shed_ace2_vpc, steric_factor_vpc, V_bind_cov_ace2_vpc, V_deg_ace2_apo_vpc, V_deg_cov_ace2_apo_vpc, V_ent_cov_vpc, V_unc_cov_vpc, V_rep_cov_rna_vpc, V_ass_cov_vpc, V_rel_cov_vpc, V_deg_cov_apo_vpc, V_deg_cov_ass_apo_vpc, V_deg_cov_rna_apo_vpc, V_deg_cov, V_deg_cov_rna];
 
         %%% Differential equations
         dydt(1) = 0;
-        dydt(2) = 0;
-        dydt(3) = 0;
-        dydt(4) = V_mat_pc -V_tran_pc_ipc -V_apo_pc;
-        dydt(5) = V_tran_pc_ipc -V_tran_ipc_vpc -V_apo_ipc;
-        dydt(6) = V_tran_ipc_vpc -V_apo_vpc;
+        dydt(2) = V_mat_pc -V_tran_pc_ipc -V_apo_pc;
+        dydt(3) = V_tran_pc_ipc -V_tran_ipc_vpc -V_apo_ipc;
+        dydt(4) = V_tran_ipc_vpc -V_apo_vpc;
+        dydt(5) = 0;
+        dydt(6) = V_syn_ace2_pc -V_shed_ace2_pc -V_bind_cov_ace2_pc -V_deg_ace2_apo_pc -V_tran_ace2_pc_ipc;
         dydt(7) = 0;
-        dydt(8) = V_syn_ace2_pc -V_shed_ace2_pc -V_bind_cov_ace2_pc -V_deg_ace2_apo_pc -V_tran_ace2_pc_ipc;
-        dydt(9) = 0;
-        dydt(10) = V_bind_cov_ace2_pc -V_deg_cov_ace2_apo_pc -V_tran_cov_ace2_pc_ipc;
-        dydt(11) = V_tran_ace2_pc_ipc +V_syn_ace2_ipc -V_shed_ace2_ipc -V_bind_cov_ace2_ipc -V_deg_ace2_apo_ipc -V_tran_ace2_ipc_vpc;
-        dydt(12) = V_tran_cov_ace2_pc_ipc +V_bind_cov_ace2_ipc -V_deg_cov_ace2_apo_ipc -V_ent_cov_ipc -V_tran_cov_ace2_ipc_vpc;
-        dydt(13) = -V_deg_cov_apo_ipc +V_ent_cov_ipc -V_tran_cov_ipc_vpc;
-        dydt(14) = V_tran_ace2_ipc_vpc +V_syn_ace2_vpc -V_shed_ace2_vpc -V_bind_cov_ace2_vpc -V_deg_ace2_apo_vpc;
-        dydt(15) = V_tran_cov_ace2_ipc_vpc +V_bind_cov_ace2_vpc -V_deg_cov_ace2_apo_vpc -V_ent_cov_vpc;
-        dydt(16) = V_tran_cov_ipc_vpc +V_ent_cov_vpc -V_unc_cov_vpc -V_deg_cov_apo_vpc;
-        dydt(17) = V_unc_cov_vpc +V_rep_cov_rna_vpc -V_ass_cov_vpc -V_deg_cov_rna_apo_vpc;
-        dydt(18) = -V_bind_cov_ace2_pc +V_deg_cov_ace2_apo_pc -V_bind_cov_ace2_ipc +V_deg_cov_ace2_apo_ipc -V_bind_cov_ace2_vpc +V_deg_cov_ace2_apo_vpc +V_rel_cov_vpc +V_deg_cov_ass_apo_vpc -V_deg_cov;
-        dydt(19) = V_deg_cov_rna_apo_vpc -V_deg_cov_rna;
-        dydt(20) = V_ass_cov_vpc -V_rel_cov_vpc -V_deg_cov_ass_apo_vpc;
+        dydt(8) = V_bind_cov_ace2_pc -V_deg_cov_ace2_apo_pc -V_tran_cov_ace2_pc_ipc;
+        dydt(9) = V_tran_ace2_pc_ipc +V_syn_ace2_ipc -V_shed_ace2_ipc -V_bind_cov_ace2_ipc -V_deg_ace2_apo_ipc -V_tran_ace2_ipc_vpc;
+        dydt(10) = V_tran_cov_ace2_pc_ipc +V_bind_cov_ace2_ipc -V_deg_cov_ace2_apo_ipc -V_ent_cov_ipc -V_tran_cov_ace2_ipc_vpc;
+        dydt(11) = -V_deg_cov_apo_ipc +V_ent_cov_ipc -V_tran_cov_ipc_vpc;
+        dydt(12) = V_tran_ace2_ipc_vpc +V_syn_ace2_vpc -V_shed_ace2_vpc -V_bind_cov_ace2_vpc -V_deg_ace2_apo_vpc;
+        dydt(13) = V_tran_cov_ace2_ipc_vpc +V_bind_cov_ace2_vpc -V_deg_cov_ace2_apo_vpc -V_ent_cov_vpc;
+        dydt(14) = V_tran_cov_ipc_vpc +V_ent_cov_vpc -V_unc_cov_vpc -V_deg_cov_apo_vpc;
+        dydt(15) = V_unc_cov_vpc +V_rep_cov_rna_vpc -V_ass_cov_vpc -V_deg_cov_rna_apo_vpc;
+        dydt(16) = -V_bind_cov_ace2_pc +V_deg_cov_ace2_apo_pc -V_bind_cov_ace2_ipc +V_deg_cov_ace2_apo_ipc -V_bind_cov_ace2_vpc +V_deg_cov_ace2_apo_vpc +V_rel_cov_vpc +V_deg_cov_ass_apo_vpc -V_deg_cov;
+        dydt(17) = V_deg_cov_rna_apo_vpc -V_deg_cov_rna;
+        dydt(18) = V_ass_cov_vpc -V_rel_cov_vpc -V_deg_cov_ass_apo_vpc;
     end
 
     

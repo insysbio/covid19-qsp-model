@@ -12,9 +12,7 @@ nameless_model = sbiomodel('nameless');
 addparameter(nameless_model, 'timeOne', 1, 'ValueUnits', 'hour');
 
 % Compartments
-nameless.compartment.default = addcompartment(nameless_model, 'default', 'ConstantCapacity', false, 'Capacity', 1, 'CapacityUnits', 'litre', 'Notes', '', 'Tag', '');
 nameless.compartment.Vol_alv = addcompartment(nameless_model, 'Vol_alv', 'ConstantCapacity', false, 'Capacity', 0.014, 'CapacityUnits', 'litre', 'Notes', '<p>calculated as (width of linning layer)<em>(lunf surface area) = (0.1 - 0.3 um)</em>(66 - 75 m)</p>', 'Tag', '');
-nameless.compartment.Vol_pc = addcompartment(nameless_model, 'Vol_pc', 'ConstantCapacity', false, 'Capacity', 1.33e-12, 'CapacityUnits', 'litre/item', 'Notes', '<p>averaged between type I and II pneumocytes</p>', 'Tag', '');
 
 % Species
 nameless.species.PC = addspecies(nameless.compartment.Vol_alv, 'PC', 'ConstantAmount', false, 'InitialAmount', 2643000000, 'InitialAmountUnits', 'kiloitem/litre', 'BoundaryCondition', false, 'Notes', '<p>calculated on the basis of total type II pneumocytes number per lungs (see ref) and volume of lung surfactant equal to 0.014L</p>', 'Tag', '');
@@ -97,6 +95,7 @@ nameless.parameter.Emax_ir_apo = addparameter(nameless_model, 'Emax_ir_apo', 'Co
 nameless.parameter.n_ir = addparameter(nameless_model, 'n_ir', 'ConstantValue', true, 'Value', 5, 'ValueUnits', 'dimensionless', 'Notes', '<p>assumed</p>', 'Tag', '');
 nameless.parameter.Kd_anti_Ab = addparameter(nameless_model, 'Kd_anti_Ab', 'ConstantValue', true, 'Value', 14300, 'ValueUnits', 'picomole/litre', 'Notes', '<p>assumed to be equal to tat presented in the paper for neutralizing mAb</p>', 'Tag', '');
 nameless.parameter.anti_Ab_max = addparameter(nameless_model, 'anti_Ab_max', 'ConstantValue', true, 'Value', 941000, 'ValueUnits', 'picomole/litre', 'Notes', '<p>For Protective Antigen (PA) for Anthrax vaccine it was measured that concentration of Anti-PA specific IgG in serum is 141.2 ug/mL [15358653]. Taking into account Mr_IgG = 150 kDa, one obtains 141.2 ug/mL =</p>', 'Tag', '');
+nameless.parameter.Vol_pc = addparameter(nameless_model, 'Vol_pc', 'ConstantValue', true, 'Value', 1.33e-12, 'ValueUnits', 'litre/item', 'Notes', '<p>averaged between type I and II pneumocytes (moved to Const)</p>', 'Tag', '');
 
 % Reactions
 nameless.reaction.V_mat_pc = addreaction(nameless_model, 'null -> null', 'Name', 'V_mat_pc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_alv * k_apo_pc * PC_hs_ss', 'Notes', '', 'Tag', '');

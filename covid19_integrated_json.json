@@ -865,6 +865,14 @@
     "num": 941000
   },
   {
+    "class": "Const",
+    "id": "Vol_pc",
+    "title": "Volume of Pneumocyte",
+    "notes": "averaged between type I and II pneumocytes (moved to Const)",
+    "units": "L/cell",
+    "num": 1.33e-12
+  },
+  {
     "class": "Record",
     "id": "time_day",
     "title": "hours to days conversion",
@@ -1263,31 +1271,12 @@
   },
   {
     "class": "Compartment",
-    "id": "default",
-    "title": "Volume of default compartment",
-    "units": "L",
-    "assignments": {
-      "start_": "1"
-    }
-  },
-  {
-    "class": "Compartment",
     "id": "Vol_alv",
     "title": "Volume of surfactant linning alveolar surface",
     "notes": "calculated as (width of linning layer)*(lunf surface area) = (0.1 - 0.3 um)*(66 - 75 m)",
     "units": "L",
     "assignments": {
       "start_": "0.014"
-    }
-  },
-  {
-    "class": "Compartment",
-    "id": "Vol_pc",
-    "title": "Volume of Pneumocyte",
-    "notes": "averaged between type I and II pneumocytes",
-    "units": "L/cell",
-    "assignments": {
-      "start_": "1.33e-12"
     }
   },
   {

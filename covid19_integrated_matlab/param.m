@@ -3,7 +3,7 @@
 
 function p = nameless_Param()
 
-p = zeros(27, 1);
+p = zeros(28, 1);
 %%% parameter annotation
 p(1) = 1000; % kcell_to_cell, kcell to cell conversion coefficient (cell/kcell) 
 p(2) = 602000000000; % NA_pmole, Avogadro constant for 1 pmole (item/pmole) 
@@ -32,5 +32,6 @@ p(24) = 700; % Emax_ir_apo, maximal effect of IR on vPC apoptosis (UL) assumed
 p(25) = 5; % n_ir, Hill coefficient of IR effect on vPC apoptosis (UL) assumed
 p(26) = 14300; % Kd_anti_Ab, Kd for binding of Spike protein and neutralizing antibodies (pM) assumed to be equal to tat presented in the paper for neutralizing mAb
 p(27) = 941000; % anti_Ab_max, maximal concentration of anti Spike Ab in serum (pM) For Protective Antigen (PA) for Anthrax vaccine it was measured that concentration of Anti-PA specific IgG in serum is 141.2 ug/mL [15358653]. Taking into account Mr_IgG = 150 kDa, one obtains 141.2 ug/mL =
+p(28) = 1.33e-12; % Vol_pc, Volume of Pneumocyte (L/cell) averaged between type I and II pneumocytes (moved to Const)
 
 end

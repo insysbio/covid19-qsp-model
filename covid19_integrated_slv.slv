@@ -985,7 +985,7 @@ F[15] = 1*V_ass_cov_vpc-1*V_rel_cov_vpc-1*V_deg_cov_ass_apo_vpc;
 */
 
 
-//! Constants, count: 27
+//! Constants, count: 28
 kcell_to_cell = 1000; // @Const 'kcell to cell conversion coefficient' {units: cell/kcell};
 NA_pmole = 602000000000; // @Const 'Avogadro constant for 1 pmole' {units: item/pmole};
 sputum_dilution_coef = 0.1; // @Const 'dilution of sputum in comparison with lung epithelium lining fluid' {units: UL};
@@ -1013,11 +1013,10 @@ Emax_ir_apo = 700; // @Const 'maximal effect of IR on vPC apoptosis' {units: UL}
 n_ir = 5; // @Const 'Hill coefficient of IR effect on vPC apoptosis' {units: UL};
 Kd_anti_Ab = 14300; // @Const 'Kd for binding of Spike protein and neutralizing antibodies' {units: pM};
 anti_Ab_max = 941000; // @Const 'maximal concentration of anti Spike Ab in serum' {units: pM};
+Vol_pc = 1.33e-12; // @Const 'Volume of Pneumocyte' {units: L/cell};
 
-//! Initialization at start, count: 21
-default = 1; // @Compartment 'Volume of default compartment' {units: L}
+//! Initialization at start, count: 19
 Vol_alv = 0.014; // @Compartment 'Volume of surfactant linning alveolar surface' {units: L}
-Vol_pc = 1.33e-12; // @Compartment 'Volume of Pneumocyte' {units: L/cell}
 PC = 2643000000; // @Species 'concentration of PC type II (Pneumocytes free of virus) in alveoli' {units: kcell/L}
 iPC = 1; // @Species 'concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli' {units: kcell/L}
 vPC = 1; // @Species 'concentration of vPC (Pneumocytes with virus actively replicated) in alveoli' {units: kcell/L}
@@ -1275,31 +1274,19 @@ Maximize objective function
 0
 0
 0
-3
-default
+1
 Vol_alv
-Vol_pc
-0
-3
 0
 1
-2
-3
+0
+1
 
-
-
-3
-false
-false
+1
 false
 0
-3
+1
 1.00
-1.00
-1.00
-3
-3
-3
+1
 3
 15
 PC

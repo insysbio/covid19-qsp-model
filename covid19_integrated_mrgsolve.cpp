@@ -66,6 +66,8 @@ n_ir : 5 : (UL)
 Kd_anti_Ab : 14300 : (pM)
 // @Const 'maximal concentration of anti Spike Ab in serum'
 anti_Ab_max : 941000 : (pM)
+// @Const 'Volume of Pneumocyte'
+Vol_pc : 1.33e-12 : (L/cell)
 
 $CMT @annotated
 // @Species 'concentration of PC type II (Pneumocytes free of virus) in alveoli'
@@ -123,10 +125,8 @@ double Vol_alv = 0.014;
 //double COV_ipc = 0.0;
 //double COV_vpc = 0.0;
 //double COV_RNA_vpc = 0.0;
-double default = 1.0;
 double PC_hs_ss = 2643000000.0;
 double ACE2_pc_hs_ss = 615.0;
-double Vol_pc = 1.33e-12;
 
 $MAIN
 COVass_vpc_0 = (0.0);
@@ -341,9 +341,7 @@ steric_factor_vpc : a term responsible for limitation of COV to cell binding; nu
 COV_sgRNA_perc : percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients (UL)
 IR_apo : empiric function imitating effect of Immune Response on vPC apoptosis (UL)
 k_apo_vpc : dependence of rate constant of vPC apoptosis on IR effect (1/h)
-default : Volume of default compartment (L)
 Vol_alv : Volume of surfactant linning alveolar surface (L)
-Vol_pc : Volume of Pneumocyte (L/cell)
 PC : concentration of PC type II (Pneumocytes free of virus) in alveoli (kcell/L)
 iPC : concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli (kcell/L)
 vPC : concentration of vPC (Pneumocytes with virus actively replicated) in alveoli (kcell/L)
