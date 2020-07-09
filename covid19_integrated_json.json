@@ -1,17 +1,6 @@
 [
   {
     "class": "UnitDef",
-    "id": "day",
-    "units": [
-      {
-        "kind": "hour",
-        "multiplier": 24,
-        "exponent": 1
-      }
-    ]
-  },
-  {
-    "class": "UnitDef",
     "id": "fmole",
     "units": [
       {
@@ -2366,30 +2355,5 @@
         "stoichiometry": -1
       }
     ]
-  },
-  {
-    "class": "SBMLExport",
-    "id": "out_sbml",
-    "filepath": "covid19_integrated_sbml"
-  },
-  {
-    "class": "SLVExport",
-    "id": "out_slv",
-    "filepath": "covid19_integrated_slv"
-  },
-  {
-    "class": "JSONExport",
-    "id": "out_json",
-    "filepath": "covid19_integrated_json"
-  },
-  {
-    "class": "SimbioExport",
-    "id": "out_simbio",
-    "filepath": "covid19_integrated_simbio"
-  },
-  {
-    "class": "MatlabExport",
-    "id": "out_mrg",
-    "filepath": "covid19_integrated_matlab"
   }
 ]
