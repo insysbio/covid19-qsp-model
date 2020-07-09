@@ -3,6 +3,8 @@
 ## 0.1.3
 
 - update structure to support Heta compiler v0.5.x
+- remove unnecessary @Compartment "default"
+- set "Vol_pc" as @Const
 
 ## Mph_0.1.0 - development of macrophage life cycle sub-model
 
