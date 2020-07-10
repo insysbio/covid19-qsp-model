@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         node-version: [ 8.x ]
-        heta-version: [ v0.5.4 ]
+        heta-version: [ latest ]
         platform: [ ubuntu-latest ]
 
     runs-on: ${{ matrix.platform }}
