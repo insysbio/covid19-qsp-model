@@ -32,11 +32,11 @@ nameless.species.COV_RNA_vpc = addspecies(nameless.compartment.Vol_alv, 'COV_RNA
 nameless.species.COV = addspecies(nameless.compartment.Vol_alv, 'COV', 'ConstantAmount', false, 'InitialAmount', 0.0004, 'InitialAmountUnits', 'picomole/litre', 'BoundaryCondition', false, 'Notes', '', 'Tag', '');
 nameless.species.COV_RNA = addspecies(nameless.compartment.Vol_alv, 'COV_RNA', 'ConstantAmount', false, 'InitialAmount', 0, 'InitialAmountUnits', 'picomole/litre', 'BoundaryCondition', false, 'Notes', '', 'Tag', '');
 nameless.species.COVass_vpc = addspecies(nameless.compartment.Vol_alv, 'COVass_vpc', 'ConstantAmount', false, 'InitialAmount', 0, 'InitialAmountUnits', 'picomole', 'BoundaryCondition', false, 'Notes', '', 'Tag', '');
-nameless.species.anti_Ab = addspecies(nameless.compartment.Vol_alv, 'anti_Ab', 'ConstantAmount', false, 'InitialAmountUnits', 'picomole', 'BoundaryCondition', true, 'Notes', '<p>hill like expression describes general kinetic pattern observed for Spike specific IgG and IgM in [32350462]</p>', 'Tag', '');
+nameless.species.anti_Ab = addspecies(nameless.compartment.Vol_alv, 'anti_Ab', 'ConstantAmount', false, 'InitialAmountUnits', 'picomole/litre', 'BoundaryCondition', true, 'Notes', '<p>hill like expression describes general kinetic pattern observed for Spike specific IgG and IgM in [32350462]</p>', 'Tag', '');
 
 % Parameters
 nameless.parameter.time_day = addparameter(nameless_model, 'time_day', 'ConstantValue', false, 'ValueUnits', 'day', 'Notes', '', 'Tag', '');
-nameless.parameter.k_syn_ace2_pc = addparameter(nameless_model, 'k_syn_ace2_pc', 'ConstantValue', false, 'ValueUnits', 'picomole/litre/hour/item', 'Notes', '', 'Tag', '');
+nameless.parameter.k_syn_ace2_pc = addparameter(nameless_model, 'k_syn_ace2_pc', 'ConstantValue', false, 'ValueUnits', 'picomole/litre/hour', 'Notes', '', 'Tag', '');
 nameless.parameter.k_tran_pc_ipc = addparameter(nameless_model, 'k_tran_pc_ipc', 'ConstantValue', false, 'ValueUnits', '1/hour', 'Notes', '', 'Tag', '');
 nameless.parameter.k_tran_ipc_vpc = addparameter(nameless_model, 'k_tran_ipc_vpc', 'ConstantValue', false, 'ValueUnits', '1/hour', 'Notes', '', 'Tag', '');
 nameless.parameter.VO = addparameter(nameless_model, 'VO', 'ConstantValue', false, 'ValueUnits', 'dimensionless', 'Notes', '', 'Tag', '');
@@ -73,8 +73,8 @@ nameless.parameter.NA_pmole = addparameter(nameless_model, 'NA_pmole', 'Constant
 nameless.parameter.sputum_dilution_coef = addparameter(nameless_model, 'sputum_dilution_coef', 'ConstantValue', true, 'Value', 0.1, 'ValueUnits', 'dimensionless', 'Notes', '', 'Tag', '');
 nameless.parameter.k_apo_pc = addparameter(nameless_model, 'k_apo_pc', 'ConstantValue', true, 'Value', 0.00082, 'ValueUnits', '1/hour', 'Notes', '<p>the value was estimated from the HS submodel at steady state. Indeed, taking into account that (i) PC2 is precursors of PC1 [9227501], (ii) life span of PC1 is about 120 days [20616357], (iii) ratio of PC1/PC2 at steady state = 19/37 [7103258] we represented lung cell  dynamics system as follows: --(Vol<em>alv*k</em>mat<em>pc) --&gt; PC2 --(Vol</em>alv*k<em>dif</em>pc*PC2)--&gt; PC1--(Vol<em>alv*k</em>apo<em>pc1*PC1)--&gt;. Then consider the system at steady state and assuming that lifespan (T</em>ls) corresponds to time required for 99% of cell die we have come to following formulas: (a) k<em>apo</em>pc1 = ln(1/0.01)/(120 days) = 1.6e-3 1/h, (b) k<em>dif</em>pc = k<em>apo</em>pc1*PC1<em>ss/PC2</em>ss = 8.2e-4 1/h, (c) k<em>mat</em>pc = k<em>dif</em>pc*PC2<em>ss. Since  PC2 to PC1 transition was not considered in the version of the model we can assume that k</em>apo<em>pc = k</em>dif_pc</p>', 'Tag', '');
 nameless.parameter.kbase_apo_vpc = addparameter(nameless_model, 'kbase_apo_vpc', 'ConstantValue', true, 'Value', 0.00082, 'ValueUnits', '1/hour', 'Notes', '<p>the value was estimated from [PMID 18487354] only</p>', 'Tag', '');
-nameless.parameter.kbase_tran_pc_ipc = addparameter(nameless_model, 'kbase_tran_pc_ipc', 'ConstantValue', true, 'Value', 0.25, 'ValueUnits', '1/picomole*litre/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
-nameless.parameter.kbase_tran_ipc_vpc = addparameter(nameless_model, 'kbase_tran_ipc_vpc', 'ConstantValue', true, 'Value', 0.25, 'ValueUnits', '1/picomole*litre/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
+nameless.parameter.kbase_tran_pc_ipc = addparameter(nameless_model, 'kbase_tran_pc_ipc', 'ConstantValue', true, 'Value', 0.25, 'ValueUnits', '1/picomole/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
+nameless.parameter.kbase_tran_ipc_vpc = addparameter(nameless_model, 'kbase_tran_ipc_vpc', 'ConstantValue', true, 'Value', 0.25, 'ValueUnits', '1/picomole/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
 nameless.parameter.k_shed_ace2_pc = addparameter(nameless_model, 'k_shed_ace2_pc', 'ConstantValue', true, 'Value', 1.8, 'ValueUnits', '1/hour', 'Notes', '<p>rate constant of shedding catalysed by ADAM17/TACE = 5e-4 1/s</p>', 'Tag', '');
 nameless.parameter.k_off_cov_ace2 = addparameter(nameless_model, 'k_off_cov_ace2', 'ConstantValue', true, 'Value', 23.56, 'ValueUnits', '1/hour', 'Notes', '<p>k_off for viral Spike receptor binding domain (RBD) and ACE2 receptor</p>', 'Tag', '');
 nameless.parameter.Num_sp_per_cov = addparameter(nameless_model, 'Num_sp_per_cov', 'ConstantValue', true, 'Value', 150, 'ValueUnits', 'dimensionless', 'Notes', '<p>Basing on estimate  that virion diameter=120-160 nm and Spike height=20nm we have come to following number of Spikes per virion = 4<em>3.14</em>(70 nm)^2/(3.14<em>(10 nm)^2)  = 4</em>49 = 196. Assuming that &quot;dynamic&quot; diameter of Spike is little bit more we have assumed that there are about  150 spike proteins per 1 virion.</p>', 'Tag', '');
@@ -96,6 +96,7 @@ nameless.parameter.n_ir = addparameter(nameless_model, 'n_ir', 'ConstantValue', 
 nameless.parameter.Kd_anti_Ab = addparameter(nameless_model, 'Kd_anti_Ab', 'ConstantValue', true, 'Value', 14300, 'ValueUnits', 'picomole/litre', 'Notes', '<p>assumed to be equal to tat presented in the paper for neutralizing mAb</p>', 'Tag', '');
 nameless.parameter.anti_Ab_max = addparameter(nameless_model, 'anti_Ab_max', 'ConstantValue', true, 'Value', 941000, 'ValueUnits', 'picomole/litre', 'Notes', '<p>For Protective Antigen (PA) for Anthrax vaccine it was measured that concentration of Anti-PA specific IgG in serum is 141.2 ug/mL [15358653]. Taking into account Mr_IgG = 150 kDa, one obtains 141.2 ug/mL =</p>', 'Tag', '');
 nameless.parameter.Vol_pc = addparameter(nameless_model, 'Vol_pc', 'ConstantValue', true, 'Value', 1.33e-12, 'ValueUnits', 'litre/item', 'Notes', '<p>averaged between type I and II pneumocytes (moved to Const)</p>', 'Tag', '');
+nameless.parameter.L_to_mL = addparameter(nameless_model, 'L_to_mL', 'ConstantValue', true, 'Value', 1000, 'ValueUnits', 'millilitre/litre', 'Notes', '', 'Tag', '');
 
 % Reactions
 nameless.reaction.V_mat_pc = addreaction(nameless_model, 'null -> null', 'Name', 'V_mat_pc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_alv * k_apo_pc * PC_hs_ss', 'Notes', '', 'Tag', '');
@@ -212,7 +213,7 @@ addrule(nameless_model, 'COV_ACE2_vpc_per_cell = NA_pmole * COV_ACE2_vpc / vPC /
 addrule(nameless_model, 'COV_vpc_per_cell = NA_pmole * COV_vpc / vPC / Vol_alv / kcell_to_cell', 'repeatedAssignment');
 addrule(nameless_model, 'COVass_vpc_per_cell = NA_pmole * COVass_vpc / vPC / Vol_alv / kcell_to_cell', 'repeatedAssignment');
 addrule(nameless_model, 'COV_RNA_vpc_per_cell = NA_pmole * COV_RNA_vpc / vPC / Vol_alv / kcell_to_cell', 'repeatedAssignment');
-addrule(nameless_model, 'COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * Vol_alv * NA_pmole / 1000', 'repeatedAssignment');
+addrule(nameless_model, 'COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * NA_pmole / L_to_mL', 'repeatedAssignment');
 addrule(nameless_model, 'PC_tot = PC + iPC + vPC', 'repeatedAssignment');
 addrule(nameless_model, 'PC_percent = 100 * PC / PC_tot', 'repeatedAssignment');
 addrule(nameless_model, 'iPC_percent = 100 * iPC / PC_tot', 'repeatedAssignment');
@@ -227,9 +228,9 @@ addrule(nameless_model, 'steric_factor_pc = 1 - COV_ACE2_pc_per_cell / Nmax_cov_
 addrule(nameless_model, 'steric_factor_ipc = 1 - COV_ACE2_ipc_per_cell / Nmax_cov_per_cell', 'repeatedAssignment');
 addrule(nameless_model, 'steric_factor_vpc = 1 - COV_ACE2_vpc_per_cell / Nmax_cov_per_cell', 'repeatedAssignment');
 addrule(nameless_model, 'COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA)', 'repeatedAssignment');
-addrule(nameless_model, 'IR_apo = 1 + switch_ir * Emax_ir_apo * (time - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (time - T_sw_ir) ^ n_ir)', 'repeatedAssignment');
+addrule(nameless_model, 'IR_apo = 1 + switch_ir * Emax_ir_apo * (time / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (time / T_sw_ir - 1) ^ n_ir)', 'repeatedAssignment');
 addrule(nameless_model, 'k_apo_vpc = kbase_apo_vpc * IR_apo', 'repeatedAssignment');
-addrule(nameless_model, 'anti_Ab = switch_ir * anti_Ab_max * (time - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (time - T_sw_ir) ^ n_ir)', 'repeatedAssignment');
+addrule(nameless_model, 'anti_Ab = switch_ir * anti_Ab_max * (time / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (time / T_sw_ir - 1) ^ n_ir)', 'repeatedAssignment');
 
 
 

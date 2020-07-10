@@ -23,9 +23,9 @@ k_apo_pc : 0.00082 : (1/h)
 // @Const 'rate constant of vPC apoptosis'
 kbase_apo_vpc : 0.00082 : (1/h)
 // @Const 'rate constant of PC to iPC transition'
-kbase_tran_pc_ipc : 0.25 : (1/pM/h)
+kbase_tran_pc_ipc : 0.25 : (1/pmole/h)
 // @Const 'rate constant of iPC to vPC transition'
-kbase_tran_ipc_vpc : 0.25 : (1/pM/h)
+kbase_tran_ipc_vpc : 0.25 : (1/pmole/h)
 // @Const 'rate constant of ACE2 shedding'
 k_shed_ace2_pc : 1.8 : (1/h)
 // @Const 'rate constant of COV_ACE2 complex dissociation'
@@ -68,6 +68,8 @@ Kd_anti_Ab : 14300 : (pM)
 anti_Ab_max : 941000 : (pM)
 // @Const 'Volume of Pneumocyte'
 Vol_pc : 1.33e-12 : (L/cell)
+// @Const ''
+L_to_mL : 1000 : (mL/L)
 
 $CMT @annotated
 // @Species 'concentration of PC type II (Pneumocytes free of virus) in alveoli'
@@ -151,7 +153,7 @@ double time_day = SOLVERTIME / 24.0;
 // @Record 'number of COVass per vPC cell'
 double COVass_vpc_per_cell = NA_pmole * COVass_vpc / vPC / Vol_alv / kcell_to_cell;
 // @Record 'number of virus copies in 1 mL of sputum'
-double COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * Vol_alv * NA_pmole / 1000.0;
+double COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * NA_pmole / L_to_mL;
 // @Record 'total pneumocytes cell count'
 double PC_tot = PC + iPC + vPC;
 // @Record 'percent of PC of total pneumocytes cell count'
@@ -207,7 +209,7 @@ double V_apo_pc = Vol_alv * k_apo_pc * PC;
 // @Reaction 'apoptosis of iPneumocyte'
 double V_apo_ipc = Vol_alv * k_apo_pc * iPC;
 // @Record 'empiric function imitating effect of Immune Response on vPC apoptosis'
-double IR_apo = 1.0 + switch_ir * Emax_ir_apo * pow((SOLVERTIME - T_sw_ir), n_ir) / (pow((T_sw_ir + ET50_ir), n_ir) + pow((SOLVERTIME - T_sw_ir), n_ir));
+double IR_apo = 1.0 + switch_ir * Emax_ir_apo * pow((SOLVERTIME / T_sw_ir - 1.0), n_ir) / (pow((1.0 + ET50_ir / T_sw_ir), n_ir) + pow((SOLVERTIME / T_sw_ir - 1.0), n_ir));
 // @Record 'dependence of rate constant of vPC apoptosis on IR effect'
 double k_apo_vpc = kbase_apo_vpc * IR_apo;
 // @Reaction 'apoptosis of vPneumocyte'
@@ -221,7 +223,7 @@ double V_shed_ace2_pc = k_shed_ace2_pc * ACE2_pc;
 // @Record 'a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell'
 double steric_factor_pc = 1.0 - COV_ACE2_pc_per_cell / Nmax_cov_per_cell;
 // @Species 'concentration of anti-Spike attibodies'
-double anti_Ab = switch_ir * anti_Ab_max * pow((SOLVERTIME - T_sw_ir), n_ir) / (pow((T_sw_ir + ET50_ir), n_ir) + pow((SOLVERTIME - T_sw_ir), n_ir));
+double anti_Ab = switch_ir * anti_Ab_max * pow((SOLVERTIME / T_sw_ir - 1.0), n_ir) / (pow((1.0 + ET50_ir / T_sw_ir), n_ir) + pow((SOLVERTIME / T_sw_ir - 1.0), n_ir));
 // @Record 'Virus Occupancy (VO) level with anti_Ab antibodies'
 double VO = anti_Ab / (Kd_anti_Ab + anti_Ab);
 // @Record 'apparent dissociation equilibrium constant of COV and ACE2'
@@ -309,7 +311,7 @@ dxdt_COVass_vpc = (1)*V_ass_cov_vpc + (-1)*V_rel_cov_vpc + (-1)*V_deg_cov_ass_ap
 
 $CAPTURE @annotated
 time_day : hours to days conversion (day)
-k_syn_ace2_pc : rate of ACE2 synthesis calculated per volume of PC (pM/h/cell)
+k_syn_ace2_pc : rate of ACE2 synthesis calculated per volume of PC (pM/h)
 k_tran_pc_ipc : apparent rate constant of PC to iPC transition (1/h)
 k_tran_ipc_vpc : apparent rate constant of iPC to vPC transition (1/h)
 VO : Virus Occupancy (VO) level with anti_Ab antibodies (UL)
@@ -348,7 +350,7 @@ vPC : concentration of vPC (Pneumocytes with virus actively replicated) in alveo
 PC_hs_ss : concentration of PC type II at steady state w/o virus exposure (kcell/L)
 COV : concentration of  COV (SARS-CoV-2 virus) (pM)
 COV_RNA : concentration of COV_RNA released from vPC due to their apoptosis (pM)
-anti_Ab : concentration of anti-Spike attibodies (pmole)
+anti_Ab : concentration of anti-Spike attibodies (pM)
 V_mat_pc : influx of Pneumocytes via maturation (kcell/h)
 V_tran_pc_ipc : transition of Pneumocyte from normal state to state with entered COV (kcell/h)
 V_tran_ipc_vpc : transition of Pneumocyte from state with entered COV to state able to produce viral particles (kcell/h)

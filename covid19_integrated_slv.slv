@@ -742,7 +742,7 @@ time_day = t / 24; // @Record 'hours to days conversion' {units: day}
 
 COVass_vpc_per_cell = NA_pmole * COVass_vpc / vPC / Vol_alv / kcell_to_cell; // @Record 'number of COVass per vPC cell' {units: item/cell}
 
-COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * Vol_alv * NA_pmole / 1000; // @Record 'number of virus copies in 1 mL of sputum' {units: item/mL}
+COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * NA_pmole / L_to_mL; // @Record 'number of virus copies in 1 mL of sputum' {units: item/mL}
 
 PC_tot = PC + iPC + vPC; // @Record 'total pneumocytes cell count' {units: kcell/L}
 
@@ -798,13 +798,13 @@ V_apo_pc = Vol_alv * k_apo_pc * PC; // @Reaction 'apoptosis of Pneumocyte' {unit
 
 V_apo_ipc = Vol_alv * k_apo_pc * iPC; // @Reaction 'apoptosis of iPneumocyte' {units: kcell/h}
 
-IR_apo = 1 + switch_ir * Emax_ir_apo * (t - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (t - T_sw_ir) ^ n_ir); // @Record 'empiric function imitating effect of Immune Response on vPC apoptosis' {units: UL}
+IR_apo = 1 + switch_ir * Emax_ir_apo * (t / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (t / T_sw_ir - 1) ^ n_ir); // @Record 'empiric function imitating effect of Immune Response on vPC apoptosis' {units: UL}
 
 k_apo_vpc = kbase_apo_vpc * IR_apo; // @Record 'dependence of rate constant of vPC apoptosis on IR effect' {units: 1/h}
 
 V_apo_vpc = Vol_alv * k_apo_vpc * vPC; // @Reaction 'apoptosis of vPneumocyte' {units: kcell/h}
 
-k_syn_ace2_pc = k_shed_ace2_pc * ACE2_pc_hs_ss / PC_hs_ss / Vol_pc / Vol_alv / kcell_to_cell; // @Record 'rate of ACE2 synthesis calculated per volume of PC' {units: pM/h/cell}
+k_syn_ace2_pc = k_shed_ace2_pc * ACE2_pc_hs_ss / PC_hs_ss / Vol_pc / Vol_alv / kcell_to_cell; // @Record 'rate of ACE2 synthesis calculated per volume of PC' {units: pM/h}
 
 V_syn_ace2_pc = Vol_pc * k_syn_ace2_pc * PC * Vol_alv * kcell_to_cell; // @Reaction 'synthesis of ACE2 by PC' {units: pmole/h}
 
@@ -812,7 +812,7 @@ V_shed_ace2_pc = k_shed_ace2_pc * ACE2_pc; // @Reaction 'degradation of ACE2 loc
 
 steric_factor_pc = 1 - COV_ACE2_pc_per_cell / Nmax_cov_per_cell; // @Record 'a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell' {units: UL}
 
-anti_Ab = switch_ir * anti_Ab_max * (t - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (t - T_sw_ir) ^ n_ir); // @Species 'concentration of anti-Spike attibodies' {units: pmole}
+anti_Ab = switch_ir * anti_Ab_max * (t / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (t / T_sw_ir - 1) ^ n_ir); // @Species 'concentration of anti-Spike attibodies' {units: pM}
 
 VO = anti_Ab / (Kd_anti_Ab + anti_Ab); // @Record 'Virus Occupancy (VO) level with anti_Ab antibodies' {units: UL}
 
@@ -985,14 +985,14 @@ F[15] = 1*V_ass_cov_vpc-1*V_rel_cov_vpc-1*V_deg_cov_ass_apo_vpc;
 */
 
 
-//! Constants, count: 28
+//! Constants, count: 29
 kcell_to_cell = 1000; // @Const 'kcell to cell conversion coefficient' {units: cell/kcell};
 NA_pmole = 602000000000; // @Const 'Avogadro constant for 1 pmole' {units: item/pmole};
 sputum_dilution_coef = 0.1; // @Const 'dilution of sputum in comparison with lung epithelium lining fluid' {units: UL};
 k_apo_pc = 0.00082; // @Const 'rate constant of PC and iPC apoptosis' {units: 1/h};
 kbase_apo_vpc = 0.00082; // @Const 'rate constant of vPC apoptosis' {units: 1/h};
-kbase_tran_pc_ipc = 0.25; // @Const 'rate constant of PC to iPC transition' {units: 1/pM/h};
-kbase_tran_ipc_vpc = 0.25; // @Const 'rate constant of iPC to vPC transition' {units: 1/pM/h};
+kbase_tran_pc_ipc = 0.25; // @Const 'rate constant of PC to iPC transition' {units: 1/pmole/h};
+kbase_tran_ipc_vpc = 0.25; // @Const 'rate constant of iPC to vPC transition' {units: 1/pmole/h};
 k_shed_ace2_pc = 1.8; // @Const 'rate constant of ACE2 shedding' {units: 1/h};
 k_off_cov_ace2 = 23.56; // @Const 'rate constant of COV_ACE2 complex dissociation' {units: 1/h};
 Num_sp_per_cov = 150; // @Const 'number of Spike proteins per virion' {units: UL};
@@ -1014,6 +1014,7 @@ n_ir = 5; // @Const 'Hill coefficient of IR effect on vPC apoptosis' {units: UL}
 Kd_anti_Ab = 14300; // @Const 'Kd for binding of Spike protein and neutralizing antibodies' {units: pM};
 anti_Ab_max = 941000; // @Const 'maximal concentration of anti Spike Ab in serum' {units: pM};
 Vol_pc = 1.33e-12; // @Const 'Volume of Pneumocyte' {units: L/cell};
+L_to_mL = 1000; // @Const  {units: mL/L};
 
 //! Initialization at start, count: 19
 Vol_alv = 0.014; // @Compartment 'Volume of surfactant linning alveolar surface' {units: L}

@@ -3,6 +3,7 @@
   xmlns="http://www.sbml.org/sbml/level2/version4" 
   xmlns:xhtml="http://www.w3.org/1999/xhtml" 
   level="2" version="4"
+
   >
   <model 
     id="nameless" 
@@ -259,7 +260,7 @@
         boundaryCondition="true"
         hasOnlySubstanceUnits="false"
         
-        substanceUnits="_pmole_L"
+        substanceUnits="_pM_L"
         metaid="anti_Ab"
         >
         <notes>
@@ -283,7 +284,7 @@
         id="k_syn_ace2_pc"
         name="rate of ACE2 synthesis calculated per volume of PC"
         constant="false"
-        units="_pM__h__cell"
+        units="_pM__h"
         metaid="k_syn_ace2_pc"
         >
       </parameter>
@@ -594,7 +595,7 @@
         id="kbase_tran_pc_ipc"
         constant="true"
         value="0.25"
-        units="__pM__h"
+        units="__pmole__h"
         metaid="kbase_tran_pc_ipc"
         >
         <notes>
@@ -607,7 +608,7 @@
         id="kbase_tran_ipc_vpc"
         constant="true"
         value="0.25"
-        units="__pM__h"
+        units="__pmole__h"
         metaid="kbase_tran_ipc_vpc"
         >
         <notes>
@@ -888,6 +889,14 @@
             <p>averaged between type I and II pneumocytes (moved to Const)</p>
           </html>
         </notes>
+      </parameter>
+      <parameter
+        id="L_to_mL"
+        constant="true"
+        value="1000"
+        units="_mL__L"
+        metaid="L_to_mL"
+        >
       </parameter>
     </listOfParameters>
   
@@ -1604,241 +1613,207 @@
   <listOfRules>
     <assignmentRule
       variable="time_day"
-      name="hours to days conversion"
       metaid="time_day::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>t</ci><cn>24</cn></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><cn>24</cn></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="k_syn_ace2_pc"
-      name="rate of ACE2 synthesis calculated per volume of PC"
       metaid="k_syn_ace2_pc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>k_shed_ace2_pc</ci><ci>ACE2_pc_hs_ss</ci></apply><ci>PC_hs_ss</ci></apply><ci>Vol_pc</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="k_tran_pc_ipc"
-      name="apparent rate constant of PC to iPC transition"
       metaid="k_tran_pc_ipc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_tran_pc_ipc</ci><ci>COV_ACE2_pc</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="k_tran_ipc_vpc"
-      name="apparent rate constant of iPC to vPC transition"
       metaid="k_tran_ipc_vpc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_tran_ipc_vpc</ci><ci>COV_ipc</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="VO"
-      name="Virus Occupancy (VO) level with anti_Ab antibodies"
       metaid="VO::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>anti_Ab</ci><apply><plus/><ci>Kd_anti_Ab</ci><ci>anti_Ab</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="Kd_cov_ace2"
-      name="apparent dissociation equilibrium constant of COV and ACE2"
       metaid="Kd_cov_ace2::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><ci>Kd_spike_ace2</ci><ci>Num_sp_per_cov</ci></apply><apply><minus/><cn>1</cn><ci>VO</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_pc_per_cell"
-      name="number of ACE2 per PC cell"
       metaid="ACE2_pc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_pc</ci></apply><ci>PC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_ACE2_pc_per_cell"
-      name="number of COV_ACE2 per PC cell"
       metaid="COV_ACE2_pc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_pc</ci></apply><ci>PC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_ipc_per_cell"
-      name="number of ACE2 per iPC cell"
       metaid="ACE2_ipc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_ACE2_ipc_per_cell"
-      name="number of COV_ACE2 per iPC cell"
       metaid="COV_ACE2_ipc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_ipc_per_cell"
-      name="number of COV per iPC cell"
       metaid="COV_ipc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_vpc_per_cell"
-      name="number of ACE2 per vPC cell"
       metaid="ACE2_vpc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_ACE2_vpc_per_cell"
-      name="number of COV_ACE2 per vPC cell"
       metaid="COV_ACE2_vpc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_vpc_per_cell"
-      name="number of COV per vPC cell"
       metaid="COV_vpc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COVass_vpc_per_cell"
-      name="number of COVass per vPC cell"
       metaid="COVass_vpc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COVass_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_RNA_vpc_per_cell"
-      name="number of COV_RNA per vPC cell"
       metaid="COV_RNA_vpc_per_cell::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_RNA_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_num_sputum_ml"
-      name="number of virus copies in 1 mL of sputum"
       metaid="COV_num_sputum_ml::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><apply><times/><ci>sputum_dilution_coef</ci><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply><ci>Vol_alv</ci></apply><ci>NA_pmole</ci></apply><cn>1000</cn></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>sputum_dilution_coef</ci><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply><ci>NA_pmole</ci></apply><ci>L_to_mL</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="PC_tot"
-      name="total pneumocytes cell count"
       metaid="PC_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><plus/><ci>PC</ci><ci>iPC</ci></apply><ci>vPC</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="PC_percent"
-      name="percent of PC of total pneumocytes cell count"
       metaid="PC_percent::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>PC</ci></apply><ci>PC_tot</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="iPC_percent"
-      name="percent of iPC of total pneumocytes cell count"
       metaid="iPC_percent::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>iPC</ci></apply><ci>PC_tot</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="vPC_percent"
-      name="percent of vPC of total pneumocytes cell count"
       metaid="vPC_percent::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>vPC</ci></apply><ci>PC_tot</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_pc_per_cell_tot"
-      name="total number of ACE2 molecules per PC cell"
       metaid="ACE2_pc_per_cell_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_pc_per_cell</ci><ci>COV_ACE2_pc_per_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_ipc_per_cell_tot"
-      name="total number of ACE2 molecules per iPC cell"
       metaid="ACE2_ipc_per_cell_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_ipc_per_cell</ci><ci>COV_ACE2_ipc_per_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="ACE2_vpc_per_cell_tot"
-      name="total number of ACE2 molecules per vPC cell"
       metaid="ACE2_vpc_per_cell_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_vpc_per_cell</ci><ci>COV_ACE2_vpc_per_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_pc_per_cell_tot"
-      name="total number of COV genomes per PC cell"
       metaid="COV_pc_per_cell_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>COV_ACE2_pc_per_cell</ci></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_ipc_per_cell_tot"
-      name="total number of COV genomes per iPC cell"
       metaid="COV_ipc_per_cell_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>COV_ACE2_ipc_per_cell</ci><ci>COV_ipc_per_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_vpc_per_cell_tot"
-      name="total number of COV genomes per vPC cell"
       metaid="COV_vpc_per_cell_tot::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><plus/><ci>COV_ACE2_vpc_per_cell</ci><ci>COV_vpc_per_cell</ci></apply><ci>COV_RNA_vpc_per_cell</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="steric_factor_pc"
-      name="a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell"
       metaid="steric_factor_pc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_pc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="steric_factor_ipc"
-      name="a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell"
       metaid="steric_factor_ipc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_ipc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="steric_factor_vpc"
-      name="a term responsible for limitation of COV to cell binding; number COV molecules per cell cannot be higher than Nmax_cov_per_cell due to physical size of a cell and virus which attaches to the cell"
       metaid="steric_factor_vpc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_vpc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="COV_sgRNA_perc"
-      name="percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients"
       metaid="COV_sgRNA_perc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>COV_RNA</ci></apply><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="IR_apo"
-      name="empiric function imitating effect of Immune Response on vPC apoptosis"
       metaid="IR_apo::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><cn>1</cn><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>Emax_ir_apo</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><ci>T_sw_ir</ci><ci>ET50_ir</ci></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply></apply></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><cn>1</cn><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>Emax_ir_apo</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><cn>1</cn><apply><divide/><ci>ET50_ir</ci><ci>T_sw_ir</ci></apply></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply></apply></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="k_apo_vpc"
-      name="dependence of rate constant of vPC apoptosis on IR effect"
       metaid="k_apo_vpc::ode_"
       >
       <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_apo_vpc</ci><ci>IR_apo</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="anti_Ab"
-      name="concentration of anti-Spike attibodies"
       metaid="anti_Ab::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>anti_Ab_max</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><ci>T_sw_ir</ci><ci>ET50_ir</ci></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><ci>t</ci><ci>T_sw_ir</ci></apply><ci>n_ir</ci></apply></apply></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>anti_Ab_max</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><cn>1</cn><apply><divide/><ci>ET50_ir</ci><ci>T_sw_ir</ci></apply></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply></apply></math>
     </assignmentRule>
   
   </listOfRules>
@@ -1847,15 +1822,14 @@
 <listOfUnitDefinitions>
   <unitDefinition id="_day" name="day">
   <listOfUnits>
-    <unit kind="second" exponent="1" scale="4" multiplier="8.639999999999999"/>
+    <unit kind="second" exponent="1" scale="4" multiplier="8.64"/>
   </listOfUnits>
 </unitDefinition>
-  <unitDefinition id="_pM__h__cell" name="pM/h/cell">
+  <unitDefinition id="_pM__h" name="pM/h">
   <listOfUnits>
     <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
     <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
     <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-    <unit kind="item" exponent="-1" scale="0" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
   <unitDefinition id="__h" name="1/h">
@@ -1876,6 +1850,7 @@
 </unitDefinition>
   <unitDefinition id="_item__cell" name="item/cell">
   <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
   <unitDefinition id="__mL_item" name="item/mL">
@@ -1910,12 +1885,6 @@
     <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
-  <unitDefinition id="_pmole_L" name="pmole*L">
-  <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
   <unitDefinition id="_kcell__h" name="kcell/h">
   <listOfUnits>
     <unit kind="item" exponent="1" scale="3" multiplier="1"/>
@@ -1930,7 +1899,7 @@
 </unitDefinition>
   <unitDefinition id="__kcell_cell" name="cell/kcell">
   <listOfUnits>
-    <unit kind="" exponent="1" scale="-3" multiplier="1"/>
+    <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
   <unitDefinition id="__pmole_item" name="item/pmole">
@@ -1939,10 +1908,9 @@
     <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
-  <unitDefinition id="__pM__h" name="1/pM/h">
+  <unitDefinition id="__pmole__h" name="1/pmole/h">
   <listOfUnits>
     <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
-    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
     <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
   </listOfUnits>
 </unitDefinition>
@@ -1955,6 +1923,11 @@
   <listOfUnits>
     <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
     <unit kind="item" exponent="-1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+  <unitDefinition id="_mL__L" name="mL/L">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
 </listOfUnitDefinitions>

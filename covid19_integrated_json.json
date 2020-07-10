@@ -633,7 +633,7 @@
     "tags": [
       "PC"
     ],
-    "units": "1/pM/h",
+    "units": "1/pmole/h",
     "num": 0.25
   },
   {
@@ -644,7 +644,7 @@
     "tags": [
       "PC"
     ],
-    "units": "1/pM/h",
+    "units": "1/pmole/h",
     "num": 0.25
   },
   {
@@ -873,6 +873,12 @@
     "num": 1.33e-12
   },
   {
+    "class": "Const",
+    "id": "L_to_mL",
+    "units": "mL/L",
+    "num": 1000
+  },
+  {
     "class": "Record",
     "id": "time_day",
     "title": "hours to days conversion",
@@ -891,7 +897,7 @@
     "tags": [
       "COV-PC"
     ],
-    "units": "pM/h/cell",
+    "units": "pM/h",
     "assignments": {
       "ode_": "k_shed_ace2_pc * ACE2_pc_hs_ss / PC_hs_ss / Vol_pc / Vol_alv / kcell_to_cell"
     }
@@ -1074,7 +1080,7 @@
     ],
     "units": "item/mL",
     "assignments": {
-      "ode_": "sputum_dilution_coef * (COV + COV_RNA) * Vol_alv * NA_pmole / 1000"
+      "ode_": "sputum_dilution_coef * (COV + COV_RNA) * NA_pmole / L_to_mL"
     }
   },
   {
@@ -1254,7 +1260,7 @@
     ],
     "units": "UL",
     "assignments": {
-      "ode_": "1 + switch_ir * Emax_ir_apo * (t - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (t - T_sw_ir) ^ n_ir)"
+      "ode_": "1 + switch_ir * Emax_ir_apo * (t / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (t / T_sw_ir - 1) ^ n_ir)"
     }
   },
   {
@@ -1525,9 +1531,9 @@
     "tags": [
       "COV-vPC"
     ],
-    "units": "pmole",
+    "units": "pM",
     "assignments": {
-      "ode_": "switch_ir * anti_Ab_max * (t - T_sw_ir) ^ n_ir / ((T_sw_ir + ET50_ir) ^ n_ir + (t - T_sw_ir) ^ n_ir)"
+      "ode_": "switch_ir * anti_Ab_max * (t / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (t / T_sw_ir - 1) ^ n_ir)"
     },
     "compartment": "Vol_alv"
   },
