@@ -8,6 +8,9 @@ include ./qsp-units.heta
 // include life cycle module
 include ./Cov19_life_cycle/index.heta
 
+// add switchers
+include ./switchers.heta
+
 // exports
 #export {
   format: SBML,

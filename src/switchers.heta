@@ -1,0 +1,4 @@
+viral_load @TimeSwitcher {
+    start: T_sw_ir
+};
+switch_ir [viral_load]= 1;
