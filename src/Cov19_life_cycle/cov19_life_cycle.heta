@@ -22,5 +22,11 @@ include ./cov19_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 3 }
   version: L2V4
 };
 
+out_slv @SLVExport {
+  filepath: cov19_life_cycle_slv,
+  eventsOff: false
+};
+
+
 // #export { format: Simbio, filepath: cov19_life_cycle_simbio };
 // #export { format:Mrgsolve, filepath: cov19_life_cycle_mrgsolve };
