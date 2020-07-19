@@ -1,8 +1,8 @@
 $PROB
-# Model: ``
-  - Title: 
-  - Notes: 
-  - Source: Generated automatically from platform with Heta compiler
+# Model: `nameless`
+  - Title: nameless
+  - Notes: Generated automatically from platform with Heta compiler
+  - Source: Heta compiler
 
 # Demo
 ```{r,echo=TRUE}
@@ -23,9 +23,9 @@ k_apo_pc : 0.00082 : (1/h)
 // @Const 'rate constant of vPC apoptosis'
 kbase_apo_vpc : 0.00082 : (1/h)
 // @Const 'rate constant of PC to iPC transition'
-kbase_tran_pc_ipc : 0.25 : (1/pmole/h)
+kbase_tran_pc_ipc : 10 : (1/pmole/h)
 // @Const 'rate constant of iPC to vPC transition'
-kbase_tran_ipc_vpc : 0.25 : (1/pmole/h)
+kbase_tran_ipc_vpc : 10 : (1/pmole/h)
 // @Const 'rate constant of ACE2 shedding'
 k_shed_ace2_pc : 1.8 : (1/h)
 // @Const 'rate constant of COV_ACE2 complex dissociation'
@@ -41,7 +41,7 @@ k_rel_cov_vpc : 2 : (1/h)
 // @Const 'rate constant of COV uncouting in vPC cell'
 k_unc_cov_vpc : 14 : (1/h)
 // @Const 'rate constant of COV_RNA replication in vPC cell'
-k_rep_cov_rna_vpc : 0.5 : (1/h)
+k_rep_cov_rna_vpc : 0.2 : (1/h)
 // @Const 'EC50 of COV_RNA replication referring to concentration inindividual vPC cell'
 EC50_rep_cov_rna_vpc : 9992 : (pM)
 // @Const 'rate constant of COV assembling in vPC'
@@ -52,8 +52,6 @@ k_deg_cov : 0.17 : (1/h)
 Nmax_cov_per_cell : 11900 : (item/cell)
 // @Const 'rate constant of COV_RNA degradation in bulk phase'
 k_deg_cov_rna : 17 : (1/h)
-// @Const 'switch of effect of IR on vPC apoptosis'
-switch_ir : 0 : (UL)
 // @Const 'switch on time of IR effect on vPC apoptosis'
 T_sw_ir : 50 : (h)
 // @Const 'Effective Time when IR effect reach 50% of maximal value'
@@ -114,7 +112,7 @@ $PREAMBLE
 //double COVass_vpc = 0.0;
 //double vPC = 1.0;
 double Vol_alv = 0.014;
-//double COV = 4e-4;
+//double COV = 0.002;
 //double COV_RNA = 0.0;
 //double PC = 2643000000.0;
 //double iPC = 1.0;
@@ -128,12 +126,13 @@ double Vol_alv = 0.014;
 //double COV_vpc = 0.0;
 //double COV_RNA_vpc = 0.0;
 double PC_hs_ss = 2643000000.0;
+double switch_ir = 0.0;
 double ACE2_pc_hs_ss = 615.0;
 
 $MAIN
 COVass_vpc_0 = (0.0);
 vPC_amt__0 = (1.0) * Vol_alv;
-COV_amt__0 = (4e-4) * Vol_alv;
+COV_amt__0 = (0.002) * Vol_alv;
 COV_RNA_amt__0 = (0.0) * Vol_alv;
 PC_amt__0 = (2643000000.0) * Vol_alv;
 iPC_amt__0 = (1.0) * Vol_alv;
@@ -343,11 +342,13 @@ steric_factor_vpc : a term responsible for limitation of COV to cell binding; nu
 COV_sgRNA_perc : percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients (UL)
 IR_apo : empiric function imitating effect of Immune Response on vPC apoptosis (UL)
 k_apo_vpc : dependence of rate constant of vPC apoptosis on IR effect (1/h)
+switch_ir : switch of effect of IR on vPC apoptosis (UL)
 Vol_alv : Volume of surfactant linning alveolar surface (L)
 PC : concentration of PC type II (Pneumocytes free of virus) in alveoli (kcell/L)
 iPC : concentration of iPC (Pneumocytes with virus entered but w/o virus replication) in alveoli (kcell/L)
 vPC : concentration of vPC (Pneumocytes with virus actively replicated) in alveoli (kcell/L)
 PC_hs_ss : concentration of PC type II at steady state w/o virus exposure (kcell/L)
+ACE2_pc_hs_ss : amount of ACE2 located at PC (pmole)
 COV : concentration of  COV (SARS-CoV-2 virus) (pM)
 COV_RNA : concentration of COV_RNA released from vPC due to their apoptosis (pM)
 anti_Ab : concentration of anti-Spike attibodies (pM)

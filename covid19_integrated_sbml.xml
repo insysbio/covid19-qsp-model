@@ -223,7 +223,7 @@
         constant="false"
         boundaryCondition="false"
         hasOnlySubstanceUnits="false"
-        initialConcentration="0.0004"
+        initialConcentration="0.002"
         substanceUnits="_pM_L"
         metaid="COV"
         >
@@ -542,6 +542,20 @@
         >
       </parameter>
       <parameter
+        id="switch_ir"
+        name="switch of effect of IR on vPC apoptosis"
+        constant="false"
+        value="0"
+        units="_UL"
+        metaid="switch_ir"
+        >
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>assumed</p>
+          </html>
+        </notes>
+      </parameter>
+      <parameter
         id="kcell_to_cell"
         constant="true"
         value="1000"
@@ -594,7 +608,7 @@
       <parameter
         id="kbase_tran_pc_ipc"
         constant="true"
-        value="0.25"
+        value="10"
         units="__pmole__h"
         metaid="kbase_tran_pc_ipc"
         >
@@ -607,7 +621,7 @@
       <parameter
         id="kbase_tran_ipc_vpc"
         constant="true"
-        value="0.25"
+        value="10"
         units="__pmole__h"
         metaid="kbase_tran_ipc_vpc"
         >
@@ -711,7 +725,7 @@
       <parameter
         id="k_rep_cov_rna_vpc"
         constant="true"
-        value="0.5"
+        value="0.2"
         units="__h"
         metaid="k_rep_cov_rna_vpc"
         >
@@ -783,19 +797,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed to be equal to COV half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h</p>
-          </html>
-        </notes>
-      </parameter>
-      <parameter
-        id="switch_ir"
-        constant="true"
-        value="0"
-        units="_UL"
-        metaid="switch_ir"
-        >
-        <notes>
-          <html xmlns="http://www.w3.org/1999/xhtml">
-            <p>assumed</p>
           </html>
         </notes>
       </parameter>
@@ -1817,6 +1818,32 @@
     </assignmentRule>
   
   </listOfRules>
+  
+    <listOfEvents>
+      <event
+        id="viral_load"
+        metaid="viral_load"
+        >
+        <trigger>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <ci>t</ci>
+              <ci>T_sw_ir</ci>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          
+          <eventAssignment
+            variable="switch_ir"
+            metaid="switch_ir::viral_load">
+            <math xmlns="http://www.w3.org/1998/Math/MathML"><cn>1</cn></math>
+          </eventAssignment>
+          
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
   
 <!-- UNIT DEFINITIONS -->
 <listOfUnitDefinitions>

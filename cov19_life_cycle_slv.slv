@@ -1038,11 +1038,6 @@ COVass_vpc = 0; // @Species 'amount of assembled virus ready to be released from
 default_compartment_ = 1; // {units: UL} This is fake compartment to support compounds without compartment.
 
 
-//! Switchers for time events, count 1
-
-viral_load_ = 1; // @TimeSwitcher {  }
-
-
 
 #
 
@@ -1471,13 +1466,7 @@ k1
 0.000010
 1000000
 1
-1
-switch_ir
 0
-1
-T_sw_ir
-0
-viral_load_
 <listModelData>
    <item>
       <name></name>

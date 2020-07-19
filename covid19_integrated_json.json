@@ -2,576 +2,247 @@
   {
     "class": "UnitDef",
     "id": "fmole",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1e-15,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-15 mole)"
   },
   {
     "class": "UnitDef",
     "id": "pmole",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1e-12,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-12 mole)"
   },
   {
     "class": "UnitDef",
     "id": "nmole",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1e-9,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-9 mole)"
   },
   {
     "class": "UnitDef",
     "id": "umole",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 0.000001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-6 mole)"
   },
   {
     "class": "UnitDef",
     "id": "mmole",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 0.001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-3 mole)"
   },
   {
     "class": "UnitDef",
     "id": "fM",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1e-15,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "(1e-15 mole)/litre"
   },
   {
     "class": "UnitDef",
     "id": "pM",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1e-12,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "(1e-12 mole)/litre"
   },
   {
     "class": "UnitDef",
     "id": "nM",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1e-9,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "(1e-9 mole)/litre"
   },
   {
     "class": "UnitDef",
     "id": "uM",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 0.000001,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "(1e-6 mole)/litre"
   },
   {
     "class": "UnitDef",
     "id": "mM",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 0.001,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "(1e-3 mole)/litre"
   },
   {
     "class": "UnitDef",
     "id": "M",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "mole/litre"
   },
   {
     "class": "UnitDef",
     "id": "kM",
-    "units": [
-      {
-        "kind": "mole",
-        "multiplier": 1000,
-        "exponent": 1
-      },
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": -1
-      }
-    ]
+    "units": "(1e+3 mole)/litre"
   },
   {
     "class": "UnitDef",
     "id": "fL",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 1e-15,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-15 litre)"
   },
   {
     "class": "UnitDef",
     "id": "pL",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 1e-12,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-12 litre)"
   },
   {
     "class": "UnitDef",
     "id": "nL",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 1e-9,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-9 litre)"
   },
   {
     "class": "UnitDef",
     "id": "uL",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 0.000001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-6 litre)"
   },
   {
     "class": "UnitDef",
     "id": "mL",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 0.001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-3 litre)"
   },
   {
     "class": "UnitDef",
     "id": "dL",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 0.1,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-1 litre)"
   },
   {
     "class": "UnitDef",
     "id": "L",
-    "units": [
-      {
-        "kind": "litre",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "litre"
   },
   {
     "class": "UnitDef",
     "id": "fs",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 1e-15,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-15 second)"
   },
   {
     "class": "UnitDef",
     "id": "ps",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 1e-12,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-12 second)"
   },
   {
     "class": "UnitDef",
     "id": "ns",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 1e-9,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-9 second)"
   },
   {
     "class": "UnitDef",
     "id": "us",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 0.000001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-6 second)"
   },
   {
     "class": "UnitDef",
     "id": "ms",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 0.001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-3 second)"
   },
   {
     "class": "UnitDef",
     "id": "s",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "second"
   },
   {
     "class": "UnitDef",
     "id": "h",
-    "units": [
-      {
-        "kind": "hour",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "hour"
   },
   {
     "class": "UnitDef",
     "id": "week",
-    "units": [
-      {
-        "kind": "second",
-        "multiplier": 604800,
-        "exponent": 1
-      }
-    ]
+    "units": "(6.048e+5 second)"
   },
   {
     "class": "UnitDef",
     "id": "fg",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 1e-18,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-18 kilogram)"
   },
   {
     "class": "UnitDef",
     "id": "pg",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 1e-15,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-15 kilogram)"
   },
   {
     "class": "UnitDef",
     "id": "ng",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 1e-12,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-12 kilogram)"
   },
   {
     "class": "UnitDef",
     "id": "ug",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 1e-9,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-9 kilogram)"
   },
   {
     "class": "UnitDef",
     "id": "mg",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 0.000001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-6 kilogram)"
   },
   {
     "class": "UnitDef",
     "id": "g",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 0.001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-3 kilogram)"
   },
   {
     "class": "UnitDef",
     "id": "kg",
-    "units": [
-      {
-        "kind": "kilogram",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "kilogram"
   },
   {
     "class": "UnitDef",
     "id": "kat",
-    "units": [
-      {
-        "kind": "katal",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "katal"
   },
   {
     "class": "UnitDef",
     "id": "cell",
-    "units": [
-      {
-        "kind": "item",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "item"
   },
   {
     "class": "UnitDef",
     "id": "kcell",
-    "units": [
-      {
-        "kind": "item",
-        "multiplier": 1000,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e+3 item)"
   },
   {
     "class": "UnitDef",
     "id": "kvir",
-    "units": [
-      {
-        "kind": "item",
-        "multiplier": 1000,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e+3 item)"
   },
   {
     "class": "UnitDef",
     "id": "cal",
-    "units": [
-      {
-        "kind": "joule",
-        "multiplier": 4.1868,
-        "exponent": 1
-      }
-    ]
+    "units": "(4.1868e+0 joule)"
   },
   {
     "class": "UnitDef",
     "id": "kcal",
-    "units": [
-      {
-        "kind": "joule",
-        "multiplier": 4186.8,
-        "exponent": 1
-      }
-    ]
+    "units": "(4.1868e+3 joule)"
   },
   {
     "class": "UnitDef",
     "id": "fm",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 1e-15,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-15 metre)"
   },
   {
     "class": "UnitDef",
     "id": "pm",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 1e-12,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-12 metre)"
   },
   {
     "class": "UnitDef",
     "id": "nm",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 1e-9,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-9 metre)"
   },
   {
     "class": "UnitDef",
     "id": "um",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 0.000001,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-6 metre)"
   },
   {
     "class": "UnitDef",
     "id": "mm",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 1e-13,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-13 metre)"
   },
   {
     "class": "UnitDef",
     "id": "cm",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 0.01,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-2 metre)"
   },
   {
     "class": "UnitDef",
     "id": "m",
-    "units": [
-      {
-        "kind": "metre",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "metre"
   },
   {
     "class": "UnitDef",
     "id": "UL",
-    "units": [
-      {
-        "kind": "dimensionless",
-        "multiplier": 1,
-        "exponent": 1
-      }
-    ]
+    "units": "dimensionless"
   },
   {
     "class": "UnitDef",
     "id": "percent",
-    "units": [
-      {
-        "kind": "dimensionless",
-        "multiplier": 0.01,
-        "exponent": 1
-      }
-    ]
+    "units": "(1e-2 dimensionless)"
   },
   {
     "class": "Const",
@@ -634,7 +305,7 @@
       "PC"
     ],
     "units": "1/pmole/h",
-    "num": 0.25
+    "num": 10
   },
   {
     "class": "Const",
@@ -645,7 +316,7 @@
       "PC"
     ],
     "units": "1/pmole/h",
-    "num": 0.25
+    "num": 10
   },
   {
     "class": "Const",
@@ -730,7 +401,7 @@
       "COV-vPC"
     ],
     "units": "1/h",
-    "num": 0.5
+    "num": 0.2
   },
   {
     "class": "Const",
@@ -786,17 +457,6 @@
     ],
     "units": "1/h",
     "num": 17
-  },
-  {
-    "class": "Const",
-    "id": "switch_ir",
-    "title": "switch of effect of IR on vPC apoptosis",
-    "notes": "assumed",
-    "tags": [
-      "IR"
-    ],
-    "units": "UL",
-    "num": 0
   },
   {
     "class": "Const",
@@ -1276,6 +936,20 @@
     }
   },
   {
+    "class": "Record",
+    "id": "switch_ir",
+    "title": "switch of effect of IR on vPC apoptosis",
+    "notes": "assumed",
+    "tags": [
+      "IR"
+    ],
+    "units": "UL",
+    "assignments": {
+      "start_": "0",
+      "viral_load": "1"
+    }
+  },
+  {
     "class": "Compartment",
     "id": "Vol_alv",
     "title": "Volume of surfactant linning alveolar surface",
@@ -1492,7 +1166,7 @@
     ],
     "units": "pM",
     "assignments": {
-      "start_": "4e-4"
+      "start_": "0.002"
     },
     "compartment": "Vol_alv"
   },
@@ -2350,5 +2024,10 @@
         "stoichiometry": -1
       }
     ]
+  },
+  {
+    "class": "TimeSwitcher",
+    "id": "viral_load",
+    "start": "T_sw_ir"
   }
 ]
