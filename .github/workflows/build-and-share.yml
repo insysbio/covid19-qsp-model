@@ -1,5 +1,4 @@
 # This workflow build Heta platform and share results in "dist" branch
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Build and Share
 
@@ -31,8 +30,14 @@ jobs:
     - run: npm i -g heta-compiler@${{ matrix.heta-version }}
     - run: heta build
     - run: heta build --source src/Cov19_life_cycle/cov19_life_cycle.heta
-    - name: Deploy to "dist" branch only for "master" pushes
-      if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    - name: Copy other files to dist
+      run: |
+        cp -f ./static/README.md ./dist/
+        mkdir -p ./dist/plots
+        cp -rf ./diagnostics/dbsolve/*.png ./dist/plots/
+        cp -rf ./diagnostics/simbio/*.png ./dist/plots/
+    - name: Deploy to "dist" branch only for "master" and "share" pushes
+      if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/share' ) }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
