@@ -22,10 +22,17 @@ git pull
 
 ## Diagnostics
 
-### DBSolve
+### format: SLV
 
 ![default-dbsolve-IR_apo](./plots/default-dbsolve-IR_apo.png)
 ![default-dbsolve-COV_num_sputum_ml](./plots/default-dbsolve-COV_num_sputum_ml.png)
 
-### Simbiology
+### format: Matlab
+
+![default-matlab-plot](./plots/default-matlab-plot.png)
+
+### format: Simbio
+
+*Simulations differ from DBSolve. The similar result are for SBML loaded*
+
 ![default-simbio-plot](./plots/default-simbio-plot.png)
