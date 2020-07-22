@@ -359,8 +359,8 @@ function [ode_func, out_func, y0_, events_] = nameless_Model(p)
         isterminal = 1;
         
         ev_start = 50;
-        ev_period = [];
-        ev_repeatCount = Inf;
+        ev_period = 1;
+        ev_repeatCount = 0;
         
         flag = (time - ev_start)/ev_period;
         

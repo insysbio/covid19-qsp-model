@@ -232,13 +232,10 @@ addrule(nameless_model, 'IR_apo = 1 + switch_ir * Emax_ir_apo * (time / T_sw_ir 
 addrule(nameless_model, 'k_apo_vpc = kbase_apo_vpc * IR_apo', 'repeatedAssignment');
 addrule(nameless_model, 'anti_Ab = switch_ir * anti_Ab_max * (time / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (time / T_sw_ir - 1) ^ n_ir)', 'repeatedAssignment');
 
-% Time Events
-nameless.dose.viral_load.switch_ir = adddose(nameless_model, 'viral_load');
-    nameless.dose.viral_load.switch_ir.TargetName = 'switch_ir';
-    nameless.dose.viral_load.switch_ir.Amount = '1';
-    nameless.dose.viral_load.switch_ir.StartTime = 'T_sw_ir';
-    nameless.dose.viral_load.switch_ir.Active = true;
 
+
+% Time Switchers
+nameless.event.viral_load = addevent(nameless_model, 'time >= T_sw_ir', {'switch_ir = 1', }, 'Notes', '', 'Tag', '');
 
 
 
