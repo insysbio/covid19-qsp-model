@@ -33,6 +33,6 @@ git pull
 
 ### format: Simbio
 
-*Simulations differ from DBSolve. The similar result are for SBML loaded*
+*Simulations display wrong results in comparison with DBSolve, Matlab and COPASI. The similar results can be seen if we load SBML in Simbiology*
 
 ![default-simbio-plot](./plots/default-simbio-plot.png)
