@@ -13,6 +13,7 @@ The aim of the project is to develop a Quantitative Systems Pharmacology (QSP) m
 * [Usage](#usage)
 * [Getting help](#getting-help)
 * [Contributing](#contributing)
+* [Known issues](#known-issues)
 * [License](#license)
 * [Contributors](#contributors)
 
@@ -109,6 +110,10 @@ Creation of qsp platfrom located in "Y:/new-platform" which uses "Cov19_life_cyc
 ## Contributing
 
 Any contribution is welcomed: bug reports, pull requests (code or documentation), suggestions for improvements.
+
+## Known issues
+
+- The generated model code works wrong in Simbiology. We do not still understand why. Use Matlab or other tools instead.
 
 ## License
 
