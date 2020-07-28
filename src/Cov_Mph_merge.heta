@@ -1,0 +1,61 @@
+/*
+  Intagration of Cov life cycle and Mph life cycle 
+  
+*/
+
+// include units
+include ./qsp-units.heta
+// include Cov life cycle module
+include ./Cov19_life_cycle/index.heta
+
+// include Mph life cycle module
+include ./Mph_life_cycle/index.heta
+
+
+// add switchers
+//include ./switchers.heta
+
+// exports
+#export {
+  format: SBML,
+  filepath: cov_mph_integrated_sbml,
+  version: L2V4
+};
+
+#export {
+  format: SLV,
+  filepath: cov_mph_integrated_slv,
+  eventsOff: true
+};
+
+#export {
+  format: XLSX,
+  filepath: cov_mph_integrated_xlsx,
+  omitRows: 3,
+  splitByClass: true
+};
+
+
+/*
+#export {
+  format: JSON,
+  filepath: covid19_integrated_json
+};
+
+#export {
+  format: Simbio,
+  filepath: covid19_integrated_simbio
+};
+
+#export {
+  format: Mrgsolve,
+  filepath: covid19_integrated_mrgsolve
+};
+
+#export {
+  format: Matlab,
+  filepath: covid19_integrated_matlab
+};
+*/
+
+
