@@ -11,6 +11,12 @@ include ./Cov19_life_cycle/index.heta
 // add switchers
 include ./switchers.heta
 
+V_mat_pc {modifiers: [PC_hs_ss]};
+V_syn_ace2_pc {modifiers: [PC]};
+V_syn_ace2_ipc {modifiers: [iPC]};
+V_syn_ace2_vpc {modifiers: [vPC]};
+V_rep_cov_rna_vpc {modifiers: [vPC]};
+
 // exports
 #export {
   format: SBML,
@@ -21,7 +27,14 @@ include ./switchers.heta
 #export {
   format: SLV,
   filepath: covid19_integrated_slv,
+  groupConstBy: "tags[0]",
   eventsOff: false
+};
+
+#export {
+  format: DBSolve,
+  filepath: dbsolve,
+  groupConstBy: "tags[0]"
 };
 
 #export {

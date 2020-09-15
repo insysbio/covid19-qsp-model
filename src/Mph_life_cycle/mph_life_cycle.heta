@@ -16,17 +16,18 @@ include ./mph_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 1 }
 include ./mph_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 1 }
 
 // exports
-output_sbml @SBMLExport {
+#export {
+  format: SBML,
   filepath: mph_life_cycle_sbml,
   version: L2V4
 };
 
-out_slv @SLVExport {
+#export {
+  format: SLV,
   filepath: mph_life_cycle_slv,
   eventsOff: false
 };
 
-//output_yaml @YAMLExport { filepath: output };
-//output_simbio @SimbioExport { filepath: simbio };
-//output_mrg @MrgsolveExport { filepath: mrgsolve };
-//output_xlsx @XLSXExport { filepath: cov19_life_cycle_xlsx, omitRows: 3, splitByClass: true };
+//#export { format: Simbio, filepath: simbio };
+//#export { format: Mrgsolve, filepath: mrgsolve };
+//#format { format: XLSX, filepath: cov19_life_cycle_xlsx, omitRows: 3, splitByClass: true };

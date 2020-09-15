@@ -22,7 +22,8 @@ include ./cov19_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 3 }
   version: L2V4
 };
 
-out_slv @SLVExport {
+#export {
+  format: SLV,
   filepath: cov19_life_cycle_slv,
   eventsOff: false
 };

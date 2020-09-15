@@ -28,8 +28,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
-        npm i -g https://github.com/hetalang/heta-compiler.git
-        # npm i -g heta-compiler@${{ matrix.heta-version }}
+        # npm i -g https://github.com/hetalang/heta-compiler.git
+        npm i -g heta-compiler@${{ matrix.heta-version }}
     - run: heta build
     - run: heta build --source src/Cov19_life_cycle/cov19_life_cycle.heta
     - name: Copy other files to dist
