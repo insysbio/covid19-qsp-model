@@ -1,3 +1,5 @@
+// ---------- AMOUNT
+
 fmole @UnitDef {
     units: [ { kind: mole, multiplier: 1e-15 } ]
 };
@@ -13,6 +15,10 @@ umole @UnitDef {
 mmole @UnitDef {
     units: [ { kind: mole, multiplier: 1e-3 } ]
 };
+
+
+// ---------- CONCENTRATION
+
 fM @UnitDef {
     units: [ { kind: mole, multiplier: 1e-15 }, {kind: litre, exponent: -1} ]
 };
@@ -36,27 +42,8 @@ kM @UnitDef {
     units: [ { kind: mole, multiplier: 1e3 }, { kind:litre, exponent: -1 } ]
 };
 
-fL @UnitDef {
-    units: [ { kind: litre, multiplier: 1e-15 } ]
-};
-pL @UnitDef {
-    units: [ { kind: litre, multiplier: 1e-12 } ]
-};
-nL @UnitDef {
-    units: [ { kind: litre, multiplier: 1e-9 } ]
-};
-uL @UnitDef {
-    units: [ { kind: litre, multiplier: 1e-6 } ]
-};
-mL @UnitDef {
-    units: [ { kind: litre, multiplier: 1e-3 } ]
-};
-dL @UnitDef {
-    units: [ { kind: litre, multiplier: 1e-1 } ]
-};
-L @UnitDef {
-    units: [ { kind: litre } ]
-};
+
+// ---------- TIME
 
 fs @UnitDef {
     units: [ { kind: second, multiplier: 1e-15 } ]
@@ -86,6 +73,9 @@ week @UnitDef {
     units: [ { kind: second, multiplier: 604800 } ]
 };
 
+
+// ---------- WEIGHT
+
 fg @UnitDef {
     units: [ { kind: kilogram, multiplier: 1e-18 } ]
 };
@@ -108,26 +98,8 @@ kg @UnitDef {
     units: [ { kind: kilogram} ]
 };
 
-kat @UnitDef {
-    units: [ { kind: katal} ]
-};
 
-cell @UnitDef {
-    units: [ { kind: item} ]
-};
-kcell @UnitDef {
-    units: [ { kind: item, multiplier: 1e3 } ]
-};
-kvir @UnitDef {
-    units: [ { kind: item, multiplier: 1e3 } ]
-};
-
-cal @UnitDef {
-    units: [ { kind: joule, multiplier: 4.1868} ]
-};
-kcal @UnitDef {
-    units: [ { kind: joule, multiplier: 4.1868e3} ]
-};
+// ---------- LENGTH
 
 fm @UnitDef {
     units: [ { kind: metre, multiplier: 1e-15} ]
@@ -151,9 +123,84 @@ m @UnitDef {
     units: [ { kind: metre } ]
 };
 
+
+// ---------- SQUARE
+
+m2 @UnitDef {
+    units: [ {kind: metre, exponent: 2} ]
+};
+
+cm2 @UnitDef {
+    units: [ {kind: metre, multiplier: 1e-2, exponent: 2} ]
+};
+
+um2 @UnitDef {
+    units: [ {kind: metre, multiplier: 1e-6, exponent: 2} ]
+};
+
+
+// ---------- VOLUME
+
+fL @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-15 } ]
+};
+pL @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-12 } ]
+};
+nL @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-9 } ]
+};
+uL @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-6 } ]
+};
+mL @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-3 } ]
+};
+dL @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-1 } ]
+};
+L @UnitDef {
+    units: [ { kind: litre } ]
+};
+cm3 @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-3 } ]
+};
+um3 @UnitDef {
+    units: [ { kind: litre, multiplier: 1e-15 } ]
+};
+
+
+// ---------- DIMENTIONLESS
+
 UL @UnitDef {
     units: [ { kind: dimensionless } ]
 };
 percent @UnitDef {
     units: [ { kind: dimensionless, multiplier: 1e-2 } ]
 };
+
+
+// ---------- OTHER UNITS
+
+kat @UnitDef {
+    units: [ { kind: katal} ]
+};
+
+cell @UnitDef {
+    units: [ { kind: item} ]
+};
+kcell @UnitDef {
+    units: [ { kind: item, multiplier: 1e3 } ]
+};
+kvir @UnitDef {
+    units: [ { kind: item, multiplier: 1e3 } ]
+};
+
+cal @UnitDef {
+    units: [ { kind: joule, multiplier: 4.1868} ]
+};
+kcal @UnitDef {
+    units: [ { kind: joule, multiplier: 4.1868e3} ]
+};
+
+

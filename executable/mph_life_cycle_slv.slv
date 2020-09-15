@@ -1458,7 +1458,7 @@ Redraw Plot Window
 Variable for Family
 #k1 
 Sign for Family
-#+ 
+#+  
 Initial  for Family
 #1.000000e+00 
 Implicit Algebraic System Dimension
@@ -1498,7 +1498,7 @@ Bifurcation Initial Step
 Bifurcation Tolerance
 #0.000000e+00
 ODE 1st Variale for plotting  #t
-ODE 2nd Variable for plotting #X[1]
+ODE 2nd Variable for plotting #M1_ts
 ODE 1st Value Maximum for plotting #0.000000e+00
 ODE 1st Value Minimum for plotting #0.000000e+00
 ODE 2nd Value Maximum for plotting #0.000000e+00
@@ -1506,7 +1506,7 @@ ODE 2nd Value Minimum for plotting #0.000000e+00
 ODE Title for X Axes
 #Time
 ODE Title for Y Axes
-#X[1]
+#M1_ts
 BET 1st Variale for plotting  #k1
 BET 2nd Variable for plotting #X[1]
 BET 1st Value Maximum for plotting #0.000000e+00
