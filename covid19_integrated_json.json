@@ -61,41 +61,6 @@
   },
   {
     "class": "UnitDef",
-    "id": "fL",
-    "units": "(1e-15 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "pL",
-    "units": "(1e-12 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "nL",
-    "units": "(1e-9 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "uL",
-    "units": "(1e-6 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "mL",
-    "units": "(1e-3 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "dL",
-    "units": "(1e-1 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "L",
-    "units": "litre"
-  },
-  {
-    "class": "UnitDef",
     "id": "fs",
     "units": "(1e-15 second)"
   },
@@ -171,36 +136,6 @@
   },
   {
     "class": "UnitDef",
-    "id": "kat",
-    "units": "katal"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cell",
-    "units": "item"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kcell",
-    "units": "(1e+3 item)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kvir",
-    "units": "(1e+3 item)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cal",
-    "units": "(4.1868e+0 joule)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kcal",
-    "units": "(4.1868e+3 joule)"
-  },
-  {
-    "class": "UnitDef",
     "id": "fm",
     "units": "(1e-15 metre)"
   },
@@ -236,6 +171,66 @@
   },
   {
     "class": "UnitDef",
+    "id": "m2",
+    "units": "metre^2"
+  },
+  {
+    "class": "UnitDef",
+    "id": "cm2",
+    "units": "(1e-2 metre)^2"
+  },
+  {
+    "class": "UnitDef",
+    "id": "um2",
+    "units": "(1e-6 metre)^2"
+  },
+  {
+    "class": "UnitDef",
+    "id": "fL",
+    "units": "(1e-15 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "pL",
+    "units": "(1e-12 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "nL",
+    "units": "(1e-9 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "uL",
+    "units": "(1e-6 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "mL",
+    "units": "(1e-3 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "dL",
+    "units": "(1e-1 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "L",
+    "units": "litre"
+  },
+  {
+    "class": "UnitDef",
+    "id": "cm3",
+    "units": "(1e-3 litre)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "um3",
+    "units": "(1e-15 litre)"
+  },
+  {
+    "class": "UnitDef",
     "id": "UL",
     "units": "dimensionless"
   },
@@ -243,6 +238,36 @@
     "class": "UnitDef",
     "id": "percent",
     "units": "(1e-2 dimensionless)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "kat",
+    "units": "katal"
+  },
+  {
+    "class": "UnitDef",
+    "id": "cell",
+    "units": "item"
+  },
+  {
+    "class": "UnitDef",
+    "id": "kcell",
+    "units": "(1e+3 item)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "kvir",
+    "units": "(1e+3 item)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "cal",
+    "units": "(4.1868e+0 joule)"
+  },
+  {
+    "class": "UnitDef",
+    "id": "kcal",
+    "units": "(4.1868e+3 joule)"
   },
   {
     "class": "Const",
@@ -304,7 +329,7 @@
     "tags": [
       "PC"
     ],
-    "units": "1/pmole/h",
+    "units": "1/pM/h",
     "num": 10
   },
   {
@@ -315,7 +340,7 @@
     "tags": [
       "PC"
     ],
-    "units": "1/pmole/h",
+    "units": "1/pM/h",
     "num": 10
   },
   {
@@ -1228,6 +1253,11 @@
         "target": "PC",
         "stoichiometry": 1
       }
+    ],
+    "modifiers": [
+      {
+        "target": "PC_hs_ss"
+      }
     ]
   },
   {
@@ -1349,6 +1379,11 @@
       {
         "target": "ACE2_pc",
         "stoichiometry": 1
+      }
+    ],
+    "modifiers": [
+      {
+        "target": "PC"
       }
     ]
   },
@@ -1502,6 +1537,11 @@
       {
         "target": "ACE2_ipc",
         "stoichiometry": 1
+      }
+    ],
+    "modifiers": [
+      {
+        "target": "iPC"
       }
     ]
   },
@@ -1721,6 +1761,11 @@
         "target": "ACE2_vpc",
         "stoichiometry": 1
       }
+    ],
+    "modifiers": [
+      {
+        "target": "vPC"
+      }
     ]
   },
   {
@@ -1873,6 +1918,11 @@
       {
         "target": "COV_RNA_vpc",
         "stoichiometry": 1
+      }
+    ],
+    "modifiers": [
+      {
+        "target": "vPC"
       }
     ]
   },

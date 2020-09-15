@@ -74,8 +74,8 @@ nameless.parameter.NA_pmole = addparameter(nameless_model, 'NA_pmole', 'Constant
 nameless.parameter.sputum_dilution_coef = addparameter(nameless_model, 'sputum_dilution_coef', 'ConstantValue', true, 'Value', 0.1, 'ValueUnits', 'dimensionless', 'Notes', '', 'Tag', '');
 nameless.parameter.k_apo_pc = addparameter(nameless_model, 'k_apo_pc', 'ConstantValue', true, 'Value', 0.00082, 'ValueUnits', '1/hour', 'Notes', '<p>the value was estimated from the HS submodel at steady state. Indeed, taking into account that (i) PC2 is precursors of PC1 [9227501], (ii) life span of PC1 is about 120 days [20616357], (iii) ratio of PC1/PC2 at steady state = 19/37 [7103258] we represented lung cell  dynamics system as follows: --(Vol<em>alv*k</em>mat<em>pc) --&gt; PC2 --(Vol</em>alv*k<em>dif</em>pc*PC2)--&gt; PC1--(Vol<em>alv*k</em>apo<em>pc1*PC1)--&gt;. Then consider the system at steady state and assuming that lifespan (T</em>ls) corresponds to time required for 99% of cell die we have come to following formulas: (a) k<em>apo</em>pc1 = ln(1/0.01)/(120 days) = 1.6e-3 1/h, (b) k<em>dif</em>pc = k<em>apo</em>pc1*PC1<em>ss/PC2</em>ss = 8.2e-4 1/h, (c) k<em>mat</em>pc = k<em>dif</em>pc*PC2<em>ss. Since  PC2 to PC1 transition was not considered in the version of the model we can assume that k</em>apo<em>pc = k</em>dif_pc</p>', 'Tag', '');
 nameless.parameter.kbase_apo_vpc = addparameter(nameless_model, 'kbase_apo_vpc', 'ConstantValue', true, 'Value', 0.00082, 'ValueUnits', '1/hour', 'Notes', '<p>the value was estimated from [PMID 18487354] only</p>', 'Tag', '');
-nameless.parameter.kbase_tran_pc_ipc = addparameter(nameless_model, 'kbase_tran_pc_ipc', 'ConstantValue', true, 'Value', 10, 'ValueUnits', '1/picomole/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
-nameless.parameter.kbase_tran_ipc_vpc = addparameter(nameless_model, 'kbase_tran_ipc_vpc', 'ConstantValue', true, 'Value', 10, 'ValueUnits', '1/picomole/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
+nameless.parameter.kbase_tran_pc_ipc = addparameter(nameless_model, 'kbase_tran_pc_ipc', 'ConstantValue', true, 'Value', 10, 'ValueUnits', '1/picomole*litre/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
+nameless.parameter.kbase_tran_ipc_vpc = addparameter(nameless_model, 'kbase_tran_ipc_vpc', 'ConstantValue', true, 'Value', 10, 'ValueUnits', '1/picomole*litre/hour', 'Notes', '<p>fitted to describe in vivo viral load dynamics</p>', 'Tag', '');
 nameless.parameter.k_shed_ace2_pc = addparameter(nameless_model, 'k_shed_ace2_pc', 'ConstantValue', true, 'Value', 1.8, 'ValueUnits', '1/hour', 'Notes', '<p>rate constant of shedding catalysed by ADAM17/TACE = 5e-4 1/s</p>', 'Tag', '');
 nameless.parameter.k_off_cov_ace2 = addparameter(nameless_model, 'k_off_cov_ace2', 'ConstantValue', true, 'Value', 23.56, 'ValueUnits', '1/hour', 'Notes', '<p>k_off for viral Spike receptor binding domain (RBD) and ACE2 receptor</p>', 'Tag', '');
 nameless.parameter.Num_sp_per_cov = addparameter(nameless_model, 'Num_sp_per_cov', 'ConstantValue', true, 'Value', 150, 'ValueUnits', 'dimensionless', 'Notes', '<p>Basing on estimate  that virion diameter=120-160 nm and Spike height=20nm we have come to following number of Spikes per virion = 4<em>3.14</em>(70 nm)^2/(3.14<em>(10 nm)^2)  = 4</em>49 = 196. Assuming that &quot;dynamic&quot; diameter of Spike is little bit more we have assumed that there are about  150 spike proteins per 1 virion.</p>', 'Tag', '');
@@ -100,7 +100,8 @@ nameless.parameter.L_to_mL = addparameter(nameless_model, 'L_to_mL', 'ConstantVa
 
 % Reactions
 nameless.reaction.V_mat_pc = addreaction(nameless_model, 'null -> null', 'Name', 'V_mat_pc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_alv * k_apo_pc * PC_hs_ss', 'Notes', '', 'Tag', '');
-  addproduct(nameless.reaction.V_mat_pc, [nameless.species.PC, ], [1, ]);
+  addreactant(nameless.reaction.V_mat_pc, [nameless.species.PC_hs_ss, ], [1, ]);
+  addproduct(nameless.reaction.V_mat_pc, [nameless.species.PC, nameless.species.PC_hs_ss, ], [1, 1, ]);
 nameless.reaction.V_tran_pc_ipc = addreaction(nameless_model, 'null -> null', 'Name', 'V_tran_pc_ipc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_tran_pc_ipc * PC', 'Notes', '', 'Tag', '');
   addreactant(nameless.reaction.V_tran_pc_ipc, [nameless.species.PC, ], [1, ]);
   addproduct(nameless.reaction.V_tran_pc_ipc, [nameless.species.iPC, ], [1, ]);
@@ -114,7 +115,8 @@ nameless.reaction.V_apo_ipc = addreaction(nameless_model, 'null -> null', 'Name'
 nameless.reaction.V_apo_vpc = addreaction(nameless_model, 'null -> null', 'Name', 'V_apo_vpc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_alv * k_apo_vpc * vPC', 'Notes', '', 'Tag', '');
   addreactant(nameless.reaction.V_apo_vpc, [nameless.species.vPC, ], [1, ]);
 nameless.reaction.V_syn_ace2_pc = addreaction(nameless_model, 'null -> null', 'Name', 'V_syn_ace2_pc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_pc * k_syn_ace2_pc * PC * Vol_alv * kcell_to_cell', 'Notes', '', 'Tag', '');
-  addproduct(nameless.reaction.V_syn_ace2_pc, [nameless.species.ACE2_pc, ], [1, ]);
+  addreactant(nameless.reaction.V_syn_ace2_pc, [nameless.species.PC, ], [1, ]);
+  addproduct(nameless.reaction.V_syn_ace2_pc, [nameless.species.ACE2_pc, nameless.species.PC, ], [1, 1, ]);
 nameless.reaction.V_shed_ace2_pc = addreaction(nameless_model, 'null -> null', 'Name', 'V_shed_ace2_pc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_shed_ace2_pc * ACE2_pc', 'Notes', '', 'Tag', '');
   addreactant(nameless.reaction.V_shed_ace2_pc, [nameless.species.ACE2_pc, ], [1, ]);
 nameless.reaction.V_bind_cov_ace2_pc = addreaction(nameless_model, 'null -> null', 'Name', 'V_bind_cov_ace2_pc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_off_cov_ace2 * (steric_factor_pc * COV * ACE2_pc / Kd_cov_ace2 - COV_ACE2_pc)', 'Notes', '', 'Tag', '');
@@ -132,7 +134,8 @@ nameless.reaction.V_tran_cov_ace2_pc_ipc = addreaction(nameless_model, 'null -> 
   addreactant(nameless.reaction.V_tran_cov_ace2_pc_ipc, [nameless.species.COV_ACE2_pc, ], [1, ]);
   addproduct(nameless.reaction.V_tran_cov_ace2_pc_ipc, [nameless.species.COV_ACE2_ipc, ], [1, ]);
 nameless.reaction.V_syn_ace2_ipc = addreaction(nameless_model, 'null -> null', 'Name', 'V_syn_ace2_ipc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_pc * k_syn_ace2_pc * iPC * Vol_alv * kcell_to_cell', 'Notes', '', 'Tag', '');
-  addproduct(nameless.reaction.V_syn_ace2_ipc, [nameless.species.ACE2_ipc, ], [1, ]);
+  addreactant(nameless.reaction.V_syn_ace2_ipc, [nameless.species.iPC, ], [1, ]);
+  addproduct(nameless.reaction.V_syn_ace2_ipc, [nameless.species.ACE2_ipc, nameless.species.iPC, ], [1, 1, ]);
 nameless.reaction.V_shed_ace2_ipc = addreaction(nameless_model, 'null -> null', 'Name', 'V_shed_ace2_ipc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_shed_ace2_pc * ACE2_ipc', 'Notes', '', 'Tag', '');
   addreactant(nameless.reaction.V_shed_ace2_ipc, [nameless.species.ACE2_ipc, ], [1, ]);
 nameless.reaction.V_bind_cov_ace2_ipc = addreaction(nameless_model, 'null -> null', 'Name', 'V_bind_cov_ace2_ipc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_off_cov_ace2 * (steric_factor_ipc * COV * ACE2_ipc / Kd_cov_ace2 - COV_ACE2_ipc)', 'Notes', '', 'Tag', '');
@@ -158,7 +161,8 @@ nameless.reaction.V_tran_cov_ipc_vpc = addreaction(nameless_model, 'null -> null
   addreactant(nameless.reaction.V_tran_cov_ipc_vpc, [nameless.species.COV_ipc, ], [1, ]);
   addproduct(nameless.reaction.V_tran_cov_ipc_vpc, [nameless.species.COV_vpc, ], [1, ]);
 nameless.reaction.V_syn_ace2_vpc = addreaction(nameless_model, 'null -> null', 'Name', 'V_syn_ace2_vpc', 'Active', true, 'Reversible', true, 'ReactionRate', 'Vol_pc * k_syn_ace2_pc * vPC * Vol_alv * kcell_to_cell', 'Notes', '', 'Tag', '');
-  addproduct(nameless.reaction.V_syn_ace2_vpc, [nameless.species.ACE2_vpc, ], [1, ]);
+  addreactant(nameless.reaction.V_syn_ace2_vpc, [nameless.species.vPC, ], [1, ]);
+  addproduct(nameless.reaction.V_syn_ace2_vpc, [nameless.species.ACE2_vpc, nameless.species.vPC, ], [1, 1, ]);
 nameless.reaction.V_shed_ace2_vpc = addreaction(nameless_model, 'null -> null', 'Name', 'V_shed_ace2_vpc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_shed_ace2_pc * ACE2_vpc', 'Notes', '', 'Tag', '');
   addreactant(nameless.reaction.V_shed_ace2_vpc, [nameless.species.ACE2_vpc, ], [1, ]);
 nameless.reaction.V_bind_cov_ace2_vpc = addreaction(nameless_model, 'null -> null', 'Name', 'V_bind_cov_ace2_vpc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_off_cov_ace2 * (steric_factor_vpc * COV * ACE2_vpc / Kd_cov_ace2 - COV_ACE2_vpc)', 'Notes', '', 'Tag', '');
@@ -176,7 +180,8 @@ nameless.reaction.V_unc_cov_vpc = addreaction(nameless_model, 'null -> null', 'N
   addreactant(nameless.reaction.V_unc_cov_vpc, [nameless.species.COV_vpc, ], [1, ]);
   addproduct(nameless.reaction.V_unc_cov_vpc, [nameless.species.COV_RNA_vpc, ], [1, ]);
 nameless.reaction.V_rep_cov_rna_vpc = addreaction(nameless_model, 'null -> null', 'Name', 'V_rep_cov_rna_vpc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_rep_cov_rna_vpc * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * kcell_to_cell) / Vol_pc) / EC50_rep_cov_rna_vpc)', 'Notes', '', 'Tag', '');
-  addproduct(nameless.reaction.V_rep_cov_rna_vpc, [nameless.species.COV_RNA_vpc, ], [1, ]);
+  addreactant(nameless.reaction.V_rep_cov_rna_vpc, [nameless.species.vPC, ], [1, ]);
+  addproduct(nameless.reaction.V_rep_cov_rna_vpc, [nameless.species.COV_RNA_vpc, nameless.species.vPC, ], [1, 1, ]);
 nameless.reaction.V_ass_cov_vpc = addreaction(nameless_model, 'null -> null', 'Name', 'V_ass_cov_vpc', 'Active', true, 'Reversible', true, 'ReactionRate', 'k_ass_cov_vpc * COV_RNA_vpc', 'Notes', '', 'Tag', '');
   addreactant(nameless.reaction.V_ass_cov_vpc, [nameless.species.COV_RNA_vpc, ], [1, ]);
   addproduct(nameless.reaction.V_ass_cov_vpc, [nameless.species.COVass_vpc, ], [1, ]);
@@ -236,6 +241,8 @@ addrule(nameless_model, 'anti_Ab = switch_ir * anti_Ab_max * (time / T_sw_ir - 1
 
 % Time Switchers
 nameless.event.viral_load = addevent(nameless_model, 'time >= T_sw_ir', {'switch_ir = 1', }, 'Notes', '', 'Tag', '');
+
+
 
 
 

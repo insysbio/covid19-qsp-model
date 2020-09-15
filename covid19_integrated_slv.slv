@@ -932,6 +932,8 @@ F[14] = ( 1*V_deg_cov_rna_apo_vpc-1*V_deg_cov_rna ) / Vol_alv;
 //!! COVass_vpc  @Species 'amount of assembled virus ready to be released from from vPC' {units: pmole}
 F[15] = 1*V_ass_cov_vpc-1*V_rel_cov_vpc-1*V_deg_cov_ass_apo_vpc;
 
+
+
 #
 
 <RHS 2
@@ -966,8 +968,8 @@ sputum_dilution_coef = 0.1; // @Const 'dilution of sputum in comparison with lun
 //!! PC
 k_apo_pc = 0.00082; // @Const 'rate constant of PC and iPC apoptosis' {units: 1/h};
 kbase_apo_vpc = 0.00082; // @Const 'rate constant of vPC apoptosis' {units: 1/h};
-kbase_tran_pc_ipc = 10; // @Const 'rate constant of PC to iPC transition' {units: 1/pmole/h};
-kbase_tran_ipc_vpc = 10; // @Const 'rate constant of iPC to vPC transition' {units: 1/pmole/h};
+kbase_tran_pc_ipc = 10; // @Const 'rate constant of PC to iPC transition' {units: 1/pM/h};
+kbase_tran_ipc_vpc = 10; // @Const 'rate constant of iPC to vPC transition' {units: 1/pM/h};
 //
 //!! COV-PC
 k_shed_ace2_pc = 1.8; // @Const 'rate constant of ACE2 shedding' {units: 1/h};

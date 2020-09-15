@@ -609,7 +609,7 @@
         id="kbase_tran_pc_ipc"
         constant="true"
         value="10"
-        units="__pmole__h"
+        units="__pM__h"
         metaid="kbase_tran_pc_ipc"
         >
         <notes>
@@ -622,7 +622,7 @@
         id="kbase_tran_ipc_vpc"
         constant="true"
         value="10"
-        units="__pmole__h"
+        units="__pM__h"
         metaid="kbase_tran_ipc_vpc"
         >
         <notes>
@@ -1909,9 +1909,10 @@
     <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
   </listOfUnits>
 </unitDefinition>
-  <unitDefinition id="__pmole__h" name="1/pmole/h">
+  <unitDefinition id="__pM__h" name="1/pM/h">
   <listOfUnits>
     <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
+    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
     <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
   </listOfUnits>
 </unitDefinition>
