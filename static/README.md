@@ -33,5 +33,4 @@ git pull
 
 ### format: Simbio
 
-*Simulations display wrong results in comparison with DBSolve, Matlab and COPASI. 
-We are working on Simbio version of the code.*
+![default-matlab-plot](./plots/default-simbio-plot.png)

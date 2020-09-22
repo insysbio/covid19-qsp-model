@@ -14,3 +14,8 @@
 
 1. Open bash in repository root
 1. ./diagnostics/simbio/start.sh or (bash ./diagnostics/simbio/start.sh)
+
+## Matlab - semi-manual run
+
+1. Open bash in repository root
+1. ./diagnostics/matlab/start.sh or (bash ./diagnostics/matlab/start.sh)

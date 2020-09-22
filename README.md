@@ -113,7 +113,7 @@ Any contribution is welcomed: bug reports, pull requests (code or documentation)
 
 ## Known issues
 
-- The generated model code works wrong in Simbiology. We do not still understand why. Use Matlab or other tools instead.
+- Nothing
 
 ## License
 
