@@ -744,7 +744,7 @@ if(t==0){
     Vol_alv = 0.014;
     vPC = 1;
     COVass_vpc_per_cell = NA_pmole * COVass_vpc / vPC / Vol_alv / kcell_to_cell;
-    COV = 0.002;
+    COV = 0.0018;
     COV_RNA = 0;
     COV_num_sputum_ml = sputum_dilution_coef * (COV + COV_RNA) * NA_pmole / L_to_mL;
     PC = 2.643e+9;
@@ -780,10 +780,10 @@ if(t==0){
     COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA);
     PC_hs_ss = 2.643e+9;
     V_mat_pc = Vol_alv * k_apo_pc * PC_hs_ss;
-    k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc;
-    V_tran_pc_ipc = k_tran_pc_ipc * PC;
-    k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc;
-    V_tran_ipc_vpc = k_tran_ipc_vpc * iPC;
+    k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc / Vol_alv;
+    V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC;
+    k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc / Vol_alv;
+    V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC;
     V_apo_pc = Vol_alv * k_apo_pc * PC;
     V_apo_ipc = Vol_alv * k_apo_pc * iPC;
     switch_ir = 0;
@@ -890,14 +890,14 @@ COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA);
 //
 //!! V_mat_pc
 V_mat_pc = Vol_alv * k_apo_pc * PC_hs_ss;
-k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc;
+k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc / Vol_alv;
 //
 //!! V_tran_pc_ipc
-V_tran_pc_ipc = k_tran_pc_ipc * PC;
-k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc;
+V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC;
+k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc / Vol_alv;
 //
 //!! V_tran_ipc_vpc
-V_tran_ipc_vpc = k_tran_ipc_vpc * iPC;
+V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC;
 //
 //!! V_apo_pc
 V_apo_pc = Vol_alv * k_apo_pc * PC;
@@ -1099,8 +1099,8 @@ sputum_dilution_coef = 0.1; // @Const 'dilution of sputum in comparison with lun
 //!! PC
 k_apo_pc = 0.00082; // @Const 'rate constant of PC and iPC apoptosis' {units: 1/h};
 kbase_apo_vpc = 0.00082; // @Const 'rate constant of vPC apoptosis' {units: 1/h};
-kbase_tran_pc_ipc = 10; // @Const 'rate constant of PC to iPC transition' {units: 1/pM/h};
-kbase_tran_ipc_vpc = 10; // @Const 'rate constant of iPC to vPC transition' {units: 1/pM/h};
+kbase_tran_pc_ipc = 4; // @Const 'rate constant of PC to iPC transition' {units: 1/pM/h};
+kbase_tran_ipc_vpc = 4; // @Const 'rate constant of iPC to vPC transition' {units: 1/pM/h};
 //
 //!! COV-PC
 k_shed_ace2_pc = 1.8; // @Const 'rate constant of ACE2 shedding' {units: 1/h};

@@ -330,7 +330,7 @@
       "PC"
     ],
     "units": "1/pM/h",
-    "num": 10
+    "num": 4
   },
   {
     "class": "Const",
@@ -341,7 +341,7 @@
       "PC"
     ],
     "units": "1/pM/h",
-    "num": 10
+    "num": 4
   },
   {
     "class": "Const",
@@ -596,7 +596,7 @@
     ],
     "units": "1/h",
     "assignments": {
-      "ode_": "kbase_tran_pc_ipc * COV_ACE2_pc"
+      "ode_": "kbase_tran_pc_ipc * COV_ACE2_pc / Vol_alv"
     }
   },
   {
@@ -608,7 +608,7 @@
     ],
     "units": "1/h",
     "assignments": {
-      "ode_": "kbase_tran_ipc_vpc * COV_ipc"
+      "ode_": "kbase_tran_ipc_vpc * COV_ipc / Vol_alv"
     }
   },
   {
@@ -1191,7 +1191,7 @@
     ],
     "units": "pM",
     "assignments": {
-      "start_": "0.002"
+      "start_": "0.0018"
     },
     "compartment": "Vol_alv"
   },
@@ -1270,7 +1270,7 @@
     "aux": {},
     "units": "kcell/h",
     "assignments": {
-      "ode_": "k_tran_pc_ipc * PC"
+      "ode_": "Vol_alv * k_tran_pc_ipc * PC"
     },
     "actors": [
       {
@@ -1293,7 +1293,7 @@
     "aux": {},
     "units": "kcell/h",
     "assignments": {
-      "ode_": "k_tran_ipc_vpc * iPC"
+      "ode_": "Vol_alv * k_tran_ipc_vpc * iPC"
     },
     "actors": [
       {

@@ -223,7 +223,7 @@
         constant="false"
         boundaryCondition="false"
         hasOnlySubstanceUnits="false"
-        initialConcentration="0.002"
+        initialConcentration="0.0018"
         substanceUnits="_pM_L"
         metaid="COV"
         >
@@ -608,7 +608,7 @@
       <parameter
         id="kbase_tran_pc_ipc"
         constant="true"
-        value="10"
+        value="4"
         units="__pM__h"
         metaid="kbase_tran_pc_ipc"
         >
@@ -621,7 +621,7 @@
       <parameter
         id="kbase_tran_ipc_vpc"
         constant="true"
-        value="10"
+        value="4"
         units="__pM__h"
         metaid="kbase_tran_ipc_vpc"
         >
@@ -936,7 +936,7 @@
         <listOfModifiers>
         </listOfModifiers>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_tran_pc_ipc</ci><ci>PC</ci></apply></math>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>Vol_alv</ci><ci>k_tran_pc_ipc</ci></apply><ci>PC</ci></apply></math>
         </kineticLaw>
       </reaction>
       <reaction
@@ -955,7 +955,7 @@
         <listOfModifiers>
         </listOfModifiers>
         <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>k_tran_ipc_vpc</ci><ci>iPC</ci></apply></math>
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><apply><times/><ci>Vol_alv</ci><ci>k_tran_ipc_vpc</ci></apply><ci>iPC</ci></apply></math>
         </kineticLaw>
       </reaction>
       <reaction
@@ -1628,13 +1628,13 @@
       variable="k_tran_pc_ipc"
       metaid="k_tran_pc_ipc::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_tran_pc_ipc</ci><ci>COV_ACE2_pc</ci></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>kbase_tran_pc_ipc</ci><ci>COV_ACE2_pc</ci></apply><ci>Vol_alv</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="k_tran_ipc_vpc"
       metaid="k_tran_ipc_vpc::ode_"
       >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_tran_ipc_vpc</ci><ci>COV_ipc</ci></apply></math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>kbase_tran_ipc_vpc</ci><ci>COV_ipc</ci></apply><ci>Vol_alv</ci></apply></math>
     </assignmentRule>
     <assignmentRule
       variable="VO"

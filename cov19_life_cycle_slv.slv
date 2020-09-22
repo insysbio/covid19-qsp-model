@@ -763,14 +763,14 @@ COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA); // @Record 'percent of activel
 //
 //!! V_mat_pc
 V_mat_pc = Vol_alv * k_apo_pc * PC_hs_ss; // @Reaction 'influx of Pneumocytes via maturation' {units: kcell/h}
-k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc; // @Record 'apparent rate constant of PC to iPC transition' {units: 1/h}
+k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc / Vol_alv; // @Record 'apparent rate constant of PC to iPC transition' {units: 1/h}
 //
 //!! V_tran_pc_ipc
-V_tran_pc_ipc = k_tran_pc_ipc * PC; // @Reaction 'transition of Pneumocyte from normal state to state with entered COV' {units: kcell/h}
-k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc; // @Record 'apparent rate constant of iPC to vPC transition' {units: 1/h}
+V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC; // @Reaction 'transition of Pneumocyte from normal state to state with entered COV' {units: kcell/h}
+k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc / Vol_alv; // @Record 'apparent rate constant of iPC to vPC transition' {units: 1/h}
 //
 //!! V_tran_ipc_vpc
-V_tran_ipc_vpc = k_tran_ipc_vpc * iPC; // @Reaction 'transition of Pneumocyte from state with entered COV to state able to produce viral particles' {units: kcell/h}
+V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC; // @Reaction 'transition of Pneumocyte from state with entered COV to state able to produce viral particles' {units: kcell/h}
 //
 //!! V_apo_pc
 V_apo_pc = Vol_alv * k_apo_pc * PC; // @Reaction 'apoptosis of Pneumocyte' {units: kcell/h}
@@ -968,8 +968,8 @@ sputum_dilution_coef = 0.1; // @Const 'dilution of sputum in comparison with lun
 //!! PC
 k_apo_pc = 0.00082; // @Const 'rate constant of PC and iPC apoptosis' {units: 1/h};
 kbase_apo_vpc = 0.00082; // @Const 'rate constant of vPC apoptosis' {units: 1/h};
-kbase_tran_pc_ipc = 10; // @Const 'rate constant of PC to iPC transition' {units: 1/pM/h};
-kbase_tran_ipc_vpc = 10; // @Const 'rate constant of iPC to vPC transition' {units: 1/pM/h};
+kbase_tran_pc_ipc = 4; // @Const 'rate constant of PC to iPC transition' {units: 1/pM/h};
+kbase_tran_ipc_vpc = 4; // @Const 'rate constant of iPC to vPC transition' {units: 1/pM/h};
 //
 //!! COV-PC
 k_shed_ace2_pc = 1.8; // @Const 'rate constant of ACE2 shedding' {units: 1/h};
@@ -1019,7 +1019,7 @@ ACE2_vpc = 0; // @Species 'amount of ACE2 located at vPC' {units: pmole}
 COV_ACE2_vpc = 0; // @Species 'amount of COV_ACE2 complexes located at vPC' {units: pmole}
 COV_vpc = 0; // @Species 'amount of partially disrupted COV particles ready to release RNA in cytoplasm located in vPC' {units: pmole}
 COV_RNA_vpc = 0; // @Species 'amount of COV_RNA located in vPC' {units: pmole}
-COV = 0.002; // @Species 'concentration of  COV (SARS-CoV-2 virus)' {units: pM}
+COV = 0.0018; // @Species 'concentration of  COV (SARS-CoV-2 virus)' {units: pM}
 COV_RNA = 0; // @Species 'concentration of COV_RNA released from vPC due to their apoptosis' {units: pM}
 COVass_vpc = 0; // @Species 'amount of assembled virus ready to be released from from vPC' {units: pmole}
 default_compartment_ = 1; // {units: UL} This is fake compartment to support compounds without compartment.

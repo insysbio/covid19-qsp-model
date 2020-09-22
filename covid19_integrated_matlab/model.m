@@ -23,7 +23,7 @@ function [ode_func, out_func, y0_, events_conditions, events_affects, reinit_y0]
         vPC = 1; % vPC, concentration of vPC (Pneumocytes with virus actively replicated) in alveoli (kcell/L)
         Vol_alv = 0.014; % Vol_alv, Volume of surfactant linning alveolar surface (L)
         COVass_vpc_per_cell = p(2) * COVass_vpc / vPC / Vol_alv / p(1); % COVass_vpc_per_cell, number of COVass per vPC cell (item/cell)
-        COV = 0.002; % COV, concentration of  COV (SARS-CoV-2 virus) (pM)
+        COV = 0.0018; % COV, concentration of  COV (SARS-CoV-2 virus) (pM)
         COV_RNA = 0; % COV_RNA, concentration of COV_RNA released from vPC due to their apoptosis (pM)
         COV_num_sputum_ml = p(3) * (COV + COV_RNA) * p(2) / p(28); % COV_num_sputum_ml, number of virus copies in 1 mL of sputum (item/mL)
         PC = 2.643e+9; % PC, concentration of PC type II (Pneumocytes free of virus) in alveoli (kcell/L)
@@ -59,10 +59,10 @@ function [ode_func, out_func, y0_, events_conditions, events_affects, reinit_y0]
         COV_sgRNA_perc = 100 * COV_RNA / (COV + COV_RNA); % COV_sgRNA_perc, percent of actively transcribed subgenomic RNA of total (packed + unpacked) RNA in sputum samples taken from the patients (UL)
         PC_hs_ss = 2.643e+9; % PC_hs_ss, concentration of PC type II at steady state w/o virus exposure (kcell/L)
         V_mat_pc = Vol_alv * p(4) * PC_hs_ss; % V_mat_pc, influx of Pneumocytes via maturation (kcell/h)
-        k_tran_pc_ipc = p(6) * COV_ACE2_pc; % k_tran_pc_ipc, apparent rate constant of PC to iPC transition (1/h)
-        V_tran_pc_ipc = k_tran_pc_ipc * PC; % V_tran_pc_ipc, transition of Pneumocyte from normal state to state with entered COV (kcell/h)
-        k_tran_ipc_vpc = p(7) * COV_ipc; % k_tran_ipc_vpc, apparent rate constant of iPC to vPC transition (1/h)
-        V_tran_ipc_vpc = k_tran_ipc_vpc * iPC; % V_tran_ipc_vpc, transition of Pneumocyte from state with entered COV to state able to produce viral particles (kcell/h)
+        k_tran_pc_ipc = p(6) * COV_ACE2_pc / Vol_alv; % k_tran_pc_ipc, apparent rate constant of PC to iPC transition (1/h)
+        V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC; % V_tran_pc_ipc, transition of Pneumocyte from normal state to state with entered COV (kcell/h)
+        k_tran_ipc_vpc = p(7) * COV_ipc / Vol_alv; % k_tran_ipc_vpc, apparent rate constant of iPC to vPC transition (1/h)
+        V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC; % V_tran_ipc_vpc, transition of Pneumocyte from state with entered COV to state able to produce viral particles (kcell/h)
         V_apo_pc = Vol_alv * p(4) * PC; % V_apo_pc, apoptosis of Pneumocyte (kcell/h)
         V_apo_ipc = Vol_alv * p(4) * iPC; % V_apo_ipc, apoptosis of iPneumocyte (kcell/h)
         switch_ir = 0; % switch_ir, switch of effect of IR on vPC apoptosis (UL)
@@ -250,13 +250,13 @@ function [ode_func, out_func, y0_, events_conditions, events_affects, reinit_y0]
         % influx of Pneumocytes via maturation (kcell/h) 
         V_mat_pc = Vol_alv * p(4) * PC_hs_ss;
         % apparent rate constant of PC to iPC transition (1/h) 
-        k_tran_pc_ipc = p(6) * COV_ACE2_pc;
+        k_tran_pc_ipc = p(6) * COV_ACE2_pc / Vol_alv;
         % transition of Pneumocyte from normal state to state with entered COV (kcell/h) 
-        V_tran_pc_ipc = k_tran_pc_ipc * PC;
+        V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC;
         % apparent rate constant of iPC to vPC transition (1/h) 
-        k_tran_ipc_vpc = p(7) * COV_ipc;
+        k_tran_ipc_vpc = p(7) * COV_ipc / Vol_alv;
         % transition of Pneumocyte from state with entered COV to state able to produce viral particles (kcell/h) 
-        V_tran_ipc_vpc = k_tran_ipc_vpc * iPC;
+        V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC;
         % apoptosis of Pneumocyte (kcell/h) 
         V_apo_pc = Vol_alv * p(4) * PC;
         % apoptosis of iPneumocyte (kcell/h) 
@@ -464,13 +464,13 @@ function [ode_func, out_func, y0_, events_conditions, events_affects, reinit_y0]
         % influx of Pneumocytes via maturation (kcell/h) 
         V_mat_pc = Vol_alv * p(4) * PC_hs_ss;
         % apparent rate constant of PC to iPC transition (1/h) 
-        k_tran_pc_ipc = p(6) * COV_ACE2_pc;
+        k_tran_pc_ipc = p(6) * COV_ACE2_pc / Vol_alv;
         % transition of Pneumocyte from normal state to state with entered COV (kcell/h) 
-        V_tran_pc_ipc = k_tran_pc_ipc * PC;
+        V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC;
         % apparent rate constant of iPC to vPC transition (1/h) 
-        k_tran_ipc_vpc = p(7) * COV_ipc;
+        k_tran_ipc_vpc = p(7) * COV_ipc / Vol_alv;
         % transition of Pneumocyte from state with entered COV to state able to produce viral particles (kcell/h) 
-        V_tran_ipc_vpc = k_tran_ipc_vpc * iPC;
+        V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC;
         % apoptosis of Pneumocyte (kcell/h) 
         V_apo_pc = Vol_alv * p(4) * PC;
         % apoptosis of iPneumocyte (kcell/h) 

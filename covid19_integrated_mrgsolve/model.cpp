@@ -23,9 +23,9 @@ k_apo_pc : 0.00082 : (1/h)
 // @Const 'rate constant of vPC apoptosis'
 kbase_apo_vpc : 0.00082 : (1/h)
 // @Const 'rate constant of PC to iPC transition'
-kbase_tran_pc_ipc : 10 : (1/pM/h)
+kbase_tran_pc_ipc : 4 : (1/pM/h)
 // @Const 'rate constant of iPC to vPC transition'
-kbase_tran_ipc_vpc : 10 : (1/pM/h)
+kbase_tran_ipc_vpc : 4 : (1/pM/h)
 // @Const 'rate constant of ACE2 shedding'
 k_shed_ace2_pc : 1.8 : (1/h)
 // @Const 'rate constant of COV_ACE2 complex dissociation'
@@ -112,7 +112,7 @@ $PREAMBLE
 //double COVass_vpc = 0.0;
 //double vPC = 1.0;
 double Vol_alv = 0.014;
-//double COV = 0.002;
+//double COV = 0.0018;
 //double COV_RNA = 0.0;
 //double PC = 2643000000.0;
 //double iPC = 1.0;
@@ -132,7 +132,7 @@ double ACE2_pc_hs_ss = 615.0;
 $MAIN
 COVass_vpc_0 = (0.0);
 vPC_amt__0 = (1.0) * Vol_alv;
-COV_amt__0 = (0.002) * Vol_alv;
+COV_amt__0 = (0.0018) * Vol_alv;
 COV_RNA_amt__0 = (0.0) * Vol_alv;
 PC_amt__0 = (2643000000.0) * Vol_alv;
 iPC_amt__0 = (1.0) * Vol_alv;
@@ -196,13 +196,13 @@ double COV_sgRNA_perc = 100.0 * COV_RNA / (COV + COV_RNA);
 // @Reaction 'influx of Pneumocytes via maturation'
 double V_mat_pc = Vol_alv * k_apo_pc * PC_hs_ss;
 // @Record 'apparent rate constant of PC to iPC transition'
-double k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc;
+double k_tran_pc_ipc = kbase_tran_pc_ipc * COV_ACE2_pc / Vol_alv;
 // @Reaction 'transition of Pneumocyte from normal state to state with entered COV'
-double V_tran_pc_ipc = k_tran_pc_ipc * PC;
+double V_tran_pc_ipc = Vol_alv * k_tran_pc_ipc * PC;
 // @Record 'apparent rate constant of iPC to vPC transition'
-double k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc;
+double k_tran_ipc_vpc = kbase_tran_ipc_vpc * COV_ipc / Vol_alv;
 // @Reaction 'transition of Pneumocyte from state with entered COV to state able to produce viral particles'
-double V_tran_ipc_vpc = k_tran_ipc_vpc * iPC;
+double V_tran_ipc_vpc = Vol_alv * k_tran_ipc_vpc * iPC;
 // @Reaction 'apoptosis of Pneumocyte'
 double V_apo_pc = Vol_alv * k_apo_pc * PC;
 // @Reaction 'apoptosis of iPneumocyte'
