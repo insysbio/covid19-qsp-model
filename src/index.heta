@@ -33,7 +33,7 @@ V_rep_cov_rna_vpc {modifiers: [vPC]};
 
 #export {
   format: DBSolve,
-  filepath: dbsolve,
+  filepath: covid19_integrated_dbsolve,
   groupConstBy: "tags[0]"
 };
 
