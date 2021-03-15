@@ -1,5 +1,5 @@
 {
-  "builderVersion": "^0.5.7",
+  "builderVersion": "^0.6.1",
   "id": "cov19-mph-integrated",
   "license": "MIT",
   "importModule": {

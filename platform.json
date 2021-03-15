@@ -1,10 +1,13 @@
 {
-  "builderVersion": "^0.5.5",
+  "builderVersion": "^0.6.0",
   "id": "COVID19",
   "title": "COVID-19 QSP model",
   "notes": "QSP model describing immune response and virus life cycle in COVID-19",
   "version": "0.1.5",
   "license": "MIT",
+  "options": {
+    "unitsCheck": true
+  },
   "importModule": {
     "type": "heta",
     "source": "src/index.heta"

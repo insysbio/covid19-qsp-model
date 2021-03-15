@@ -17,6 +17,10 @@ V_syn_ace2_ipc {modifiers: [iPC]};
 V_syn_ace2_vpc {modifiers: [vPC]};
 V_rep_cov_rna_vpc {modifiers: [vPC]};
 
+block { output: true } begin
+  IR_apo; COV_num_sputum_ml;
+end
+
 // exports
 #export {
   format: SBML,
