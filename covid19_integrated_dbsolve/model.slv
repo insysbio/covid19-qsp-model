@@ -1,5 +1,3 @@
-
-
 DBSolve Optimum (new parser) 1 Jul 2006
 SLV25.00*
 Number of rows in matrix (Number of activities) #38
@@ -104,7 +102,7 @@ Number of scan parameters
 ABsolute Fitting
 #1
 Variables for FileOutput
-#PC  iPC  vPC  ACE2_pc  COV_ACE2_pc  ACE2_ipc  COV_ACE2_ipc  COV_ipc  ACE2_vpc  COV_ACE2_vpc  COV_vpc  COV_RNA_vpc  COV  COV_RNA  COVass_vpc  t   #####
+#COV_num_sputum_ml  IR_apo  t   #####
 Variables for FileOutputOn
 # #####
 (Internal) Temporary Print Option

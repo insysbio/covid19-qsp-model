@@ -1,6 +1,6 @@
 %{
   This model was created by Heta compiler.
-  Additional functions and constants for compatibility see in "fun.m"
+  Additional functions see in the directory
   export from : #export { format: Simbio, namespace: nameless, ...};
 %}
 
@@ -240,7 +240,7 @@ addrule(nameless_model, 'anti_Ab = switch_ir * anti_Ab_max * (time / T_sw_ir - 1
 
 
 % Time Switchers
-nameless.event.viral_load = addevent(nameless_model, 'time >= T_sw_ir', {'switch_ir = 1', }, 'Notes', '', 'Tag', '');
+nameless.event.viral_load = addevent(nameless_model, 'time > T_sw_ir', {'switch_ir = 1', }, 'Active', true, 'Notes', '', 'Tag', '');
 
 
 

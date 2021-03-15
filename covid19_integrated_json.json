@@ -1,275 +1,5 @@
 [
   {
-    "class": "UnitDef",
-    "id": "fmole",
-    "units": "(1e-15 mole)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "pmole",
-    "units": "(1e-12 mole)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "nmole",
-    "units": "(1e-9 mole)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "umole",
-    "units": "(1e-6 mole)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "mmole",
-    "units": "(1e-3 mole)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "fM",
-    "units": "(1e-15 mole)/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "pM",
-    "units": "(1e-12 mole)/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "nM",
-    "units": "(1e-9 mole)/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "uM",
-    "units": "(1e-6 mole)/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "mM",
-    "units": "(1e-3 mole)/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "M",
-    "units": "mole/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kM",
-    "units": "(1e+3 mole)/litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "fs",
-    "units": "(1e-15 second)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "ps",
-    "units": "(1e-12 second)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "ns",
-    "units": "(1e-9 second)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "us",
-    "units": "(1e-6 second)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "ms",
-    "units": "(1e-3 second)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "s",
-    "units": "second"
-  },
-  {
-    "class": "UnitDef",
-    "id": "h",
-    "units": "hour"
-  },
-  {
-    "class": "UnitDef",
-    "id": "week",
-    "units": "(6.048e+5 second)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "fg",
-    "units": "(1e-18 kilogram)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "pg",
-    "units": "(1e-15 kilogram)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "ng",
-    "units": "(1e-12 kilogram)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "ug",
-    "units": "(1e-9 kilogram)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "mg",
-    "units": "(1e-6 kilogram)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "g",
-    "units": "(1e-3 kilogram)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kg",
-    "units": "kilogram"
-  },
-  {
-    "class": "UnitDef",
-    "id": "fm",
-    "units": "(1e-15 metre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "pm",
-    "units": "(1e-12 metre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "nm",
-    "units": "(1e-9 metre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "um",
-    "units": "(1e-6 metre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "mm",
-    "units": "(1e-13 metre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cm",
-    "units": "(1e-2 metre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "m",
-    "units": "metre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "m2",
-    "units": "metre^2"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cm2",
-    "units": "(1e-2 metre)^2"
-  },
-  {
-    "class": "UnitDef",
-    "id": "um2",
-    "units": "(1e-6 metre)^2"
-  },
-  {
-    "class": "UnitDef",
-    "id": "fL",
-    "units": "(1e-15 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "pL",
-    "units": "(1e-12 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "nL",
-    "units": "(1e-9 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "uL",
-    "units": "(1e-6 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "mL",
-    "units": "(1e-3 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "dL",
-    "units": "(1e-1 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "L",
-    "units": "litre"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cm3",
-    "units": "(1e-3 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "um3",
-    "units": "(1e-15 litre)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "UL",
-    "units": "dimensionless"
-  },
-  {
-    "class": "UnitDef",
-    "id": "percent",
-    "units": "(1e-2 dimensionless)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kat",
-    "units": "katal"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cell",
-    "units": "item"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kcell",
-    "units": "(1e+3 item)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kvir",
-    "units": "(1e+3 item)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "cal",
-    "units": "(4.1868e+0 joule)"
-  },
-  {
-    "class": "UnitDef",
-    "id": "kcal",
-    "units": "(4.1868e+3 joule)"
-  },
-  {
     "class": "Const",
     "id": "kcell_to_cell",
     "title": "kcell to cell conversion coefficient",
@@ -766,7 +496,8 @@
     "units": "item/mL",
     "assignments": {
       "ode_": "sputum_dilution_coef * (COV + COV_RNA) * NA_pmole / L_to_mL"
-    }
+    },
+    "output": true
   },
   {
     "class": "Record",
@@ -946,7 +677,8 @@
     "units": "UL",
     "assignments": {
       "ode_": "1 + switch_ir * Emax_ir_apo * (t / T_sw_ir - 1) ^ n_ir / ((1 + ET50_ir / T_sw_ir) ^ n_ir + (t / T_sw_ir - 1) ^ n_ir)"
-    }
+    },
+    "output": true
   },
   {
     "class": "Record",
@@ -1243,7 +975,6 @@
     "tags": [
       "PC"
     ],
-    "aux": {},
     "units": "kcell/h",
     "assignments": {
       "ode_": "Vol_alv * k_apo_pc * PC_hs_ss"
@@ -1267,7 +998,6 @@
     "tags": [
       "PC"
     ],
-    "aux": {},
     "units": "kcell/h",
     "assignments": {
       "ode_": "Vol_alv * k_tran_pc_ipc * PC"
@@ -1290,7 +1020,6 @@
     "tags": [
       "PC"
     ],
-    "aux": {},
     "units": "kcell/h",
     "assignments": {
       "ode_": "Vol_alv * k_tran_ipc_vpc * iPC"
@@ -1313,7 +1042,6 @@
     "tags": [
       "PC"
     ],
-    "aux": {},
     "units": "kcell/h",
     "assignments": {
       "ode_": "Vol_alv * k_apo_pc * PC"
@@ -1332,7 +1060,6 @@
     "tags": [
       "PC"
     ],
-    "aux": {},
     "units": "kcell/h",
     "assignments": {
       "ode_": "Vol_alv * k_apo_pc * iPC"
@@ -1351,7 +1078,6 @@
     "tags": [
       "PC"
     ],
-    "aux": {},
     "units": "kcell/h",
     "assignments": {
       "ode_": "Vol_alv * k_apo_vpc * vPC"
@@ -1370,7 +1096,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "Vol_pc * k_syn_ace2_pc * PC * Vol_alv * kcell_to_cell"
@@ -1394,7 +1119,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_shed_ace2_pc * ACE2_pc"
@@ -1413,7 +1137,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_off_cov_ace2 * (steric_factor_pc * COV * ACE2_pc / Kd_cov_ace2 - COV_ACE2_pc)"
@@ -1440,7 +1163,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_pc * ACE2_pc"
@@ -1459,7 +1181,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_pc * COV_ACE2_pc"
@@ -1482,7 +1203,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_tran_pc_ipc * ACE2_pc"
@@ -1505,7 +1225,6 @@
     "tags": [
       "COV-PC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_tran_pc_ipc * COV_ACE2_pc"
@@ -1528,7 +1247,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "Vol_pc * k_syn_ace2_pc * iPC * Vol_alv * kcell_to_cell"
@@ -1552,7 +1270,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_shed_ace2_pc * ACE2_ipc"
@@ -1571,7 +1288,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_off_cov_ace2 * (steric_factor_ipc * COV * ACE2_ipc / Kd_cov_ace2 - COV_ACE2_ipc)"
@@ -1598,7 +1314,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_pc * ACE2_ipc"
@@ -1617,7 +1332,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_pc * COV_ACE2_ipc"
@@ -1640,7 +1354,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_pc * COV_ipc"
@@ -1659,7 +1372,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_ent_cov_ipc * COV_ACE2_ipc"
@@ -1682,7 +1394,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_tran_ipc_vpc * ACE2_ipc"
@@ -1705,7 +1416,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_tran_ipc_vpc * COV_ACE2_ipc"
@@ -1728,7 +1438,6 @@
     "tags": [
       "COV-iPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_tran_ipc_vpc * COV_ipc"
@@ -1751,7 +1460,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "Vol_pc * k_syn_ace2_pc * vPC * Vol_alv * kcell_to_cell"
@@ -1775,7 +1483,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_shed_ace2_pc * ACE2_vpc"
@@ -1794,7 +1501,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_off_cov_ace2 * (steric_factor_vpc * COV * ACE2_vpc / Kd_cov_ace2 - COV_ACE2_vpc)"
@@ -1821,7 +1527,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_vpc * ACE2_vpc"
@@ -1840,7 +1545,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_vpc * COV_ACE2_vpc"
@@ -1863,7 +1567,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_ent_cov_ipc * COV_ACE2_vpc"
@@ -1886,7 +1589,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_unc_cov_vpc * COV_vpc"
@@ -1909,7 +1611,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_rep_cov_rna_vpc * COV_RNA_vpc / (1 + (COV_RNA_vpc / (vPC * Vol_alv * kcell_to_cell) / Vol_pc) / EC50_rep_cov_rna_vpc)"
@@ -1933,7 +1634,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_ass_cov_vpc * COV_RNA_vpc"
@@ -1956,7 +1656,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_rel_cov_vpc * COVass_vpc"
@@ -1979,7 +1678,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_vpc * COV_vpc"
@@ -1998,7 +1696,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_vpc * COVass_vpc"
@@ -2021,7 +1718,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "k_apo_vpc * COV_RNA_vpc"
@@ -2044,7 +1740,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "Vol_alv * k_deg_cov * COV"
@@ -2063,7 +1758,6 @@
     "tags": [
       "COV-vPC"
     ],
-    "aux": {},
     "units": "pmole/h",
     "assignments": {
       "ode_": "Vol_alv * k_deg_cov_rna * COV_RNA"
@@ -2079,5 +1773,245 @@
     "class": "TimeSwitcher",
     "id": "viral_load",
     "start": "T_sw_ir"
+  },
+  {
+    "id": "fmole",
+    "units": "(1e-15 mole)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "pmole",
+    "units": "(1e-12 mole)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "nmole",
+    "units": "(1e-9 mole)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "umole",
+    "units": "(1e-6 mole)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "mmole",
+    "units": "(1e-3 mole)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "fM",
+    "units": "(1e-15 mole)/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "pM",
+    "units": "(1e-12 mole)/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "nM",
+    "units": "(1e-9 mole)/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "uM",
+    "units": "(1e-6 mole)/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "mM",
+    "units": "(1e-3 mole)/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "M",
+    "units": "mole/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "kM",
+    "units": "(1e+3 mole)/litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "fL",
+    "units": "(1e-15 litre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "pL",
+    "units": "(1e-12 litre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "nL",
+    "units": "(1e-9 litre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "uL",
+    "units": "(1e-6 litre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "mL",
+    "units": "(1e-3 litre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "dL",
+    "units": "(1e-1 litre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "L",
+    "units": "litre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "fs",
+    "units": "(1e-15 second)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "ps",
+    "units": "(1e-12 second)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "ns",
+    "units": "(1e-9 second)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "us",
+    "units": "(1e-6 second)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "ms",
+    "units": "(1e-3 second)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "s",
+    "units": "second",
+    "action": "defineUnit"
+  },
+  {
+    "id": "h",
+    "units": "hour",
+    "action": "defineUnit"
+  },
+  {
+    "id": "week",
+    "units": "(7e+0 day)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "fg",
+    "units": "(1e-18 kilogram)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "pg",
+    "units": "(1e-15 kilogram)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "ng",
+    "units": "(1e-12 kilogram)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "ug",
+    "units": "(1e-9 kilogram)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "mg",
+    "units": "(1e-6 kilogram)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "g",
+    "units": "(1e-3 kilogram)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "kg",
+    "units": "kilogram",
+    "action": "defineUnit"
+  },
+  {
+    "id": "kat",
+    "units": "katal",
+    "action": "defineUnit"
+  },
+  {
+    "id": "cell",
+    "units": "item",
+    "action": "defineUnit"
+  },
+  {
+    "id": "kcell",
+    "units": "(1e+3 item)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "cal",
+    "units": "(4.1868e+0 joule)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "kcal",
+    "units": "(4.1868e+3 joule)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "fm",
+    "units": "(1e-15 metre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "pm",
+    "units": "(1e-12 metre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "nm",
+    "units": "(1e-9 metre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "um",
+    "units": "(1e-6 metre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "mm",
+    "units": "(1e-13 metre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "cm",
+    "units": "(1e-2 metre)",
+    "action": "defineUnit"
+  },
+  {
+    "id": "m",
+    "units": "metre",
+    "action": "defineUnit"
+  },
+  {
+    "id": "UL",
+    "units": "dimensionless",
+    "action": "defineUnit"
+  },
+  {
+    "id": "percent",
+    "units": "(1e-2 dimensionless)",
+    "action": "defineUnit"
   }
 ]
