@@ -22,11 +22,6 @@ git pull
 
 ## Diagnostics
 
-### format: HetaSimulator.jl
-
-![default-hetasimulator-IR_apo](./plots/default-hetasimulator-IR_apo.png)
-![default-hetasimulator-COV_num_sputum_ml](./plots/default-hetasimulator-COV_num_sputum_ml.png)
-
 ### format: SLV
 
 ![default-dbsolve-IR_apo](./plots/default-dbsolve-IR_apo.png)

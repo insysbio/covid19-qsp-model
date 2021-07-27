@@ -1,5 +1,9 @@
 [
   {
+    "class": "TimeScale",
+    "id": "t"
+  },
+  {
     "class": "Const",
     "id": "kcell_to_cell",
     "title": "kcell to cell conversion coefficient",

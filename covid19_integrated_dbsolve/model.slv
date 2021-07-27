@@ -736,6 +736,7 @@ InteractionNetwork
 
 //! Initialization at start_
 if(t==0){
+    // initialization of TimeScales
     // initialization of Records
     time_day = t / 24;
     COVass_vpc = 0;
