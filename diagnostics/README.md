@@ -19,3 +19,8 @@
 
 1. Open bash in repository root
 1. ./diagnostics/matlab/start.sh or (bash ./diagnostics/matlab/start.sh)
+
+## HetaSimulator.jl
+
+1. Open bash in repository root
+1. ./diagnostics/julia/start.sh or (bash ./diagnostics/julia/start.sh)

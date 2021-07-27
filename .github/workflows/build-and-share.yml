@@ -42,6 +42,7 @@ jobs:
         cp -rf ./diagnostics/dbsolve/*.png ./dist/plots/
         cp -rf ./diagnostics/simbio/*.png ./dist/plots/
         cp -rf ./diagnostics/matlab/*.png ./dist/plots/
+        cp -rf ./diagnostics/julia/*.png ./dist/plots/
     - name: Deploy to "dist" branch only for "master" and "share" pushes
       if: ${{ matrix.node-version == '8.x' && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/share' ) }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
