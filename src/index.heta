@@ -61,6 +61,11 @@ end
   filepath: covid19_integrated_matlab
 };
 
+#export {
+  format: Julia,
+  filepath: julia
+};
+
 /*
 #export {
   format: XLSX,
