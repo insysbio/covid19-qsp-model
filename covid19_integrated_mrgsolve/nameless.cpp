@@ -66,8 +66,10 @@ Kd_anti_Ab : 14300 : (pM)
 anti_Ab_max : 941000 : (pM)
 // @Const 'Volume of Pneumocyte'
 Vol_pc : 1.33e-12 : (L/cell)
-// @Const ''
+// @Const 
 L_to_mL : 1000 : (mL/L)
+// @TimeSwitcher 
+viral_load_ : 1 :
 
 $CMT @annotated
 // @Species 'concentration of PC type II (Pneumocytes free of virus) in alveoli'
@@ -128,6 +130,7 @@ double Vol_alv = 0.014;
 double PC_hs_ss = 2643000000.0;
 double switch_ir = 0.0;
 double ACE2_pc_hs_ss = 615.0;
+self.mevent(T_sw_ir, 10);
 
 $MAIN
 COVass_vpc_0 = (0.0);
@@ -145,6 +148,12 @@ COV_ACE2_vpc_0 = (0.0);
 COV_ipc_0 = (0.0);
 COV_vpc_0 = (0.0);
 COV_RNA_vpc_0 = (0.0);
+
+$TABLE
+// viral_load @TimeSwitcher
+if (viral_load_ && EVID==10 && TIME>0.0) { 
+  switch_ir = 1.0;
+}
 
 $ODE
 // @Record 'hours to days conversion'

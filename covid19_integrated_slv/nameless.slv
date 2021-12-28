@@ -933,8 +933,6 @@ F[14] = ( 1*V_deg_cov_rna_apo_vpc-1*V_deg_cov_rna ) / Vol_alv;
 //!! COVass_vpc  @Species 'amount of assembled virus ready to be released from from vPC' {units: pmole}
 F[15] = 1*V_ass_cov_vpc-1*V_rel_cov_vpc-1*V_deg_cov_ass_apo_vpc;
 
-
-
 #
 
 <RHS 2

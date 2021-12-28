@@ -1,10 +1,10 @@
 # preamble
 library('mrgsolve')
 
-# load model
-nameless_model <- mrgsolve::mread(model = 'nameless', file = 'model.cpp')
+# load models
+nameless_model <- mrgsolve::mread(model = 'nameless', file = 'nameless.cpp')
 
-# run model
+# run first model
 sim <- nameless_model %>%
   mrgsim(
     delta = 1,

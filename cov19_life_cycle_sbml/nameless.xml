@@ -9,6 +9,123 @@
     metaid="nameless"
     >
     
+<!-- BEGIN UNIT DEFINITIONS -->
+    <listOfUnitDefinitions>
+    <unitDefinition id="__kcell_cell" name="cell/kcell">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__pmole_item" name="item/pmole">
+  <listOfUnits>
+    <unit kind="item" exponent="1" scale="0" multiplier="1"/>
+    <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_UL" name="UL">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__h" name="1/h">
+  <listOfUnits>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__pM__h" name="1/pM/h">
+  <listOfUnits>
+    <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
+    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_pM" name="pM">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_item__cell" name="item/cell">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_h" name="h">
+  <listOfUnits>
+    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__cell_L" name="L/cell">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+    <unit kind="item" exponent="-1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_mL__L" name="mL/L">
+  <listOfUnits>
+    <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_day" name="day">
+  <listOfUnits>
+    <unit kind="second" exponent="1" scale="4" multiplier="8.64"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_pM__h" name="pM/h">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="__mL_item" name="item/mL">
+  <listOfUnits>
+    <unit kind="item" exponent="1" scale="0" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_kcell__L" name="kcell/L">
+  <listOfUnits>
+    <unit kind="item" exponent="1" scale="3" multiplier="1"/>
+    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_L" name="L">
+  <listOfUnits>
+    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_kcell" name="kcell">
+  <listOfUnits>
+    <unit kind="item" exponent="1" scale="3" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_pmole" name="pmole">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_pM_L" name="pM*L">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_kcell__h" name="kcell/h">
+  <listOfUnits>
+    <unit kind="item" exponent="1" scale="3" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    <unitDefinition id="_pmole__h" name="pmole/h">
+  <listOfUnits>
+    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
+    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
+    </listOfUnitDefinitions>
+<!-- END UNIT DEFINITIONS -->
+  
+  
     <listOfCompartments>
       <compartment
         id="Vol_alv"
@@ -21,7 +138,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>calculated as (width of linning layer)<em>(lunf surface area) = (0.1 - 0.3 um)</em>(66 - 75 m)</p>
-
           </html>
         </notes>
       </compartment>
@@ -42,7 +158,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>calculated on the basis of total type II pneumocytes number per lungs (see ref) and volume of lung surfactant equal to 0.014L</p>
-
           </html>
         </notes>
       </species>
@@ -84,7 +199,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>estimate for type II pneumocytes was taken</p>
-
           </html>
         </notes>
       </species>
@@ -102,7 +216,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>based on 1e4 ACE2 per cell</p>
-
           </html>
         </notes>
       </species>
@@ -120,7 +233,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>based on 1e4 ACE2 per cell and total PC II number in lungs equal to 37e9 [7103258]</p>
-
           </html>
         </notes>
       </species>
@@ -270,7 +382,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>hill like expression describes general kinetic pattern observed for Spike specific IgG and IgM in [32350462]</p>
-
           </html>
         </notes>
       </species>
@@ -327,7 +438,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>Kd for viral Spike receptor binding domain (RBD) and ACE2 receptor is known and equal to 4.67 nM. Basing on estimate that virion includes  VO*Num_sp_per_cov free spike proteins ready to bind to ACE2 we have come to the equation for apparent Kd describing binding of virion and ACE2</p>
-
           </html>
         </notes>
       </parameter>
@@ -558,7 +668,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed</p>
-
           </html>
         </notes>
       </parameter>
@@ -596,7 +705,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>the value was estimated from the HS submodel at steady state. Indeed, taking into account that (i) PC2 is precursors of PC1 [9227501], (ii) life span of PC1 is about 120 days [20616357], (iii) ratio of PC1/PC2 at steady state = 19/37 [7103258] we represented lung cell  dynamics system as follows: --(Vol_alv<em>k_mat_pc) --&gt; PC2 --(Vol_alv</em>k_dif_pc<em>PC2)--&gt; PC1--(Vol_alv</em>k_apo_pc1<em>PC1)--&gt;. Then consider the system at steady state and assuming that lifespan (T_ls) corresponds to time required for 99% of cell die we have come to following formulas: (a) k_apo_pc1 = ln(1/0.01)/(120 days) = 1.6e-3 1/h, (b) k_dif_pc = k_apo_pc1</em>PC1_ss/PC2_ss = 8.2e-4 1/h, (c) k_mat_pc = k_dif_pc*PC2_ss. Since  PC2 to PC1 transition was not considered in the version of the model we can assume that k_apo_pc = k_dif_pc</p>
-
           </html>
         </notes>
       </parameter>
@@ -610,7 +718,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>the value was estimated from [PMID 18487354] only</p>
-
           </html>
         </notes>
       </parameter>
@@ -624,7 +731,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>fitted to describe in vivo viral load dynamics</p>
-
           </html>
         </notes>
       </parameter>
@@ -638,7 +744,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>fitted to describe in vivo viral load dynamics</p>
-
           </html>
         </notes>
       </parameter>
@@ -652,7 +757,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>rate constant of shedding catalysed by ADAM17/TACE = 5e-4 1/s</p>
-
           </html>
         </notes>
       </parameter>
@@ -666,7 +770,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>k_off for viral Spike receptor binding domain (RBD) and ACE2 receptor</p>
-
           </html>
         </notes>
       </parameter>
@@ -680,7 +783,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>Basing on estimate  that virion diameter=120-160 nm and Spike height=20nm we have come to following number of Spikes per virion = 4<em>3.14</em>(70 nm)^2/(3.14*(10 nm)^2)  = 4*49 = 196. Assuming that &quot;dynamic&quot; diameter of Spike is little bit more we have assumed that there are about  150 spike proteins per 1 virion.</p>
-
           </html>
         </notes>
       </parameter>
@@ -694,7 +796,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>Kd for viral Spike receptor binding domain (RBD) and ACE2</p>
-
           </html>
         </notes>
       </parameter>
@@ -708,7 +809,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>estimated on the basis of rate constant of endocytosis for Influenza virus</p>
-
           </html>
         </notes>
       </parameter>
@@ -722,7 +822,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>fitted to describe in vivo viral load dynamics averaged across 9 patients</p>
-
           </html>
         </notes>
       </parameter>
@@ -736,7 +835,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>estimated on the basis of rate constant of endocytosis for Influenza virus: k_end-cyt_Vend in original paper describing release from endosome/uncoating</p>
-
           </html>
         </notes>
       </parameter>
@@ -750,7 +848,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>fitted to describe in vivo viral load dynamics averaged across 9 patients</p>
-
           </html>
         </notes>
       </parameter>
@@ -764,7 +861,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>it was proposed that a host cell can produce about 8000 (item/cell) virions of Influenza virus before it dies [15384040]. So we have calculated the EC50 basing on the value; taking into account that Vol_pc = 1.33e-12 L/cell we can obtain estimate in pM: EC50 = 8e3 /NA_pmole/Vol_pc = 8e3/6.02e11/1.33e-12 = 9992 pM</p>
-
           </html>
         </notes>
       </parameter>
@@ -778,7 +874,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>fitted to describe in vivo viral load dynamics averaged across 9 patients</p>
-
           </html>
         </notes>
       </parameter>
@@ -792,7 +887,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>COV half-life on different surfaces and aerosole is varied from 1 to 8 hours. We have chosen half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h</p>
-
           </html>
         </notes>
       </parameter>
@@ -806,7 +900,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>maximal number of virions Nmax = (surface area of PC faced to alveoli lumen)/(area of &quot;maximal&quot; section of SARS-CoV-2). Based on PC surface area = 183 um^2 [7103258] and (virion diameter=120-160 nm), one obtains Nmax =  183 um^2 / Pi*(140/2 nm) ^2 = 11900</p>
-
           </html>
         </notes>
       </parameter>
@@ -820,7 +913,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed to be equal to COV half-life equal to 4 hour. So, rate constant is equal to ln2/4 = 0.17 1/h</p>
-
           </html>
         </notes>
       </parameter>
@@ -834,7 +926,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed</p>
-
           </html>
         </notes>
       </parameter>
@@ -848,7 +939,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed</p>
-
           </html>
         </notes>
       </parameter>
@@ -862,7 +952,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed</p>
-
           </html>
         </notes>
       </parameter>
@@ -876,7 +965,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed</p>
-
           </html>
         </notes>
       </parameter>
@@ -890,7 +978,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>assumed to be equal to tat presented in the paper for neutralizing mAb</p>
-
           </html>
         </notes>
       </parameter>
@@ -904,7 +991,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>For Protective Antigen (PA) for Anthrax vaccine it was measured that concentration of Anti-PA specific IgG in serum is 141.2 ug/mL [15358653]. Taking into account Mr_IgG = 150 kDa, one obtains 141.2 ug/mL =</p>
-
           </html>
         </notes>
       </parameter>
@@ -918,7 +1004,6 @@
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>averaged between type I and II pneumocytes (moved to Const)</p>
-
           </html>
         </notes>
       </parameter>
@@ -931,6 +1016,216 @@
         >
       </parameter>
     </listOfParameters>
+  
+<!-- BEGIN RULES -->
+  <listOfRules>
+    <assignmentRule
+      variable="time_day"
+      metaid="time_day::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><cn>24</cn></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="k_syn_ace2_pc"
+      metaid="k_syn_ace2_pc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>k_shed_ace2_pc</ci><ci>ACE2_pc_hs_ss</ci></apply><ci>PC_hs_ss</ci></apply><ci>Vol_pc</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="k_tran_pc_ipc"
+      metaid="k_tran_pc_ipc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>kbase_tran_pc_ipc</ci><ci>COV_ACE2_pc</ci></apply><ci>Vol_alv</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="k_tran_ipc_vpc"
+      metaid="k_tran_ipc_vpc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>kbase_tran_ipc_vpc</ci><ci>COV_ipc</ci></apply><ci>Vol_alv</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="VO"
+      metaid="VO::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>anti_Ab</ci><apply><plus/><ci>Kd_anti_Ab</ci><ci>anti_Ab</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="Kd_cov_ace2"
+      metaid="Kd_cov_ace2::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><ci>Kd_spike_ace2</ci><ci>Num_sp_per_cov</ci></apply><apply><minus/><cn>1</cn><ci>VO</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="ACE2_pc_per_cell"
+      metaid="ACE2_pc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_pc</ci></apply><ci>PC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_ACE2_pc_per_cell"
+      metaid="COV_ACE2_pc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_pc</ci></apply><ci>PC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="ACE2_ipc_per_cell"
+      metaid="ACE2_ipc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_ACE2_ipc_per_cell"
+      metaid="COV_ACE2_ipc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_ipc_per_cell"
+      metaid="COV_ipc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="ACE2_vpc_per_cell"
+      metaid="ACE2_vpc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_ACE2_vpc_per_cell"
+      metaid="COV_ACE2_vpc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_vpc_per_cell"
+      metaid="COV_vpc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COVass_vpc_per_cell"
+      metaid="COVass_vpc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COVass_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_RNA_vpc_per_cell"
+      metaid="COV_RNA_vpc_per_cell::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_RNA_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_num_sputum_ml"
+      metaid="COV_num_sputum_ml::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>sputum_dilution_coef</ci><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply><ci>NA_pmole</ci></apply><ci>L_to_mL</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PC_tot"
+      metaid="PC_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><plus/><ci>PC</ci><ci>iPC</ci></apply><ci>vPC</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="PC_percent"
+      metaid="PC_percent::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>PC</ci></apply><ci>PC_tot</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="iPC_percent"
+      metaid="iPC_percent::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>iPC</ci></apply><ci>PC_tot</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="vPC_percent"
+      metaid="vPC_percent::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>vPC</ci></apply><ci>PC_tot</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="ACE2_pc_per_cell_tot"
+      metaid="ACE2_pc_per_cell_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_pc_per_cell</ci><ci>COV_ACE2_pc_per_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="ACE2_ipc_per_cell_tot"
+      metaid="ACE2_ipc_per_cell_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_ipc_per_cell</ci><ci>COV_ACE2_ipc_per_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="ACE2_vpc_per_cell_tot"
+      metaid="ACE2_vpc_per_cell_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_vpc_per_cell</ci><ci>COV_ACE2_vpc_per_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_pc_per_cell_tot"
+      metaid="COV_pc_per_cell_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>COV_ACE2_pc_per_cell</ci></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_ipc_per_cell_tot"
+      metaid="COV_ipc_per_cell_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>COV_ACE2_ipc_per_cell</ci><ci>COV_ipc_per_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_vpc_per_cell_tot"
+      metaid="COV_vpc_per_cell_tot::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><plus/><ci>COV_ACE2_vpc_per_cell</ci><ci>COV_vpc_per_cell</ci></apply><ci>COV_RNA_vpc_per_cell</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="steric_factor_pc"
+      metaid="steric_factor_pc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_pc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="steric_factor_ipc"
+      metaid="steric_factor_ipc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_ipc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="steric_factor_vpc"
+      metaid="steric_factor_vpc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_vpc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="COV_sgRNA_perc"
+      metaid="COV_sgRNA_perc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>COV_RNA</ci></apply><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="IR_apo"
+      metaid="IR_apo::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><cn>1</cn><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>Emax_ir_apo</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><cn>1</cn><apply><divide/><ci>ET50_ir</ci><ci>T_sw_ir</ci></apply></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply></apply></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="k_apo_vpc"
+      metaid="k_apo_vpc::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_apo_vpc</ci><ci>IR_apo</ci></apply></math>
+    </assignmentRule>
+    <assignmentRule
+      variable="anti_Ab"
+      metaid="anti_Ab::ode_"
+      >
+      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>anti_Ab_max</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><cn>1</cn><apply><divide/><ci>ET50_ir</ci><ci>T_sw_ir</ci></apply></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply></apply></math>
+    </assignmentRule>
+  
+  </listOfRules>
+<!-- BEGIN RULES -->
   
     <listOfReactions>
       <reaction
@@ -1642,328 +1937,6 @@
       </reaction>
     </listOfReactions>
   
-  <listOfRules>
-    <assignmentRule
-      variable="time_day"
-      metaid="time_day::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><cn>24</cn></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="k_syn_ace2_pc"
-      metaid="k_syn_ace2_pc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>k_shed_ace2_pc</ci><ci>ACE2_pc_hs_ss</ci></apply><ci>PC_hs_ss</ci></apply><ci>Vol_pc</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="k_tran_pc_ipc"
-      metaid="k_tran_pc_ipc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>kbase_tran_pc_ipc</ci><ci>COV_ACE2_pc</ci></apply><ci>Vol_alv</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="k_tran_ipc_vpc"
-      metaid="k_tran_ipc_vpc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><ci>kbase_tran_ipc_vpc</ci><ci>COV_ipc</ci></apply><ci>Vol_alv</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="VO"
-      metaid="VO::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><ci>anti_Ab</ci><apply><plus/><ci>Kd_anti_Ab</ci><ci>anti_Ab</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="Kd_cov_ace2"
-      metaid="Kd_cov_ace2::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><ci>Kd_spike_ace2</ci><ci>Num_sp_per_cov</ci></apply><apply><minus/><cn>1</cn><ci>VO</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="ACE2_pc_per_cell"
-      metaid="ACE2_pc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_pc</ci></apply><ci>PC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_ACE2_pc_per_cell"
-      metaid="COV_ACE2_pc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_pc</ci></apply><ci>PC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="ACE2_ipc_per_cell"
-      metaid="ACE2_ipc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_ACE2_ipc_per_cell"
-      metaid="COV_ACE2_ipc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_ipc_per_cell"
-      metaid="COV_ipc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ipc</ci></apply><ci>iPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="ACE2_vpc_per_cell"
-      metaid="ACE2_vpc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>ACE2_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_ACE2_vpc_per_cell"
-      metaid="COV_ACE2_vpc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_ACE2_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_vpc_per_cell"
-      metaid="COV_vpc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COVass_vpc_per_cell"
-      metaid="COVass_vpc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COVass_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_RNA_vpc_per_cell"
-      metaid="COV_RNA_vpc_per_cell::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><divide/><apply><divide/><apply><times/><ci>NA_pmole</ci><ci>COV_RNA_vpc</ci></apply><ci>vPC</ci></apply><ci>Vol_alv</ci></apply><ci>kcell_to_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_num_sputum_ml"
-      metaid="COV_num_sputum_ml::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>sputum_dilution_coef</ci><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply><ci>NA_pmole</ci></apply><ci>L_to_mL</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PC_tot"
-      metaid="PC_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><plus/><ci>PC</ci><ci>iPC</ci></apply><ci>vPC</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="PC_percent"
-      metaid="PC_percent::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>PC</ci></apply><ci>PC_tot</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="iPC_percent"
-      metaid="iPC_percent::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>iPC</ci></apply><ci>PC_tot</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="vPC_percent"
-      metaid="vPC_percent::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>vPC</ci></apply><ci>PC_tot</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="ACE2_pc_per_cell_tot"
-      metaid="ACE2_pc_per_cell_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_pc_per_cell</ci><ci>COV_ACE2_pc_per_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="ACE2_ipc_per_cell_tot"
-      metaid="ACE2_ipc_per_cell_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_ipc_per_cell</ci><ci>COV_ACE2_ipc_per_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="ACE2_vpc_per_cell_tot"
-      metaid="ACE2_vpc_per_cell_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>ACE2_vpc_per_cell</ci><ci>COV_ACE2_vpc_per_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_pc_per_cell_tot"
-      metaid="COV_pc_per_cell_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><ci>COV_ACE2_pc_per_cell</ci></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_ipc_per_cell_tot"
-      metaid="COV_ipc_per_cell_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><ci>COV_ACE2_ipc_per_cell</ci><ci>COV_ipc_per_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_vpc_per_cell_tot"
-      metaid="COV_vpc_per_cell_tot::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><apply><plus/><ci>COV_ACE2_vpc_per_cell</ci><ci>COV_vpc_per_cell</ci></apply><ci>COV_RNA_vpc_per_cell</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="steric_factor_pc"
-      metaid="steric_factor_pc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_pc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="steric_factor_ipc"
-      metaid="steric_factor_ipc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_ipc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="steric_factor_vpc"
-      metaid="steric_factor_vpc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><minus/><cn>1</cn><apply><divide/><ci>COV_ACE2_vpc_per_cell</ci><ci>Nmax_cov_per_cell</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="COV_sgRNA_perc"
-      metaid="COV_sgRNA_perc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><cn>100</cn><ci>COV_RNA</ci></apply><apply><plus/><ci>COV</ci><ci>COV_RNA</ci></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="IR_apo"
-      metaid="IR_apo::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><plus/><cn>1</cn><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>Emax_ir_apo</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><cn>1</cn><apply><divide/><ci>ET50_ir</ci><ci>T_sw_ir</ci></apply></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply></apply></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="k_apo_vpc"
-      metaid="k_apo_vpc::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><times/><ci>kbase_apo_vpc</ci><ci>IR_apo</ci></apply></math>
-    </assignmentRule>
-    <assignmentRule
-      variable="anti_Ab"
-      metaid="anti_Ab::ode_"
-      >
-      <math xmlns="http://www.w3.org/1998/Math/MathML"><apply><divide/><apply><times/><apply><times/><ci>switch_ir</ci><ci>anti_Ab_max</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply><apply><plus/><apply><power/><apply><plus/><cn>1</cn><apply><divide/><ci>ET50_ir</ci><ci>T_sw_ir</ci></apply></apply><ci>n_ir</ci></apply><apply><power/><apply><minus/><apply><divide/><csymbol definitionURL="http://www.sbml.org/sbml/symbols/time">t</csymbol><ci>T_sw_ir</ci></apply><cn>1</cn></apply><ci>n_ir</ci></apply></apply></apply></math>
-    </assignmentRule>
-  
-  </listOfRules>
-  
-<!-- UNIT DEFINITIONS -->
-<listOfUnitDefinitions>
-  <unitDefinition id="__kcell_cell" name="cell/kcell">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__pmole_item" name="item/pmole">
-  <listOfUnits>
-    <unit kind="item" exponent="1" scale="0" multiplier="1"/>
-    <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_UL" name="UL">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__h" name="1/h">
-  <listOfUnits>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__pM__h" name="1/pM/h">
-  <listOfUnits>
-    <unit kind="mole" exponent="-1" scale="-12" multiplier="1"/>
-    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_pM" name="pM">
-  <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_item__cell" name="item/cell">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_h" name="h">
-  <listOfUnits>
-    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__cell_L" name="L/cell">
-  <listOfUnits>
-    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
-    <unit kind="item" exponent="-1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_mL__L" name="mL/L">
-  <listOfUnits>
-    <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_day" name="day">
-  <listOfUnits>
-    <unit kind="second" exponent="1" scale="4" multiplier="8.64"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_pM__h" name="pM/h">
-  <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="__mL_item" name="item/mL">
-  <listOfUnits>
-    <unit kind="item" exponent="1" scale="0" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="-3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_kcell__L" name="kcell/L">
-  <listOfUnits>
-    <unit kind="item" exponent="1" scale="3" multiplier="1"/>
-    <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_L" name="L">
-  <listOfUnits>
-    <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_kcell" name="kcell">
-  <listOfUnits>
-    <unit kind="item" exponent="1" scale="3" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_pmole" name="pmole">
-  <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_pM_L" name="pM*L">
-  <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_kcell__h" name="kcell/h">
-  <listOfUnits>
-    <unit kind="item" exponent="1" scale="3" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-  <unitDefinition id="_pmole__h" name="pmole/h">
-  <listOfUnits>
-    <unit kind="mole" exponent="1" scale="-12" multiplier="1"/>
-    <unit kind="second" exponent="-1" scale="3" multiplier="3.6"/>
-  </listOfUnits>
-</unitDefinition>
-</listOfUnitDefinitions>
   
   </model>
 </sbml>
