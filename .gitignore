@@ -3,6 +3,7 @@
 /draft
 /drafts
 /meta
+/.vscode
 
 ### temporal files
 *.tmp

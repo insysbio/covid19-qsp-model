@@ -2,13 +2,13 @@
 % this is for diagnostic purposes
 
 %start this using ci script
-% run('dist/covid19_integrated_simbio/model.m');
+% run('dist/covid19_integrated_simbio/nameless.m');
 
 %%% prepare
 
 % use when start matlab console
 %cd '../simulations'
-%copyfile('../../dist/simbio/fun.m', './fun.m');
+%copyfile('../../dist/simbio/tern__.m', './tern__.m');
 %run('../dist/simbio/main.m');
 %sbiosaveproject '../../dist/simbio/proj' default_model;
 

@@ -2,7 +2,7 @@ using HetaSimulator, Plots
 
 model = load_jlmodel("../../dist/julia/model.jl")
 
-res = sim(model; tspan = (0,1700))
+res = Scenario(model; tspan = (0,1700)) |> sim
 
 @info "Creating plots..."
 

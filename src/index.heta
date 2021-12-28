@@ -5,6 +5,7 @@
 
 // include units
 include ./qsp-units.heta
+t {units: hour};
 // include life cycle module
 include ./Cov19_life_cycle/index.heta
 
