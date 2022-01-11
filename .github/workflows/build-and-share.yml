@@ -12,7 +12,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [ 12.x ]
+        node-version: [ 10.x ]
         heta-version: [ latest ]
         platform: [ ubuntu-latest ]
 
@@ -34,7 +34,7 @@ jobs:
       run: |
         rm -rf dist/*
         heta build
-        #heta build --source src/Cov19_life_cycle/cov19_life_cycle.heta
+        heta build --source src/Cov19_life_cycle/cov19_life_cycle.heta
     - name: Copy other files to dist
       run: |
         cp -f ./static/README.md ./dist/
