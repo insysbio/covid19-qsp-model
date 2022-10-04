@@ -18,6 +18,10 @@ V_syn_ace2_ipc {modifiers: [iPC]};
 V_syn_ace2_vpc {modifiers: [vPC]};
 V_rep_cov_rna_vpc {modifiers: [vPC]};
 
+// update for poster
+@Const COV_0 = 0.0018;
+COV .= COV_0;
+
 block { output: true } begin
   IR_apo; COV_num_sputum_ml;
 end
