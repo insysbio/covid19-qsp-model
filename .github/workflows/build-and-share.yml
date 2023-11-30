@@ -44,7 +44,7 @@ jobs:
         cp -rf ./diagnostics/matlab/*.png ./dist/plots/
         cp -rf ./diagnostics/julia/*.png ./dist/plots/
     - name: Deploy to "dist" branch only for "master" and "share" pushes
-      if: ${{ matrix.node-version == '10.x' && github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/share' ) }}
+      if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/share' ) }}
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
