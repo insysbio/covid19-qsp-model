@@ -28,8 +28,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
-        npm i -g https://github.com/hetalang/heta-compiler.git
-        #npm i -g heta-compiler@${{ matrix.heta-version }}
+        #npm i -g https://github.com/hetalang/heta-compiler.git
+        npm i -g heta-compiler@${{ matrix.heta-version }}
     - name: Clean and build
       run: |
         rm -rf dist/*
