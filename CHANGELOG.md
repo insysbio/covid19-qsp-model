@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.1.5
+
+- Julia support
+- support of heta-compiler v0.6.x
+- fix autobuild
+- unit fixes
+- modifications in Mph, Cov modules
+
+## 0.1.4
+
+- diagnostics update
+- matlab diagnostics
+- fitting of parameters in viral_load
+
 ## 0.1.3
 
 - update structure to support Heta compiler v0.5.x
