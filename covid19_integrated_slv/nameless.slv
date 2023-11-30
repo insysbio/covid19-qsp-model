@@ -1,5 +1,5 @@
-DBSolve Optimum (new parser) 1 Jul 2006
-SLV25.00*
+DBSolve Optimum 2020 (new parser) 1 Jul 2006
+SLV26.00*
 Number of rows in matrix (Number of activities) #38
 Number of cols in matrix (Number of compounds) #15
 Initial System dimension #15
@@ -1456,6 +1456,10 @@ k1
 1
 0.000010
 1000000
+p1
+0.000000
+0.000000
+10
 1
 1
 switch_ir

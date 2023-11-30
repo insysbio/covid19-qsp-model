@@ -11,6 +11,11 @@
     
 <!-- BEGIN UNIT DEFINITIONS -->
     <listOfUnitDefinitions>
+    <unitDefinition id="_h" name="h">
+  <listOfUnits>
+    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
+  </listOfUnits>
+</unitDefinition>
     <unitDefinition id="__kcell_cell" name="cell/kcell">
   <listOfUnits>
     <unit kind="dimensionless" exponent="1" scale="-3" multiplier="1"/>
@@ -48,11 +53,6 @@
     <unitDefinition id="_item__cell" name="item/cell">
   <listOfUnits>
     <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
-  </listOfUnits>
-</unitDefinition>
-    <unitDefinition id="_h" name="h">
-  <listOfUnits>
-    <unit kind="second" exponent="1" scale="3" multiplier="3.6"/>
   </listOfUnits>
 </unitDefinition>
     <unitDefinition id="__cell_L" name="L/cell">
@@ -124,7 +124,7 @@
 </unitDefinition>
     </listOfUnitDefinitions>
 <!-- END UNIT DEFINITIONS -->
-  
+
   
     <listOfCompartments>
       <compartment

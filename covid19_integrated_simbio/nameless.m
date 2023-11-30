@@ -4,7 +4,7 @@
   export from : #export { format: Simbio, namespace: nameless, ...};
 %}
 
-sbioaddtolibrary(sbiounit('week', 'day', 7));
+%sbioaddtolibrary(sbiounit('week', 'day', 7));
 
 nameless_model = sbiomodel('nameless');
 
