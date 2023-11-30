@@ -3,12 +3,12 @@
 */
 
 // @Const
-include ./mph_life_cycle.xlsx type xlsx with { sheet: 1, omitRows: 1 }
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 1, omitRows: 1 };
 // @Record
-include ./mph_life_cycle.xlsx type xlsx with { sheet: 2, omitRows: 1 }
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 2, omitRows: 1 };
 // @Compartment
-include ./mph_life_cycle.xlsx type xlsx with { sheet: 3, omitRows: 1 }
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 3, omitRows: 1 };
 // @Species
-include ./mph_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 1 }
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 1 };
 // @Reaction
-include ./mph_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 1 }
+include ./mph_life_cycle.xlsx type xlsx with { sheet: 5, omitRows: 1 };

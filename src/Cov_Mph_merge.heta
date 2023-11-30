@@ -4,16 +4,16 @@
 */
 
 // include units
-include ./qsp-units.heta
+include ./qsp-units.heta;
 // include Cov life cycle module
-include ./Cov19_life_cycle/index.heta
+include ./Cov19_life_cycle/index.heta;
 
 // include Mph life cycle module
-include ./Mph_life_cycle/index.heta
+include ./Mph_life_cycle/index.heta;
 
 
 // add switchers
-//include ./switchers.heta
+//include ./switchers.heta;
 
 // exports
 #export {

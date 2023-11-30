@@ -2,16 +2,18 @@
   platform for compilation as stand-alone model (not integral)
 */
 // add qsp units
-include ../qsp-units.heta
+include ../qsp-units.heta;
+
+t {units: h};
 
 // @Const
-include ./cov19_life_cycle.xlsx type xlsx with { sheet: 0, omitRows: 3 }
+include ./cov19_life_cycle.xlsx type xlsx with { sheet: 0, omitRows: 3 };
 // @Record
-include ./cov19_life_cycle.xlsx type xlsx with { sheet: 1, omitRows: 3 }
+include ./cov19_life_cycle.xlsx type xlsx with { sheet: 1, omitRows: 3 };
 // @Compartment
-include ./cov19_life_cycle.xlsx type xlsx with { sheet: 2, omitRows: 3 }
+include ./cov19_life_cycle.xlsx type xlsx with { sheet: 2, omitRows: 3 };
 // @Species
-include ./cov19_life_cycle.xlsx type xlsx with { sheet: 3, omitRows: 3 }
+include ./cov19_life_cycle.xlsx type xlsx with { sheet: 3, omitRows: 3 };
 // @Reaction
 include ./cov19_life_cycle.xlsx type xlsx with { sheet: 4, omitRows: 3 }
 

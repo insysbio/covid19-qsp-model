@@ -88,9 +88,9 @@ Creation of qsp platfrom located in "Y:/new-platform" which uses "Cov19_life_cyc
 - update an index file "Y:/new-platform/src/index.heta"
     ```heta
     /* my qsp platform */
-    include ./qsp-units.heta
+    include ./qsp-units.heta;
 
-    include Y:/covid19-qsp-model/src/Cov19_life_cycle/cov19_life_cycle.heta
+    include Y:/covid19-qsp-model/src/Cov19_life_cycle/cov19_life_cycle.heta;
 
     // new initial value
     ACE2_ipc .= 1e-6;

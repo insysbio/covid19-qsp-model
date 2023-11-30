@@ -1,5 +1,5 @@
 {
-  "builderVersion": "^0.6.10",
+  "builderVersion": "^0.7.2",
   "id": "COVID19",
   "title": "COVID-19 QSP model",
   "notes": "QSP model describing immune response and virus life cycle in COVID-19",

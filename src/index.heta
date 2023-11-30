@@ -4,13 +4,13 @@
 */
 
 // include units
-include ./qsp-units.heta
+include ./qsp-units.heta;
 t {units: hour};
 // include life cycle module
-include ./Cov19_life_cycle/index.heta
+include ./Cov19_life_cycle/index.heta;
 
 // add switchers
-include ./switchers.heta
+include ./switchers.heta;
 
 V_mat_pc {modifiers: [PC_hs_ss]};
 V_syn_ace2_pc {modifiers: [PC]};
