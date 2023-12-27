@@ -12,7 +12,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [ 14.x ]
+        node-version: [ 16.x ]
         heta-version: [ "0.7.2" ]
         platform: [ ubuntu-latest ]
 
@@ -45,8 +45,8 @@ jobs:
         cp -rf ./diagnostics/julia/*.png ./dist/plots/
     - name: Deploy to "dist" branch only for "master" and "share" pushes
       if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/share' ) }}
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: dist # The branch the action should deploy to.
-        FOLDER: dist # The folder the action should deploy.
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: dist # The branch the action should deploy to.
+        folder: dist # The folder the action should deploy.
